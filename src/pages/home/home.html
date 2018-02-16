@@ -39,11 +39,10 @@
         <ion-input type="text" [(ngModel)]="cilindrata" (change)="validaForm()"></ion-input>
       </ion-item>
 
-
     </ion-list>
   </div>
   <div  align=center>
-    <button  ion-button color="secondary" [disabled]="!abilitato">
+        <button ion-button block [disabled]="!abilitato" >Conferma</button>
       Prosegui &nbsp;
       <ion-icon name='arrow-forward'></ion-icon>
     </button>
