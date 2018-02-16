@@ -2,7 +2,7 @@
 
 <ion-content padding>
 
-    <div id="header" padding align="center">
+    <div id="header" align="center">
   
         <h1><span id="pi">P</span>iuSicuro</h1>
   
@@ -24,27 +24,31 @@
             
             <ion-item>
               <ion-label>Furto</ion-label>
-              <ion-checkbox ></ion-checkbox>
+              <ion-checkbox [(ngModel)]="furto"></ion-checkbox>
             </ion-item>
 
             <ion-item>
                 <ion-label>Incendio</ion-label>
-                <ion-checkbox ></ion-checkbox>
+                <ion-checkbox [(ngModel)]="incendio" ></ion-checkbox>
               </ion-item>
 
               <ion-item>
                   <ion-label>Minicasko</ion-label>
-                  <ion-checkbox ></ion-checkbox>
+                  <ion-checkbox [(ngModel)]="minicasko" ></ion-checkbox>
                 </ion-item>
 
                 <ion-item>
                     <ion-label>Cristalli</ion-label>
-                    <ion-checkbox ></ion-checkbox>
+                    <ion-checkbox [(ngModel)]="cristalli"></ion-checkbox>
                   </ion-item>
     
     </div>
     <div  align=center>
+<<<<<<< HEAD
           <button ion-button block [disabled]="disabilitato" (click)="navigateToRiepilogo()" >
+=======
+          <button ion-button block >
+>>>>>>> fe05103d2bab584d8888cce108d185432e459b2b
             Riepilogo
       </button>
     </div>
