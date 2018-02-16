@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the RiepilogoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {Preventivo,Garanzia,Persona,Veicolo, CreaPreventivoProvider} from '../../providers/crea-preventivo/crea-preventivo';
 
 @IonicPage()
 @Component({
@@ -15,10 +9,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RiepilogoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  preventivo:Preventivo={
+    id:0,
+    veicolo:{marca:"",modello:"",annoImm:null,allestimento:"",cilindrata:null},
+    persona:{nome:"",cognome:"",dataNascita:"",luogoNascita:"",anniPatente:null},
+    garanzie:[]
+  };
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public serv:CreaPreventivoProvider) 
+  {
+    this.preventivo=serv.preve();
+    console.log(this.preventivo);
+   
   }
 
-  ionViewDidLoad() {
+  ionViewDidLoad() 
+  {
     console.log('ionViewDidLoad RiepilogoPage');
   }
 

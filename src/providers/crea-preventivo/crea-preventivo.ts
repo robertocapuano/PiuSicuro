@@ -42,7 +42,7 @@ export class CreaPreventivoProvider {
 
   garanzie: string = "furto,incendio,minikasko,cristalli";
   codiciGaranzie: string="1235,1478,4587,9654";  
-
+  cont:number=0;
 
   veicolo : Veicolo = {
 
@@ -69,8 +69,15 @@ export class CreaPreventivoProvider {
     codice:0
   }]
 
-  constructor(public http: HttpClient) {
+  preventivo:Preventivo={
+    id:0,
+    veicolo:{marca:"",modello:"",annoImm:null,allestimento:"",cilindrata:null},
+    persona:{nome:"",cognome:"",dataNascita:"",luogoNascita:"",anniPatente:null},
+    garanzie:[]
+  };
 
+  constructor(public http: HttpClient) {
+      this.cont++;
   }
 
   setPersona(pers: Persona)
@@ -87,5 +94,16 @@ export class CreaPreventivoProvider {
   {
     this.garanzi =gar;
   }
+
+  preve()
+  {
+      return this.preventivo={
+      id:this.cont,
+      veicolo:this.veicolo,
+      persona:this.persona,
+      garanzie:this.garanzi
+    };
+  }
+
 
 }

@@ -4,13 +4,6 @@ import { CreaPreventivoProvider , Garanzia} from '../../providers/crea-preventiv
 import { RiepilogoPage } from '../riepilogo/riepilogo';
 
 
-/**
- * Generated class for the GaranziaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-garanzia',
@@ -33,6 +26,7 @@ export class GaranziaPage {
   }
 
   addGaranzia(item : Garanzia){
+    console.log(item);
     this.garanzie.push(item);
 
   }
@@ -55,6 +49,7 @@ export class GaranziaPage {
       this.addGaranzia({nome:"minicasko",codice:111111});
 
     this.servizio.setGaranzia(this.garanzie);
+    console.log(this.garanzie);
     //console.log("navigaaaaaaaaa versoooo l infinito e oltreeee aahahahahah no skerzo verso il riepilogo");
     this.navCtrl.push(RiepilogoPage);
   }
