@@ -1,6 +1,7 @@
 import { Component,Input } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CreaPreventivoProvider,Persona } from '../../providers/crea-preventivo/crea-preventivo';
+import {GaranziaPage} from '../garanzia/garanzia';
 
 
 @IonicPage()
@@ -22,22 +23,21 @@ export class ContraentePage {
     console.log('ionViewDidLoad ContraentePage');
   }
 
-  formValida()
+  validaForm()
   {
     if(
-      this.contraente.nome !== null &&
-      this.contraente.cognome !== null &&
-      this.contraente.dataNascita !== null &&
-      this.contraente.luogoNascita !== null &&
-      this.contraente.anniPatente > 0
-    )
-      this.disabilitato=true;
+      this.contraente.nome !=="" &&
+      this.contraente.cognome !=="" &&
+      this.contraente.dataNascita !=="" &&
+      this.contraente.luogoNascita !=="" &&
+      this.contraente.anniPatente > 0)
+      this.disabilitato=false;
     else
-    this.disabilitato=false;
+    this.disabilitato=true;
   }
   navigateToGaranzia(){
     console.log("navigaaaaaaa puoi!!!");
     this.servizo.setPersona(this.contraente);
-    //this.navCtrl.push(ContraentePage);
+    this.navCtrl.push(GaranziaPage);
   }
 }
