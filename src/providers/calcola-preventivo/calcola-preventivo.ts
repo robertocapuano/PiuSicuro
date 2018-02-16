@@ -8,7 +8,6 @@ export class CalcolaPreventivoProvider {
   constructor(public http: HttpClient) {
   }
 
-
   data= new Date();
 
 
@@ -59,6 +58,7 @@ export class CalcolaPreventivoProvider {
         case 'cristalli':
           tot+=200;
         break;
+
       }
     }
     return tot+RCA;

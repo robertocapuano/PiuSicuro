@@ -40,6 +40,9 @@ export interface Preventivo
 @Injectable()
 export class CreaPreventivoProvider {
 
+  garanzie: string = "furto,incendio,minikasko,cristalli";  
+
+
   veicolo : Veicolo = {
 
     marca:"",
@@ -54,7 +57,7 @@ export class CreaPreventivoProvider {
   {
     nome:"",
     cognome:"",
-    dataNascita: new Date(""),
+    dataNascita: "",
     luogoNascita:"",
     anniPatente:0
   }

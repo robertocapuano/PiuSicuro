@@ -27,7 +27,7 @@ export class HomePage {
     if(
       this.veicolo.marca !=="" &&  
       this.veicolo.modello !=="" && 
-      this.veicolo.annoImm > 0 && 
+      this.veicolo.annoImm > 1000 && 
       this.veicolo.allestimento !=="" &&
       this.veicolo.cilindrata >= 1000)
       this.disabilitato=false;

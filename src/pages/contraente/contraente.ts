@@ -11,10 +11,7 @@ import { CreaPreventivoProvider,Persona } from '../../providers/crea-preventivo/
 export class ContraentePage {
   
   @Input()
-  contraente : Persona={nome:"",cognome:"",dataNascita:Date,
-    luogoNascita:string,
-    anniPatente:number
-  };
+  contraente : Persona={nome:"",cognome:"",dataNascita:"",luogoNascita:"",anniPatente:null};
   @Input()
   disabilitato : boolean = true;
 
@@ -32,9 +29,11 @@ export class ContraentePage {
       this.contraente.cognome !== null &&
       this.contraente.dataNascita !== null &&
       this.contraente.luogoNascita !== null &&
-      this.contraente.anniPatente !== null
+      this.contraente.anniPatente > 0
     )
       this.disabilitato=true;
+    else
+    this.disabilitato=false;
   }
   navigateToGaranzia(){
     console.log("navigaaaaaaa puoi!!!");
