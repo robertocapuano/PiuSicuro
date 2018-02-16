@@ -1,7 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
 page-garanzia {
 
     .button{
         background-color: rgb(230, 0, 0) !important;
+    }
+
+    //HEADER
+
+    h1{
+        font-family: 'Dosis', sans-serif;
+        font-size: 45px;
+        color:rgb(230, 0, 0);
+    }
+
+    #pi{
+        font-weight: bold;
+        font-style: italic;
+        font-size: 60px;
     }
 
 }
