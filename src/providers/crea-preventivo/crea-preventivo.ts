@@ -7,7 +7,7 @@ export interface Veicolo
   modello:string,
   allestimento:string,
   annoImm:number,
-  cilindrata:number;
+  cilindrata:number
 }
 
 export interface Persona
@@ -16,13 +16,13 @@ export interface Persona
   cognome:string,
   dataNascita:Date,
   luogoNascita:string,
-  anniPatente:number;
+  anniPatente:number
 }
 
 export interface Garanzia
 {
   nome:string,
-  codice:number;
+  codice:number
 }
 
 export interface Preventivo
@@ -50,13 +50,38 @@ export class CreaPreventivoProvider {
     
   }
 
+  persona: Persona =
+  {
+    nome:"",
+    cognome:"",
+    dataNascita: new Date(""),
+    luogoNascita:"",
+    anniPatente:0
+  }
+
+  garanzia: Garanzia = 
+  {
+    nome:"",
+    codice:0
+  }
+
   constructor(public http: HttpClient) {
-    console.log('Hello CreaPreventivoProvider Provider');
+
+  }
+
+  setPersona(pers: Persona)
+  {
+    this.persona = pers;
   }
 
   setVeicolo(auto : Veicolo)
   {
-    return this.veicolo = auto;
+    this.veicolo = auto;
+  }
+
+  setGaranzia(gar: Garanzia)
+  {
+    this.garanzia = gar;
   }
 
 }

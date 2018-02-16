@@ -6,7 +6,6 @@ import {Veicolo,Garanzia,Persona,Preventivo} from '../../providers/crea-preventi
 export class CalcolaPreventivoProvider {
 
   constructor(public http: HttpClient) {
-    console.log('Hello CalcolaPreventivoProvider Provider');
   }
 
 
@@ -49,16 +48,16 @@ export class CalcolaPreventivoProvider {
       switch(prev.garanzie[i].nome)
       {
         case 'incendio':
-          tot+100;
+          tot+=100;
         break;
         case 'furto':
-          tot+100;
+          tot+=100;
         break;
         case 'minikasko':
-          tot+300;
+          tot+=300;
         break;
         case 'cristalli':
-          tot+200;
+          tot+=200;
         break;
       }
     }
