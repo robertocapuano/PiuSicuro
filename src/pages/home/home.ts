@@ -12,6 +12,7 @@ export class HomePage {
   veicolo : Veicolo={marca:"",modello:"",annoImm:null,allestimento:"",cilindrata:null};
   @Input()
   disabilitato : boolean = true;
+
   constructor(public navCtrl: NavController,public servizo : CreaPreventivoProvider) {
   }
   
