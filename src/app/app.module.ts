@@ -16,6 +16,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { ContraentePage } from '../pages/contraente/contraente';
 import {GaranziaPage} from '../pages/garanzia/garanzia';
+import { RiepilogoPage } from '../pages/riepilogo/riepilogo';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {GaranziaPage} from '../pages/garanzia/garanzia';
     HomePage,
     TabsPage,
     ContraentePage,
-    GaranziaPage
+    GaranziaPage,
+    RiepilogoPage
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,8 @@ import {GaranziaPage} from '../pages/garanzia/garanzia';
     HomePage,
     TabsPage,
     ContraentePage,
-    GaranziaPage
+    GaranziaPage,
+    RiepilogoPage
   ],
   providers: [
     StatusBar,
