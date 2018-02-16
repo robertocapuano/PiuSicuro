@@ -1,12 +1,7 @@
 import { Component,Input } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CreaPreventivoProvider,Persona } from '../../providers/crea-preventivo/crea-preventivo';
-/**
- * Generated class for the ContraentePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 @IonicPage()
 @Component({
