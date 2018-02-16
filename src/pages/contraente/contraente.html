@@ -1,18 +1,55 @@
-<!--
-  Generated template for the ContraentePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>contraente</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
 <ion-content padding>
+
+  <div id="header" padding align="center">
+
+    <img src="https://www.genertel.it/dms/genertel-wf5/logo-genertel-full.svg">
+
+  </div>
+
+  <div id="title" padding>
+
+    <h2>Dati personali</h2>
+
+  </div>
+
+  <div id="form">
+    <ion-list>
+
+      <ion-item>
+        <ion-label>Nome</ion-label>
+        <ion-input type="text" [(ngModel)]="contraente.nome" (change)="validaForm()"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Cognome</ion-label>
+        <ion-input type="text"  [(ngModel)]="contraente.cognome"(change)="validaForm()"v></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Data di nascita</ion-label>
+        <ion-input type="text" [(ngModel)]="contraente.dataNascita" (change)="validaForm()"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label>Cognome</ion-label>
+          <ion-input type="text"  [(ngModel)]="contraente.luogoNascita"(change)="validaForm()"v></ion-input>
+        </ion-item>
+  
+  
+        <ion-item>
+          <ion-label>Data di nascita</ion-label>
+          <ion-input type="number" [(ngModel)]="contraente.anniPatente" (change)="validaForm()"></ion-input>
+        </ion-item>
+
+      
+
+    </ion-list>
+  </div>
+  <div  align=center>
+        <button ion-button block [disabled]="disabilitato" >
+      Prosegui &nbsp;
+      <ion-icon name='arrow-forward'></ion-icon>
+    </button>
+  </div>
 
 </ion-content>

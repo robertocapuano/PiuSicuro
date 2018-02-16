@@ -11,7 +11,10 @@ import { CreaPreventivoProvider,Persona } from '../../providers/crea-preventivo/
 export class ContraentePage {
   
   @Input()
-  contraente : Persona;
+  contraente : Persona={nome:"",cognome:"",dataNascita:Date,
+    luogoNascita:string,
+    anniPatente:number
+  };
   @Input()
   disabilitato : boolean = true;
 
