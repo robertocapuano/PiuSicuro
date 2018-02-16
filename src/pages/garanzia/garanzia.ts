@@ -27,7 +27,7 @@ export class GaranziaPage {
   cristalli:boolean=false;
   
 
-  garanzie: Garanzia[];
+  garanzie: Garanzia[]=[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public servizio : CreaPreventivoProvider) {
   }
