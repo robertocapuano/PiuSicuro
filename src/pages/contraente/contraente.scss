@@ -1,11 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
 page-contraente {
 
     
     #header{
 
-        img{
-            width: 500px;
-        }
+          //HEADER
+    
+    h1{
+        font-family: 'Dosis', sans-serif;
+        font-size: 45px;
+        color:rgb(230, 0, 0);
+    }
+
+    #pi{
+        font-weight: bold;
+        font-style: italic;
+        font-size: 60px;
+    }
 
     }
 
