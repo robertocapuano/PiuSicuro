@@ -18,13 +18,13 @@ import { RiepilogoPage } from '../riepilogo/riepilogo';
 })
 export class GaranziaPage {
   @Input()
-  furto:boolean;
+  furto:boolean=false;
   @Input()
-  incendio:boolean;
+  incendio:boolean=false;
   @Input()
-  minicasko:boolean;
+  minicasko:boolean=false;
   @Input()
-  cristalli:boolean;
+  cristalli:boolean=false;
   
 
   garanzie: Garanzia[];
