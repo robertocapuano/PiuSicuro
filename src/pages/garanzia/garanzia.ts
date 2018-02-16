@@ -11,16 +11,16 @@ import { RiepilogoPage } from '../riepilogo/riepilogo';
 })
 export class GaranziaPage {
   @Input()
-  furto:boolean;
+  furto:boolean=false;
   @Input()
-  incendio:boolean;
+  incendio:boolean=false;
   @Input()
-  minicasko:boolean;
+  minicasko:boolean=false;
   @Input()
-  cristalli:boolean;
+  cristalli:boolean=false;
   
 
-  garanzie: Garanzia[];
+  garanzie: Garanzia[]=[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public servizio : CreaPreventivoProvider) {
   }
@@ -36,6 +36,7 @@ export class GaranziaPage {
   }
   navigateToRiepilogo()
   {
+    this.addGaranzia({nome:"rca",codice:0});
     if(this.furto)
       this.addGaranzia({nome:"furto",codice:111111});
     
