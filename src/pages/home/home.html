@@ -1,17 +1,52 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
-
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+
+  <div id="header" padding align="center">
+
+    <img src="https://www.genertel.it/dms/genertel-wf5/logo-genertel-full.svg">
+
+  </div>
+
+  <div id="title" padding>
+
+    <h2>Dati veicolo</h2>
+
+  </div>
+
+  <div id="form">
+    <ion-list>
+
+      <ion-item>
+        <ion-label>Marca</ion-label>
+        <ion-input type="text" [(ngModel)]="marca" (change)="validaForm()"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Modello</ion-label>
+        <ion-input type="text"  [(ngModel)]="modello"(change)="validaForm()"v></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Allestimento</ion-label>
+        <ion-input type="text" [(ngModel)]="allestimento" (change)="validaForm()"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Anno Immatricolazione </ion-label>
+        <ion-input type="text" [(ngModel)]="annoI" (change)="validaForm()"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Cilindrata</ion-label>
+        <ion-input type="text" [(ngModel)]="cilindrata" (change)="validaForm()"></ion-input>
+      </ion-item>
+
+
+    </ion-list>
+  </div>
+  <div  align=center>
+    <button  ion-button color="secondary" [disabled]="!abilitato">
+      Prosegui &nbsp;
+      <ion-icon name='arrow-forward'></ion-icon>
+    </button>
+  </div>
+
 </ion-content>
