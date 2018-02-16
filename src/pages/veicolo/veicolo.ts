@@ -2,8 +2,9 @@ import { Component ,Input} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ContactPage } from '../contact/contact';
 import { ContraentePage } from '../contraente/contraente';
+import { CreaPreventivoProvider , Veicolo} from '../../providers/crea-preventivo/crea-preventivo';
 
-/**
+ /**
  * Generated class for the VeicoloPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
@@ -21,7 +22,7 @@ export class VeicoloPage {
   @Input()
   disabilitato : boolean = true;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProviders) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProvider) {
   }
 
   ionViewDidLoad() {
@@ -39,7 +40,7 @@ export class VeicoloPage {
     if(
       this.veicolo.marca !==null &&  
       this.veicolo.modello !==null && 
-      this.veicolo.annoDiImmatricolazione !==null && 
+      this.veicolo.annoImm !==null && 
       this.veicolo.allestimento !==null &&
       this.veicolo.cilindrata >= 1000)
       this.disabilitato=false;
