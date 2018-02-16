@@ -14,7 +14,6 @@ import { CreaPreventivoProvider } from '../providers/crea-preventivo/crea-preven
 import { CalcolaPreventivoProvider } from '../providers/calcola-preventivo/calcola-preventivo';
 import {HttpClientModule} from '@angular/common/http';
 import { HttpModule } from '@angular/http';
-import { VeicoloPage } from '../pages/veicolo/veicolo';
 import { ContraentePage } from '../pages/contraente/contraente';
 
 @NgModule({
@@ -24,7 +23,6 @@ import { ContraentePage } from '../pages/contraente/contraente';
     ContactPage,
     HomePage,
     TabsPage,
-    VeicoloPage,
     ContraentePage
   ],
   imports: [
@@ -40,7 +38,6 @@ import { ContraentePage } from '../pages/contraente/contraente';
     ContactPage,
     HomePage,
     TabsPage,
-    VeicoloPage,
     ContraentePage
   ],
   providers: [
