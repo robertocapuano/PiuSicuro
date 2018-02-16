@@ -14,7 +14,7 @@ export interface Persona
 {
   nome:string,
   cognome:string,
-  dataNascita:Date,
+  dataNascita:string,
   luogoNascita:string,
   anniPatente:number
 }
@@ -54,7 +54,7 @@ export class CreaPreventivoProvider {
   {
     nome:"",
     cognome:"",
-    dataNascita: new Date(""),
+    dataNascita: "",
     luogoNascita:"",
     anniPatente:0
   }
