@@ -15,6 +15,7 @@ import { CalcolaPreventivoProvider } from '../providers/calcola-preventivo/calco
 import {HttpClientModule} from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { ContraentePage } from '../pages/contraente/contraente';
+import {GaranziaPage} from '../pages/garanzia/garanzia';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ContraentePage } from '../pages/contraente/contraente';
     ContactPage,
     HomePage,
     TabsPage,
-    ContraentePage
+    ContraentePage,
+    GaranziaPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import { ContraentePage } from '../pages/contraente/contraente';
     ContactPage,
     HomePage,
     TabsPage,
-    ContraentePage
+    ContraentePage,
+    GaranziaPage
   ],
   providers: [
     StatusBar,
