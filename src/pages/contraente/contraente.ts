@@ -1,6 +1,6 @@
 import { Component,Input } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { CreaPreventivoProvider,Persona } from '../../providers/crea-preventivo/crea-preventivo';
 /**
  * Generated class for the ContraentePage page.
  *
@@ -20,7 +20,7 @@ export class ContraentePage {
   @Input()
   disabilitato : boolean = true;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProviders) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProvider) {
   }
 
   ionViewDidLoad() {
@@ -32,8 +32,8 @@ export class ContraentePage {
     if(
       this.contraente.nome !== null &&
       this.contraente.cognome !== null &&
-      this.contraente.dataDiNascita !== null &&
-      this.contraente.luogoDiNascita !== null &&
+      this.contraente.dataNascita !== null &&
+      this.contraente.luogoNascita !== null &&
       this.contraente.anniPatente !== null
     )
       this.disabilitato=true;
