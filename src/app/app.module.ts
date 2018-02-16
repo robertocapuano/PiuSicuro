@@ -10,7 +10,14 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+<<<<<<< HEAD
+import { CreaPreventivoProvider } from '../providers/crea-preventivo/crea-preventivo';
+import { CalcolaPreventivoProvider } from '../providers/calcola-preventivo/calcola-preventivo';
+import {HttpClientModule} from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+=======
 import { VeicoloPage } from '../pages/veicolo/veicolo';
+>>>>>>> 666a55d1eb877c8a0e4febb864c03d69c21525f4
 
 @NgModule({
   declarations: [
@@ -23,7 +30,9 @@ import { VeicoloPage } from '../pages/veicolo/veicolo';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,6 +46,8 @@ import { VeicoloPage } from '../pages/veicolo/veicolo';
   providers: [
     StatusBar,
     SplashScreen,
+    CreaPreventivoProvider,
+    CalcolaPreventivoProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
