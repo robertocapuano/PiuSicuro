@@ -40,7 +40,8 @@ export interface Preventivo
 @Injectable()
 export class CreaPreventivoProvider {
 
-  garanzie: string = "furto,incendio,minikasko,cristalli";  
+  garanzie: string = "furto,incendio,minikasko,cristalli";
+  codiciGaranzie: string="1235,1478,4587,9654";  
 
 
   veicolo : Veicolo = {
