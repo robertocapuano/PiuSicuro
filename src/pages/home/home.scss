@@ -1,3 +1,24 @@
-page-home {
+page-home{
+
+    #header{
+
+        img{
+            width: 500px;
+        }
+
+    }
+
+    #title{
+        white-space: normal;
+    }
+    
+    .button-inner{
+        color: white;
+    }
+
+    .button-ios{
+        background-color: rgb(230, 0, 0) !important;
+    }
+
 
 }
