@@ -17,32 +17,32 @@
 
       <ion-item>
         <ion-label>Marca</ion-label>
-        <ion-input type="text" [(ngModel)]="marca" (change)="validaForm()"></ion-input>
+        <ion-input type="text" [(ngModel)]="veicolo.marca" (change)="validaForm()"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label>Modello</ion-label>
-        <ion-input type="text"  [(ngModel)]="modello"(change)="validaForm()"v></ion-input>
+        <ion-input type="text"  [(ngModel)]="veicolo.modello"(change)="validaForm()"v></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label>Allestimento</ion-label>
-        <ion-input type="text" [(ngModel)]="allestimento" (change)="validaForm()"></ion-input>
+        <ion-input type="text" [(ngModel)]="veicolo.allestimento" (change)="validaForm()"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label>Anno Immatricolazione </ion-label>
-        <ion-input type="text" [(ngModel)]="annoI" (change)="validaForm()"></ion-input>
+        <ion-input type="number" [(ngModel)]="veicolo.annoImm" (change)="validaForm()"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Cilindrata</ion-label>
-        <ion-input type="text" [(ngModel)]="cilindrata" (change)="validaForm()"></ion-input>
+        <ion-input type="text" [(ngModel)]="veicolo.cilindrata" (change)="validaForm()"></ion-input>
       </ion-item>
 
     </ion-list>
   </div>
   <div  align=center>
-        <button ion-button block [disabled]="!abilitato" >Conferma</button>
+        <button ion-button block [disabled]="disabilitato" >
       Prosegui &nbsp;
       <ion-icon name='arrow-forward'></ion-icon>
     </button>

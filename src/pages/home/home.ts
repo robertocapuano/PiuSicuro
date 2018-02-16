@@ -9,7 +9,7 @@ import { CreaPreventivoProvider , Veicolo} from '../../providers/crea-preventivo
 })
 export class HomePage {
   @Input()
-  veicolo : Veicolo;
+  veicolo : Veicolo={marca:"",modello:"",annoImm:null,allestimento:"",cilindrata:null};
   @Input()
   disabilitato : boolean = true;
   constructor(public navCtrl: NavController,public servizo : CreaPreventivoProvider) {
@@ -20,14 +20,14 @@ export class HomePage {
     this.servizo.setVeicolo(this.veicolo);
     this.navCtrl.push(ContraentePage);
   }
-  formValida()
+  validaForm()
   {
-    //console.log();
+    //console.log(  );
     if(
-      this.veicolo.marca !==null &&  
-      this.veicolo.modello !==null && 
-      this.veicolo.annoImm !==null && 
-      this.veicolo.allestimento !==null &&
+      this.veicolo.marca !=="" &&  
+      this.veicolo.modello !=="" && 
+      this.veicolo.annoImm > 0 && 
+      this.veicolo.allestimento !=="" &&
       this.veicolo.cilindrata >= 1000)
       this.disabilitato=false;
     else
