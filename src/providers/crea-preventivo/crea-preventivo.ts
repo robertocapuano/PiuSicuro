@@ -63,11 +63,11 @@ export class CreaPreventivoProvider {
     anniPatente:0
   }
 
-  garanzia: Garanzia = 
-  {
+  garanzi: Garanzia[] = 
+  [{
     nome:"",
     codice:0
-  }
+  }]
 
   constructor(public http: HttpClient) {
 
@@ -83,9 +83,9 @@ export class CreaPreventivoProvider {
     this.veicolo = auto;
   }
 
-  setGaranzia(gar: Garanzia)
+  setGaranzia(gar: Garanzia[])
   {
-    this.garanzia = gar;
+    this.garanzi =gar;
   }
 
 }
