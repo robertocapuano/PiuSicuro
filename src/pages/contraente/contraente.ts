@@ -26,15 +26,14 @@ export class ContraentePage {
   validaForm()
   {
     if(
-      this.contraente.nome !== "" &&
-      this.contraente.cognome !== "" &&
-      this.contraente.dataNascita !== "" &&
-      this.contraente.luogoNascita !== "" &&
-      this.contraente.anniPatente > 0
-    )
-      this.disabilitato=true;
+      this.contraente.nome !=="" &&
+      this.contraente.cognome !=="" &&
+      this.contraente.dataNascita !=="" &&
+      this.contraente.luogoNascita !=="" &&
+      this.contraente.anniPatente > 0)
+      this.disabilitato=false;
     else
-    this.disabilitato=false;
+    this.disabilitato=true;
   }
   navigateToGaranzia(){
     console.log("navigaaaaaaa puoi!!!");
