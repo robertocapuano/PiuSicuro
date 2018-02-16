@@ -42,6 +42,7 @@ export class GaranziaPage {
   }
   navigateToRiepilogo()
   {
+    this.addGaranzia({nome:"rca",codice:0});
     if(this.furto)
       this.addGaranzia({nome:"furto",codice:111111});
     
