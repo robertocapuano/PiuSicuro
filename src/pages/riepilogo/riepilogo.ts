@@ -34,11 +34,11 @@ export class RiepilogoPage {
   }
 
   navigateToPersona(){
-    this.navCtrl.push(ContraentePage,this.serv.getPersona);
+    this.navCtrl.push(ContraentePage,this.serv.getPersona());
   }
   pagInizio()
   {
-    this.navCtrl.push(HomePage,this.serv.getVeicolo);
+    this.navCtrl.push(HomePage,this.serv.getVeicolo());
   }
   
   navigateToGaranzia(){
