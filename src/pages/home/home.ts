@@ -11,7 +11,6 @@ import {GaranziaPage} from '../garanzia/garanzia';
 export class HomePage {
   @Input()
   veicolo : Veicolo={marca:"",modello:"",annoImm:null,allestimento:"",cilindrata:null};
-  @Input()
   disabilitato : boolean = true;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProvider) {
