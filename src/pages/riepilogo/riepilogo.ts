@@ -19,13 +19,16 @@ export class RiepilogoPage {
     persona:{nome:"",cognome:"",dataNascita:"",luogoNascita:"",anniPatente:null},
     garanzie:[]
   };
-  premio:number;
+  premio:number=0;
+  iva:number=0;
+  rca:number=0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public serv:CreaPreventivoProvider,public calcola : CalcolaPreventivoProvider) 
   {
     this.preventivo=serv.preve();
-    
+    this.iva=calcola.calcolaIva(this.preventivo);
     this.premio=calcola.calcoloPremio(this.preventivo);
+    this.rca=calcola.RCA;
 
   }
 

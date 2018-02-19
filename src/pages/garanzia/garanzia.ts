@@ -45,18 +45,18 @@ export class GaranziaPage {
 
   navigateToRiepilogo()
   {
-    this.addGaranzia({nome:"rca",codice:0});
+    this.addGaranzia({nome:"rca",codice:0,prezzo:250});
     if(this.furto)
-      this.addGaranzia({nome:"furto",codice:111111});
+      this.addGaranzia({nome:"furto",codice:111111,prezzo:100});
     
     if(this.incendio)
-      this.addGaranzia({nome:"incendio",codice:22222});
+      this.addGaranzia({nome:"incendio",codice:22222,prezzo:100});
 
     if(this.cristalli)
-      this.addGaranzia({nome:"cristalli",codice:333333});
+      this.addGaranzia({nome:"cristalli",codice:333333,prezzo:200});
 
     if(this.minicasko)
-      this.addGaranzia({nome:"minicasko",codice:111111});
+      this.addGaranzia({nome:"minicasko",codice:111111,prezzo:300});
 
     this.servizio.setGaranzia(this.garanzie);
     console.log(this.garanzie);
