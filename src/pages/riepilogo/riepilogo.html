@@ -1,168 +1,69 @@
 <ion-header>
     <div id="header" padding align="center">
-<<<<<<< HEAD
-        
-              <h1><span id="pi">P</span>iuSicuro</h1>
-        
-          </div>
-        
-            <h2 id="title" padding>Dati veicolo</h2>
-            
-            <ion-grid>
-           <ion-row>
-               <b> Marca:</b> &nbsp;&nbsp; {{preventivo.veicolo.marca}}</ion-row><br>
-            <ion-row><b>Modello:</b>&nbsp;&nbsp; {{preventivo.veicolo.modello}}</ion-row><br>
-        <ion-row><b>Allestimento:</b>&nbsp;&nbsp; {{preventivo.veicolo.allestimento}}</ion-row><br>
-    <ion-row><b> Anno di Immatricolazione:</b>&nbsp;&nbsp; {{preventivo.veicolo.annoImm}}</ion-row><br>
-    <ion-row><b> Cilindrata:</b> &nbsp;&nbsp;{{preventivo.veicolo.cilindrata}}</ion-row><br>
-        <ion-row>
-            <div class="dropdown">
-                <button class="dropbtn">Dati veicolo  {{(preventivo.veicolo.marca}} &nbsp; {{preventivo.veicolo.modello)}}</button>
-            <div class="dropdown-content">
-                <b> Marca:</b> &nbsp;&nbsp; {{preventivo.veicolo.marca}}<br>
-                <b>Modello:</b>&nbsp;&nbsp; {{preventivo.veicolo.modello}}<br>
-            <b>Allestimento:</b>&nbsp;&nbsp; {{preventivo.veicolo.allestimento}}<br>
-            <b> Anno di Immatricolazione:</b>&nbsp;&nbsp; {{preventivo.veicolo.annoImm}}<br>
-            <b> Cilindrata:</b> &nbsp;&nbsp;{{preventivo.veicolo.cilindrata}}<br>
-            </div>
-        </div>
-        </ion-row>   
-</ion-grid>
-            
-           <h2 id="title" padding> Dati del contraente:</h2>
-
-           <b> Nome:</b> {{preventivo.persona.nome}}<br>
-        <b>Cognome:</b> {{preventivo.persona.cognome}}<br>
-        <b> Data di nascita:</b> {{preventivo.persona.dataNascita}}<br>
-        <b> Luogo di nascita:</b> {{preventivo.persona.luogoNascita}}<br>
-=======
 
         <h1>
             <span id="pi">P</span>iuSicuro</h1>
 
     </div>
-
 </ion-header>
-
 <ion-content>
-        <div id="breadcrumb">
-
-        <ion-grid align="center">
-            <ion-row>
-                <ion-col (click)="pagInizio()" >
-                    <b>Dati veicolo</b>
-                </ion-col>
-                <ion-col (click)="navigateToPersona()">
-                    <b>Dati cliente</b> 
-                </ion-col>
-                <ion-col (click)="navigateToGaranzia()">
-                    <b>Garanzie</b>
-                </ion-col>
-                <ion-col  class="attuale">
-                    <b>Riepilogo </b>
-                </ion-col>
-              </ion-row>
-        </ion-grid>
-      </div>
-    
-    
-
-    <div padding>
-
-        <h2 id="title">Dati veicolo</h2>
-        <br>
-        <b> Marca:</b> {{preventivo.veicolo.marca}}
-        <br>
-        <b>Modello:</b> {{preventivo.veicolo.modello}}
-        <br>
-        <b>Allestimento:</b> {{preventivo.veicolo.allestimento}}
-        <br>
-        <b> Anno di Immatricolazione:</b> {{preventivo.veicolo.annoImm}}
-        <br>
-        <b> Cilindrata:</b> {{preventivo.veicolo.cilindrata}}
-        <br>
-        <br>
-
-
-        <h2 id="title"> Dati del contraente:</h2>
-        <br>
-        <b> Nome:</b> {{preventivo.persona.nome}}
-        <br>
-        <b>Cognome:</b> {{preventivo.persona.cognome}}
-        <br>
-        <b> Data di nascita:</b> {{preventivo.persona.dataNascita}}
-        <br>
-        <b> Luogo di nascita:</b> {{preventivo.persona.luogoNascita}}
-        <br>
->>>>>>> d4a51415800e7a30e2bb9065f5a79858ab5bdbba
-        <b> Anni di possesso della patente:</b> {{preventivo.persona.anniPatente}}
-
-        <br>
-        <br>
-        <h2 id="title">Dati delle garanzie:</h2>
-        <br>
-        <div *ngFor="let item of preventivo.garanzie">
-            <b>Nome:</b> {{item.nome}}
+    <br>
+    <br>
+    <div class="dropdown">
+        <button ion-button full id="dropbtn" >Veicolo ({{preventivo.veicolo.marca}} {{preventivo.veicolo.modello}})</button>
+        <div class="dropdown-content">
+           <a> <b> Marca:</b> &nbsp;&nbsp; {{preventivo.veicolo.marca}}</a>
             <br>
-            <b>Codice:</b> {{item.codice}}
+            <a> <b>Modello:</b>&nbsp;&nbsp; {{preventivo.veicolo.modello}}</a>
             <br>
-
-<<<<<<< HEAD
-=======
+            <a> <b>Allestimento:</b>&nbsp;&nbsp; {{preventivo.veicolo.allestimento}}</a>
+            <br>
+            <a> <b> Anno di Immatricolazione:</b>&nbsp;&nbsp; {{preventivo.veicolo.annoImm}}</a>
+            <br>
+            <a> <b> Cilindrata:</b> &nbsp;&nbsp;{{preventivo.veicolo.cilindrata}}</a>
+            <br>
         </div>
+    </div> <br><br><br>
+    <div class="dropdown">
+            <button ion-button full id="dropbtn" >Contraente: ({{preventivo.persona.nome}} {{preventivo.persona.cognome}})</button>
+            <div class="dropdown-content">
+               <a> <b> Nome:</b> {{preventivo.persona.nome}}<br></a>
+                
+                <a> <b>Cognome:</b> {{preventivo.persona.cognome}}</a>
+                <br>
+                <a>  <b> Data di nascita:</b> {{preventivo.persona.dataNascita}}</a>
+                <br>
+                <a><b> Luogo di nascita:</b> {{preventivo.persona.luogoNascita}}</a>
+                <br>
+                <a> <b> Anni di possesso della patente:</b> {{preventivo.persona.anniPatente}}</a>
+                <br>
+            </div>
+        </div><br><br><br>
 
-        <div padding align="center">
-            <h2 id="title" >
-                Premio Preventivo:
-            </h2>
-
-
-            <h1><b>{{premio}}</b></h1>
-        </div>
-
-    </div>
-
-    <button ion-button (click)="pagInizio()" full>Modifica parti precedenti</button>
-    <button ion-button full>Conferma Preventivo</button>
->>>>>>> d4a51415800e7a30e2bb9065f5a79858ab5bdbba
-
-
-</ion-content>
-<ion-footer>
-<<<<<<< HEAD
-  <ion-toolbar>
-    <ion-grid>
-        <ion-row>
-            <ion-col>
-                <b>Codice Fiscale: </b> 045043054305
-            </ion-col>
-            <ion-col>
-                <b>P.IVA:</b>   0123456789
-            </ion-col>
-            <ion-col>
-                <b>Assistenza clienti:</b> <br>+39 9876543210
-            </ion-col>
-          </ion-row>
-    </ion-grid>
-  </ion-toolbar>
-</ion-footer>
-=======
-    <ion-toolbar>
-        <ion-grid align="center">
+    <div>
+        <ion-grid>
             <ion-row>
                 <ion-col>
-                    <b>Codice Fiscale: </b> 045043054305
+Garanzie
                 </ion-col>
                 <ion-col>
-                    <b>P.IVA:</b>
-                    <br> 0123456789
-                </ion-col>
-                <ion-col>
-                    <b>Assistenza clienti:</b>
-                    <br>+39 9876543210
-                </ion-col>
+                        Prezzo
+                    </ion-col>
+                    <ion-col>
+                            Iva
+                        </ion-col>
             </ion-row>
+            <ion-row *ngFor="let item of preventivo.garanzie">
+                    <ion-col>
+    {{item.nome}} {{item.codice}}
+                    </ion-col>
+                    <ion-col>
+                            
+                        </ion-col>
+                        <ion-col>
+                                
+                            </ion-col>
+                </ion-row>
         </ion-grid>
-    </ion-toolbar>
-</ion-footer>
->>>>>>> d4a51415800e7a30e2bb9065f5a79858ab5bdbba
+    </div>
+</ion-content>
