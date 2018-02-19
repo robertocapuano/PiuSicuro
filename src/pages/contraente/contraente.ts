@@ -44,4 +44,7 @@ export class ContraentePage {
     this.servizo.setPersona(this.contraente);
     this.navCtrl.push(GaranziaPage);
   }
+  navigateToPersona(){
+    this.navCtrl.push(ContraentePage);
+  }
 }
