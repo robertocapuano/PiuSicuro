@@ -21,6 +21,7 @@ export class HomePage {
     this.servizo.setVeicolo(this.veicolo);
     this.navCtrl.push(ContraentePage);
   }
+  
   validaForm()
   {
     if(
