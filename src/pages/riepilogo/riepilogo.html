@@ -12,6 +12,35 @@
           </div>
           
 </ion-content>
+Dati del veiocolo:
+
+Marca: {{preventivo.veicolo.marca}}
+Modello: {{preventivo.veicolo.modello}}
+Allestimento: {{preventivo.veicolo.allestimento}}
+Anno di Immatricolazione: {{preventivo.veicolo.annoImm}}
+Cilindrata: {{preventivo.veicolo.cilindrata}}
+
+
+Dati del contraente:
+
+Nome: {{preventivo.persona.nome}}
+Cognome: {{preventivo.persona.cognome}}
+Data di nascita: {{preventivo.persona.dataNascita}}
+Luogo di nascita: {{preventivo.persona.luogoNascita}}
+Anni di possesso della patente: {{preventivo.persona.anniPatente}}
+
+
+Dati delle garanzie:
+
+<ion-list>
+    <ion-item *ngFor="let item of preventivo.garanzie">
+        {{item.nome}}
+        {{item.codice}}
+    </ion-item>
+</ion-list>
+<button ion-button (click)="pagInizio()">Modifica parti precedenti</button>
+<button ion-button>Conferma Preventivo</button>
+
 <ion-footer>
   <ion-toolbar>
     <ion-grid>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Preventivo,Garanzia,Persona,Veicolo, CreaPreventivoProvider} from '../../providers/crea-preventivo/crea-preventivo';
+import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({
@@ -22,6 +23,12 @@ export class RiepilogoPage {
     console.log(this.preventivo);
    
   }
+
+  pagInizio()
+  {
+    this.navCtrl.push(HomePage);
+  }
+
 
   ionViewDidLoad() 
   {

@@ -65,6 +65,4 @@ export class CalcolaPreventivoProvider {
     return tot+RCA;
   }
 
-
-
 }
