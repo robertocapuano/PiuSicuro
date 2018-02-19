@@ -22,13 +22,16 @@ export class HomePage {
     this.navCtrl.push(HomePage);
   }
   navigateToGaranzia(){
-  this.navCtrl.push(GaranziaPage);
+    if(!this.disabilitato)
+      this.navCtrl.push(GaranziaPage);
   }
   
   navigateToPersona(){
-    console.log("navigaaaaaaa puoi!!!");
-    this.servizo.setVeicolo(this.veicolo);
-    this.navCtrl.push(ContraentePage);
+    //console.log("navigaaaaaaa puoi!!!");
+    if(!this.disabilitato){
+      this.servizo.setVeicolo(this.veicolo);
+      this.navCtrl.push(ContraentePage);
+    }
   }
   validaForm()
   {

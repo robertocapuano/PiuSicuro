@@ -41,8 +41,10 @@ export class ContraentePage {
   }
   navigateToGaranzia(){
     console.log("navigaaaaaaa puoi!!!");
-    this.servizo.setPersona(this.contraente);
-    this.navCtrl.push(GaranziaPage);
+    if(!this.disabilitato){
+      this.servizo.setPersona(this.contraente);
+      this.navCtrl.push(GaranziaPage);
+    }
   }
   navigateToPersona(){
     this.navCtrl.push(ContraentePage);
