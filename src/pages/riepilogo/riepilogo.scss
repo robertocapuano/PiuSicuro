@@ -1,13 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
+$primary-color: rgb(230, 0, 0);
+$text-color: white;
+
 page-riepilogo {
 
-    @import url('https://fonts.googleapis.com/css?family=Dosis');
-    $primary-color: rgb(230, 0, 0);
-    $text-color: white;
         
-    
     #header{
-        
-            background-color: $primary-color;
+
+        background-color: $primary-color;
+    
         h1{
             font-family: 'Dosis', sans-serif;
             font-size: 45px;
@@ -19,7 +21,9 @@ page-riepilogo {
             font-style: italic;
             font-size: 65px;
         }
-    }
+    
+        }
+    
         
     
         #title{
@@ -30,6 +34,51 @@ page-riepilogo {
         button{
             background-color: $primary-color;
         }
+
+        #header{
+
+            background-color: $primary-color;
+        
+            h1{
+                font-family: 'Dosis', sans-serif;
+                font-size: 45px;
+                color:$text-color;
+            }
+        
+            #pi{
+                font-weight: bold;
+                font-style: italic;
+                font-size: 65px;
+            }
+        
+            }
+
+            ion-footer{
+                color:$text-color;
+            }
+        
+                .toolbar-background{
+                    background-color: $primary-color;
+                }
+
+                #breadcrumb{
+
+       
+                    .attuale{
+                        background-color: $primary-color;
+                        color:$text-color;
+                        border-width: 5px;
+                    }
+            
+                    .grid{
+                        padding:0px;
+                        border-style: groove;
+                        border-width: 0.5px;
+            
+                    }
+                }
+            
+            
     
       
         .dropbtn {

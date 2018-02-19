@@ -45,4 +45,21 @@ page-contraente {
         background-color: $primary-color;
     }
 
+    #breadcrumb{
+
+       
+        .attuale{
+            background-color: $primary-color;
+            color:$text-color;
+            border-width: 5px;
+        }
+
+        .grid{
+            padding:0px;
+            border-style: groove;
+            border-width: 0.5px;
+
+        }
+    }
+
 }

@@ -1,5 +1,6 @@
-<ion-content padding>
+<ion-header>
     <div id="header" padding align="center">
+<<<<<<< HEAD
         
               <h1><span id="pi">P</span>iuSicuro</h1>
         
@@ -34,28 +35,101 @@
         <b>Cognome:</b> {{preventivo.persona.cognome}}<br>
         <b> Data di nascita:</b> {{preventivo.persona.dataNascita}}<br>
         <b> Luogo di nascita:</b> {{preventivo.persona.luogoNascita}}<br>
+=======
+
+        <h1>
+            <span id="pi">P</span>iuSicuro</h1>
+
+    </div>
+
+</ion-header>
+
+<ion-content>
+        <div id="breadcrumb">
+
+        <ion-grid align="center">
+            <ion-row>
+                <ion-col (click)="pagInizio()" >
+                    <b>Dati veicolo</b>
+                </ion-col>
+                <ion-col (click)="navigateToPersona()">
+                    <b>Dati cliente</b> 
+                </ion-col>
+                <ion-col (click)="navigateToGaranzia()">
+                    <b>Garanzie</b>
+                </ion-col>
+                <ion-col  class="attuale">
+                    <b>Riepilogo </b>
+                </ion-col>
+              </ion-row>
+        </ion-grid>
+      </div>
+    
+    
+
+    <div padding>
+
+        <h2 id="title">Dati veicolo</h2>
+        <br>
+        <b> Marca:</b> {{preventivo.veicolo.marca}}
+        <br>
+        <b>Modello:</b> {{preventivo.veicolo.modello}}
+        <br>
+        <b>Allestimento:</b> {{preventivo.veicolo.allestimento}}
+        <br>
+        <b> Anno di Immatricolazione:</b> {{preventivo.veicolo.annoImm}}
+        <br>
+        <b> Cilindrata:</b> {{preventivo.veicolo.cilindrata}}
+        <br>
+        <br>
+
+
+        <h2 id="title"> Dati del contraente:</h2>
+        <br>
+        <b> Nome:</b> {{preventivo.persona.nome}}
+        <br>
+        <b>Cognome:</b> {{preventivo.persona.cognome}}
+        <br>
+        <b> Data di nascita:</b> {{preventivo.persona.dataNascita}}
+        <br>
+        <b> Luogo di nascita:</b> {{preventivo.persona.luogoNascita}}
+        <br>
+>>>>>>> d4a51415800e7a30e2bb9065f5a79858ab5bdbba
         <b> Anni di possesso della patente:</b> {{preventivo.persona.anniPatente}}
-            
-            <br><br>
-            <h2 id="title" padding>Dati delle garanzie:</h2>
+
+        <br>
+        <br>
+        <h2 id="title">Dati delle garanzie:</h2>
+        <br>
+        <div *ngFor="let item of preventivo.garanzie">
+            <b>Nome:</b> {{item.nome}}
             <br>
-                <div *ngFor="let item of preventivo.garanzie">
-                  <b>Nome:</b>  {{item.nome}}<br>
-                  <b>Codice:</b>  {{item.codice}}<br>
-               
-            </div>
-            <br>
-            <br>
+            <b>Codice:</b> {{item.codice}}
             <br>
 
+<<<<<<< HEAD
+=======
+        </div>
+
+        <div padding align="center">
+            <h2 id="title" >
+                Premio Preventivo:
+            </h2>
 
 
-            <button ion-button (click)="pagInizio()" full>Modifica parti precedenti</button>
-            <button ion-button full>Conferma Preventivo</button>
-            
-          
+            <h1><b>{{premio}}</b></h1>
+        </div>
+
+    </div>
+
+    <button ion-button (click)="pagInizio()" full>Modifica parti precedenti</button>
+    <button ion-button full>Conferma Preventivo</button>
+>>>>>>> d4a51415800e7a30e2bb9065f5a79858ab5bdbba
+
+
 </ion-content>
 <ion-footer>
+<<<<<<< HEAD
   <ion-toolbar>
     <ion-grid>
         <ion-row>
@@ -72,3 +146,23 @@
     </ion-grid>
   </ion-toolbar>
 </ion-footer>
+=======
+    <ion-toolbar>
+        <ion-grid align="center">
+            <ion-row>
+                <ion-col>
+                    <b>Codice Fiscale: </b> 045043054305
+                </ion-col>
+                <ion-col>
+                    <b>P.IVA:</b>
+                    <br> 0123456789
+                </ion-col>
+                <ion-col>
+                    <b>Assistenza clienti:</b>
+                    <br>+39 9876543210
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-footer>
+>>>>>>> d4a51415800e7a30e2bb9065f5a79858ab5bdbba

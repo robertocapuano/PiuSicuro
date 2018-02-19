@@ -7,7 +7,27 @@
     </div>
 
 </ion-header>
-<ion-content padding>
+<ion-content>
+    <div id="breadcrumb">
+
+        <ion-grid align="center">
+            <ion-row>
+                <ion-col (click)="pagInizio()" >
+                    <b>Dati veicolo</b>
+                </ion-col>
+                <ion-col (click)="navigateToPersona()">
+                    <b>Dati cliente</b> 
+                </ion-col>
+                <ion-col class="attuale">
+                    <b>Garanzie</b>
+                </ion-col>
+                <ion-col>
+                    <b>Riepilogo</b>
+                </ion-col>
+              </ion-row>
+        </ion-grid>
+      </div>
+    
   
     <div id="title" padding>
   
@@ -24,22 +44,22 @@
             </ion-item>
             
             <ion-item>
-              <ion-label>Furto</ion-label>
+              <ion-label>Furto &nbsp;&nbsp;&nbsp; +100&euro;</ion-label>
               <ion-checkbox [(ngModel)]="furto"></ion-checkbox>
             </ion-item>
 
             <ion-item>
-                <ion-label>Incendio</ion-label>
+                <ion-label>Incendio &nbsp;&nbsp;&nbsp; +100&euro;</ion-label>
                 <ion-checkbox [(ngModel)]="incendio" ></ion-checkbox>
               </ion-item>
 
               <ion-item>
-                  <ion-label>Minicasko</ion-label>
+                  <ion-label>Minicasko &nbsp;&nbsp;&nbsp; +300&euro;</ion-label>
                   <ion-checkbox [(ngModel)]="minicasko" ></ion-checkbox>
                 </ion-item>
 
                 <ion-item>
-                    <ion-label>Cristalli</ion-label>
+                    <ion-label>Cristalli &nbsp;&nbsp;&nbsp; +200&euro;</ion-label>
                     <ion-checkbox [(ngModel)]="cristalli"></ion-checkbox>
                   </ion-item>
     
@@ -54,7 +74,7 @@
 
   <ion-footer>
     <ion-toolbar>
-      <ion-grid>
+      <ion-grid align="center">
           <ion-row>
               <ion-col>
                   <b>Codice Fiscale: </b> 045043054305

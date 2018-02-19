@@ -2,6 +2,7 @@ import { Component,Input } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ContraentePage } from '../contraente/contraente';
 import { CreaPreventivoProvider , Veicolo} from '../../providers/crea-preventivo/crea-preventivo';
+import {GaranziaPage} from '../garanzia/garanzia';
 
 @Component({
   selector: 'page-home',
@@ -14,6 +15,14 @@ export class HomePage {
   disabilitato : boolean = true;
 
   constructor(public navCtrl: NavController,public servizo : CreaPreventivoProvider) {
+  }
+
+  pagInizio()
+  {
+    this.navCtrl.push(HomePage);
+  }
+  navigateToGaranzia(){
+  this.navCtrl.push(GaranziaPage);
   }
   
   navigateToPersona(){
