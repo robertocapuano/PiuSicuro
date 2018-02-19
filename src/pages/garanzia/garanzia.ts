@@ -2,6 +2,9 @@ import { Component,Input } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CreaPreventivoProvider , Garanzia} from '../../providers/crea-preventivo/crea-preventivo';
 import { RiepilogoPage } from '../riepilogo/riepilogo';
+import {HomePage} from '../home/home';
+import { ContraentePage } from '../contraente/contraente';
+
 
 
 @IonicPage()
@@ -34,6 +37,12 @@ export class GaranziaPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad GaranziaPage');
   }
+
+  pagInizio()
+  {
+    this.navCtrl.push(HomePage);
+  }
+
   navigateToRiepilogo()
   {
     this.addGaranzia({nome:"rca",codice:0});
@@ -54,4 +63,9 @@ export class GaranziaPage {
     //console.log("navigaaaaaaaaa versoooo l infinito e oltreeee aahahahahah no skerzo verso il riepilogo");
     this.navCtrl.push(RiepilogoPage);
   }
+
+  navigateToPersona(){
+    this.navCtrl.push(ContraentePage);
+  }
+  
 }
