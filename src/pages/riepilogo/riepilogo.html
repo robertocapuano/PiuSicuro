@@ -8,39 +8,49 @@
           <div id="title" padding>
         
             <h2>Dati veicolo</h2>
-        
+            <br>
+           <b> Marca:</b> {{preventivo.veicolo.marca}}<br>
+            <b>Modello:</b> {{preventivo.veicolo.modello}}<br>
+        <b>Allestimento:</b> {{preventivo.veicolo.allestimento}}<br>
+        <b> Anno di Immatricolazione:</b> {{preventivo.veicolo.annoImm}}<br>
+        <b> Cilindrata:</b> {{preventivo.veicolo.cilindrata}}<br><br>
+            
+            
+           <h2> Dati del contraente:</h2>
+           <br>
+           <b> Nome:</b> {{preventivo.persona.nome}}<br>
+        <b>Cognome:</b> {{preventivo.persona.cognome}}<br>
+        <b> Data di nascita:</b> {{preventivo.persona.dataNascita}}<br>
+        <b> Luogo di nascita:</b> {{preventivo.persona.luogoNascita}}<br>
+        <b> Anni di possesso della patente:</b> {{preventivo.persona.anniPatente}}
+            
+            <br><br>
+            <h2>Dati delle garanzie:</h2>
+            <br>
+                <div *ngFor="let item of preventivo.garanzie">
+                  <b>Nome:</b>  {{item.nome}}<br>
+                  <b>Codice:</b>  {{item.codice}}<br>
+               
+            </div>
+            <br>
+            <br>
+            <br>
+
+<h2>
+    Premio Preventivo: 
+</h2>
+
+<div>
+    <b>{{premio}}</b>
+</div>
+
+            <button ion-button (click)="pagInizio()">Modifica parti precedenti</button>
+            <button ion-button>Conferma Preventivo</button>
+            
+            
           </div>
           
 </ion-content>
-Dati del veiocolo:
-
-Marca: {{preventivo.veicolo.marca}}
-Modello: {{preventivo.veicolo.modello}}
-Allestimento: {{preventivo.veicolo.allestimento}}
-Anno di Immatricolazione: {{preventivo.veicolo.annoImm}}
-Cilindrata: {{preventivo.veicolo.cilindrata}}
-
-
-Dati del contraente:
-
-Nome: {{preventivo.persona.nome}}
-Cognome: {{preventivo.persona.cognome}}
-Data di nascita: {{preventivo.persona.dataNascita}}
-Luogo di nascita: {{preventivo.persona.luogoNascita}}
-Anni di possesso della patente: {{preventivo.persona.anniPatente}}
-
-
-Dati delle garanzie:
-
-<ion-list>
-    <ion-item *ngFor="let item of preventivo.garanzie">
-        {{item.nome}}
-        {{item.codice}}
-    </ion-item>
-</ion-list>
-<button ion-button (click)="pagInizio()">Modifica parti precedenti</button>
-<button ion-button>Conferma Preventivo</button>
-
 <ion-footer>
   <ion-toolbar>
     <ion-grid>
