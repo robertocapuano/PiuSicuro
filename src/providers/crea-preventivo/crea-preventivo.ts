@@ -22,7 +22,8 @@ export interface Persona
 export interface Garanzia
 {
   nome:string,
-  codice:number
+  codice:number,
+  prezzo:number
 }
 
 export interface Preventivo
@@ -59,13 +60,14 @@ export class CreaPreventivoProvider {
     cognome:"",
     dataNascita: "",
     luogoNascita:"",
-    anniPatente:0
+    anniPatente:null
   }
 
   garanzi: Garanzia[] = 
   [{
     nome:"",
-    codice:0
+    codice:0,
+    prezzo:0
   }]
 
   preventivo:Preventivo={
@@ -102,6 +104,12 @@ export class CreaPreventivoProvider {
       persona:this.persona,
       garanzie:this.garanzi
     };
+  }
+  getPersona():Persona{
+    return this.persona;
+  }
+  getVeicolo(): Veicolo{
+    return this.veicolo
   }
 
 

@@ -2,6 +2,9 @@ import { Component,Input } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CreaPreventivoProvider , Garanzia} from '../../providers/crea-preventivo/crea-preventivo';
 import { RiepilogoPage } from '../riepilogo/riepilogo';
+import {HomePage} from '../home/home';
+import { ContraentePage } from '../contraente/contraente';
+
 
 
 @IonicPage()
@@ -34,24 +37,34 @@ export class GaranziaPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad GaranziaPage');
   }
+
+  pagInizio()
+  {
+    this.navCtrl.push(HomePage,this.servizio.getVeicolo());
+  }
+
   navigateToRiepilogo()
   {
-    this.addGaranzia({nome:"rca",codice:0});
     if(this.furto)
-      this.addGaranzia({nome:"furto",codice:111111});
+      this.addGaranzia({nome:"furto",codice:111111,prezzo:100});
     
     if(this.incendio)
-      this.addGaranzia({nome:"incendio",codice:22222});
+      this.addGaranzia({nome:"incendio",codice:22222,prezzo:100});
 
     if(this.cristalli)
-      this.addGaranzia({nome:"cristalli",codice:333333});
+      this.addGaranzia({nome:"cristalli",codice:333333,prezzo:200});
 
     if(this.minicasko)
-      this.addGaranzia({nome:"minicasko",codice:111111});
+      this.addGaranzia({nome:"minicasko",codice:111111,prezzo:300});
 
     this.servizio.setGaranzia(this.garanzie);
     console.log(this.garanzie);
     //console.log("navigaaaaaaaaa versoooo l infinito e oltreeee aahahahahah no skerzo verso il riepilogo");
     this.navCtrl.push(RiepilogoPage);
   }
+
+  navigateToPersona(){
+    this.navCtrl.push(ContraentePage,this.servizio.getPersona());
+  }
+  
 }

@@ -1,20 +1,42 @@
-<ion-content padding>
+<ion-header>
+    <div id="header" padding align="center">
 
-  <div id="header" align="center">
+        <h1><span id="pi">P</span>iuSicuro</h1>
+  
+    </div>
 
-      <h1><span id="pi">P</span>iuSicuro</h1>
+</ion-header>
 
+<ion-content>
+
+<div id="breadcrumb">
+
+    <ion-grid align="center">
+        <ion-row>
+            <ion-col class="attuale">
+                <b>Dati veicolo</b>
+            </ion-col>
+            <ion-col (click)="navigateToPersona()">
+                <b>Dati cliente</b> 
+            </ion-col>
+            <ion-col (click)="navigateToGaranzia()">
+                <b>Garanzie</b>
+            </ion-col>
+            <ion-col>
+                <b>Riepilogo</b>
+            </ion-col>
+          </ion-row>
+    </ion-grid>
   </div>
 
-  <div id="title" padding>
+    <div id="title" padding>
 
-    <h2>Dati veicolo</h2>
-
-  </div>
-
+        <h2>Dati veicolo</h2>
+    
+      </div>
+      
   <div id="form">
-    <ion-list>
-
+   
       <ion-item>
         <ion-label>Marca</ion-label>
         <ion-input type="text" [(ngModel)]="veicolo.marca" (change)="validaForm()"></ion-input>
@@ -39,9 +61,9 @@
         <ion-input type="text" [(ngModel)]="veicolo.cilindrata" (change)="validaForm()"></ion-input>
       </ion-item>
 
-    </ion-list>
+  
   </div>
-  <div  align=center>
+  <div  align=center padding>
         <button ion-button block [disabled]="disabilitato" (click)="navigateToPersona()">
       Prosegui &nbsp;
       <ion-icon name='arrow-forward'></ion-icon>
@@ -49,18 +71,19 @@
   </div>
 
 </ion-content>
+
 <ion-footer>
   <ion-toolbar>
-    <ion-grid>
+    <ion-grid align="center">
         <ion-row>
             <ion-col>
-                <b>Codice Fiscale: </b> 045043054305
+                <b>Codice Fiscale: </b> <br> 045043054305
             </ion-col>
             <ion-col>
-                <b>P.IVA:</b>   0123456789
+                <b>P.IVA:</b> <br>  0123456789
             </ion-col>
             <ion-col>
-                <b>Assistenza clienti:</b> <br> +39 9876543210
+                <b>Assistenza clienti:</b> <br>+39/9876543210
             </ion-col>
           </ion-row>
     </ion-grid>

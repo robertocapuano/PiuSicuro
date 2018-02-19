@@ -2,22 +2,62 @@
 
 page-garanzia {
 
-    .button{
-        background-color: rgb(230, 0, 0) !important;
-    }
+    $primary-color: rgb(230, 0, 0) !important;
+    $text-color: white;
 
-    //HEADER
+#header{
+
+    background-color: $primary-color;
 
     h1{
         font-family: 'Dosis', sans-serif;
-        font-size: 45px;
-        color:rgb(230, 0, 0);
+        font-size: 30px;
+        color:$text-color;
     }
 
     #pi{
         font-weight: bold;
         font-style: italic;
-        font-size: 65;
+        font-size: 65px;
     }
+
+    }
+
+    .button{
+        background-color: rgb(230, 0, 0) !important;
+    }
+
+       // FOOTER
+
+       ion-footer{
+        color:$text-color;
+    }
+
+    .toolbar-background{
+        background-color: $primary-color;
+    }
+    #prezzo{
+        span{
+            float: right;
+        }
+    }
+        #breadcrumb{
+
+       
+            .attuale{
+                background-color: $primary-color;
+                color:$text-color;
+                border-width: 5px;
+            }
+    
+            .grid{
+                padding:0px;
+                border-style: groove;
+                border-width: 0.5px;
+    
+            }
+        }
+
+
 
 }

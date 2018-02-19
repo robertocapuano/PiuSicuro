@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Preventivo,Garanzia,Persona,Veicolo, CreaPreventivoProvider} from '../../providers/crea-preventivo/crea-preventivo';
+import { ContraentePage } from '../contraente/contraente';
+import { HomePage } from '../home/home';
+import { CalcolaPreventivoProvider } from '../../providers/calcola-preventivo/calcola-preventivo';
+import {GaranziaPage} from '../garanzia/garanzia';
 
 @IonicPage()
 @Component({
@@ -16,13 +20,31 @@ export class RiepilogoPage {
     garanzie:[]
   };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public serv:CreaPreventivoProvider) 
+  premio:number=0;
+  iva:number=0;
+  rca:number=0;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public serv:CreaPreventivoProvider,public calcola : CalcolaPreventivoProvider) 
   {
     this.preventivo=serv.preve();
-    console.log(this.preventivo);
-   
+    this.iva=calcola.calcolaIva(this.preventivo);
+    this.premio=calcola.calcoloPremio(this.preventivo);
+    this.rca=calcola.RCA;
+
   }
 
+  navigateToPersona(){
+    this.navCtrl.push(ContraentePage);
+  }
+  pagInizio()
+  {
+    this.navCtrl.push(HomePage);
+  }
+  
+  navigateToGaranzia(){
+    console.log("navigaaaaaaa puoi!!!");
+    this.navCtrl.push(GaranziaPage);
+  }
   ionViewDidLoad() 
   {
     console.log('ionViewDidLoad RiepilogoPage');

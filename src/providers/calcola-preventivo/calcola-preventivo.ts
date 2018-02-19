@@ -6,10 +6,11 @@ import {Veicolo,Garanzia,Persona,Preventivo} from '../../providers/crea-preventi
 export class CalcolaPreventivoProvider {
 
   constructor(public http: HttpClient) {
+    
   }
 
   data= new Date();
-
+  RCA:number=0;
 
 
   calcolaAnniPat(prev:Preventivo)
@@ -40,7 +41,7 @@ export class CalcolaPreventivoProvider {
   calcoloPremio(prev:Preventivo)
   {
     let tot:number=0;
-    let RCA=this.calcolaAnniPat(prev)+this.calcolaAnniImm(prev)+250;
+    this.RCA=this.calcolaAnniPat(prev)+this.calcolaAnniImm(prev)+250;
 
     for(let i=0; i<prev.garanzie.length; i++)
     {
@@ -62,9 +63,14 @@ export class CalcolaPreventivoProvider {
         break;
       }
     }
-    return tot+RCA;
+    return tot+this.RCA;
   }
 
-
+  calcolaIva(prev:Preventivo)
+  {
+    let iva;    
+    iva=(this.calcoloPremio(prev)*22)/100;
+    return iva;
+  }
 
 }

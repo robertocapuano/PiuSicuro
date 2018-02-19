@@ -1,12 +1,33 @@
 
+<ion-header>
+    <div id="header" padding align="center">
 
-<ion-content padding>
-
-    <div id="header" align="center">
-  
         <h1><span id="pi">P</span>iuSicuro</h1>
   
     </div>
+
+</ion-header>
+<ion-content>
+    <div id="breadcrumb">
+
+        <ion-grid align="center">
+            <ion-row>
+                <ion-col (click)="pagInizio()" >
+                    <b>Dati veicolo</b>
+                </ion-col>
+                <ion-col (click)="navigateToPersona()">
+                    <b>Dati cliente</b> 
+                </ion-col>
+                <ion-col class="attuale">
+                    <b>Garanzie</b>
+                </ion-col>
+                <ion-col>
+                    <b>Riepilogo</b>
+                </ion-col>
+              </ion-row>
+        </ion-grid>
+      </div>
+    
   
     <div id="title" padding>
   
@@ -23,48 +44,47 @@
             </ion-item>
             
             <ion-item>
-              <ion-label>Furto</ion-label>
+              <ion-label id="prezzo">Furto<span>+100&euro;</span></ion-label>
               <ion-checkbox [(ngModel)]="furto"></ion-checkbox>
             </ion-item>
 
             <ion-item>
-                <ion-label>Incendio</ion-label>
+                <ion-label id="prezzo">Incendio<span>+100&euro;</span></ion-label>
                 <ion-checkbox [(ngModel)]="incendio" ></ion-checkbox>
               </ion-item>
 
               <ion-item>
-                  <ion-label>Minicasko</ion-label>
+                  <ion-label id="prezzo">Minicasko<span>+300&euro;</span></ion-label>
                   <ion-checkbox [(ngModel)]="minicasko" ></ion-checkbox>
                 </ion-item>
 
                 <ion-item>
-                    <ion-label>Cristalli</ion-label>
+                    <ion-label id="prezzo">Cristalli<span>+200&euro;</span></ion-label>
                     <ion-checkbox [(ngModel)]="cristalli"></ion-checkbox>
                   </ion-item>
     
     </div>
-    <div  align=center>
+    <div  align=center padding>
           <button ion-button block [disabled]="disabilitato" (click)="navigateToRiepilogo()" >
             Riepilogo
       </button>
     </div>
   
   </ion-content>
-
   <ion-footer>
-    <ion-toolbar>
-      <ion-grid>
-          <ion-row>
-              <ion-col>
-                  <b>Codice Fiscale: </b> 045043054305
-              </ion-col>
-              <ion-col>
-                  <b>P.IVA:</b>   0123456789
-              </ion-col>
-              <ion-col>
-                  <b>Assistenza clienti:</b> <br>+39 9876543210
-              </ion-col>
-            </ion-row>
-      </ion-grid>
-    </ion-toolbar>
-  </ion-footer>
+      <ion-toolbar>
+        <ion-grid align="center">
+            <ion-row>
+                <ion-col>
+                    <b>Codice Fiscale: </b> <br> 045043054305
+                </ion-col>
+                <ion-col>
+                    <b>P.IVA:</b> <br>  0123456789
+                </ion-col>
+                <ion-col>
+                    <b>Assistenza clienti:</b> <br>+39/9876543210
+                </ion-col>
+              </ion-row>
+        </ion-grid>
+      </ion-toolbar>
+    </ion-footer>
