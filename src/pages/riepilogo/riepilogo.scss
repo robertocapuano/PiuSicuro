@@ -1,3 +1,41 @@
 page-riepilogo {
 
+    @import url('https://fonts.googleapis.com/css?family=Dosis');
+    
+    page-home{
+    
+        #header{
+    
+             //HEADER
+        
+        h1{
+            font-family: 'Dosis', sans-serif;
+            font-size: 45px;
+            color:rgb(230, 0, 0);
+        }
+    
+        #pi{
+            font-weight: bold;
+            font-style: italic;
+            font-size: 65px;
+        }
+    
+        }
+    
+        #title{
+            white-space: normal;
+        }
+        
+    
+        .button{
+            background-color: rgb(230, 0, 0) !important;
+        }
+    
+        ion-col{
+            text-align: center;
+        }
+    
+    
+    }
+    
 }

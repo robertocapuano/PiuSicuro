@@ -25,46 +25,45 @@
             
             <ion-item>
               <ion-label>Furto</ion-label>
-              <ion-checkbox ></ion-checkbox>
+              <ion-checkbox [(ngModel)]="furto"></ion-checkbox>
             </ion-item>
 
             <ion-item>
                 <ion-label>Incendio</ion-label>
-                <ion-checkbox ></ion-checkbox>
+                <ion-checkbox [(ngModel)]="incendio" ></ion-checkbox>
               </ion-item>
 
               <ion-item>
                   <ion-label>Minicasko</ion-label>
-                  <ion-checkbox ></ion-checkbox>
+                  <ion-checkbox [(ngModel)]="minicasko" ></ion-checkbox>
                 </ion-item>
 
                 <ion-item>
                     <ion-label>Cristalli</ion-label>
-                    <ion-checkbox ></ion-checkbox>
+                    <ion-checkbox [(ngModel)]="cristalli"></ion-checkbox>
                   </ion-item>
     
     </div>
     <div  align=center padding>
-          <button ion-button block [disabled]="disabilitato" >
+          <button ion-button block [disabled]="disabilitato" (click)="navigateToRiepilogo()" >
             Riepilogo
       </button>
     </div>
   
   </ion-content>
 
-  
-<ion-footer>
+  <ion-footer>
     <ion-toolbar>
       <ion-grid>
           <ion-row>
               <ion-col>
-                  <b>Codice Fiscale: </b> 00171820327 
+                  <b>Codice Fiscale: </b> 045043054305
               </ion-col>
               <ion-col>
-                  <b>P.IVA:</b>   00707180329
+                  <b>P.IVA:</b>   0123456789
               </ion-col>
               <ion-col>
-                  <b>Assistenza clienti:</b> 800202020<br>+39 0406768666
+                  <b>Assistenza clienti:</b> <br>+39 9876543210
               </ion-col>
             </ion-row>
       </ion-grid>

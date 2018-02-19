@@ -23,7 +23,6 @@ export class HomePage {
   }
   validaForm()
   {
-    //console.log(  );
     if(
       this.veicolo.marca !=="" &&  
       this.veicolo.modello !=="" && 
@@ -35,7 +34,7 @@ export class HomePage {
       this.disabilitato=true;
   }
     
-    
+
 
 
   }

@@ -52,18 +52,17 @@ export class CalcolaPreventivoProvider {
         case 'furto':
           tot+=100;
         break;
-        case 'minikasko':
+        case 'minicasko':
           tot+=300;
         break;
         case 'cristalli':
           tot+=200;
         break;
-
+        default:
+        break;
       }
     }
     return tot+RCA;
   }
-
-
 
 }
