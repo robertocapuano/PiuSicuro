@@ -77,7 +77,7 @@
                      {{item.nome}}  
   
                     </ion-col>
-                    <ion-col class="prezzo">
+                    <ion-col >
                              {{item.prezzo | number:'3.1-2'}}&euro;
                         </ion-col>
                         <ion-col class="iva">
@@ -102,15 +102,15 @@
                         <ion-col>
                                {{premio}} &euro;
                         </ion-col>
-                        <ion-col class="iv">
+                        <ion-col >
                                 {{iva}}&euro;
                         </ion-col>
                     </ion-row>
-                    <ion-row class="ultima">
+                    <ion-row>
                             <ion-col col-4>
                                <h6>TOTALE    </h6>  
                             </ion-col>
-                            <ion-col col-8 class="totale">
+                            <ion-col col-8 >
                                    <h6> {{premio+iva}} &euro;</h6>
                             </ion-col>                          
                         

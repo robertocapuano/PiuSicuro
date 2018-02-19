@@ -117,12 +117,21 @@ page-riepilogo {
         .bordogrid{
            // border:1px solid black;
            word-wrap: break-word;
+           border-collapse: collapse;
             .col{
-                border:1px solid black;
+                border:1px solid white;
             }
             .iva{
                 border:none !important;
                 border-right: 1px solid black !important;
+            }
+            #rosso{
+                background-color:$primary-color;
+                color: white; 
+                text-align: center;
+                height: 40px;
+                line-height: 35px;
+                
             }
 
         }
