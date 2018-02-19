@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Preventivo,Garanzia,Persona,Veicolo, CreaPreventivoProvider} from '../../providers/crea-preventivo/crea-preventivo';
+<<<<<<< HEAD
 import { CalcolaPreventivoProvider } from '../../providers/calcola-preventivo/calcola-preventivo';
 import { calcBindingFlags } from '@angular/core/src/view/util';
+=======
+import { HomePage } from '../home/home';
+>>>>>>> 437e060532336c389034a66079b9e71fb87b0f91
 
 @IonicPage()
 @Component({
@@ -26,6 +30,12 @@ export class RiepilogoPage {
     this.premio=calcola.calcoloPremio(this.preventivo);
     //console.log(this.premio);
   }
+
+  pagInizio()
+  {
+    this.navCtrl.push(HomePage);
+  }
+
 
   ionViewDidLoad() 
   {
