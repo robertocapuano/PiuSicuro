@@ -6,7 +6,26 @@
 
     </div>
 </ion-header>
+
 <ion-content>
+        <div id="breadcrumb">
+        <ion-grid align="center">
+                <ion-row>
+                    <ion-col (click)="pagInizio()" >
+                        <b>Dati veicolo</b>
+                    </ion-col>
+                    <ion-col (click)="navigateToPersona()">
+                        <b>Dati cliente</b> 
+                    </ion-col>
+                    <ion-col>
+                        <b>Garanzie</b>
+                    </ion-col>
+                    <ion-col class="attuale">
+                        <b>Riepilogo</b>
+                    </ion-col>
+                  </ion-row>
+            </ion-grid>
+          </div>
     <br>
     <br>
     <div class="dropdown">

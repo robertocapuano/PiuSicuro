@@ -33,6 +33,7 @@ export class HomePage {
       this.navCtrl.push(ContraentePage,this.servizo.getPersona());
     }
   }
+  
   validaForm()
   {
     if(
