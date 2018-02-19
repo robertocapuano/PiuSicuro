@@ -46,16 +46,16 @@ export class GaranziaPage {
   navigateToRiepilogo()
   {
     if(this.furto)
-      this.addGaranzia({nome:"furto",codice:111111,prezzo:100});
+      this.addGaranzia({nome:"Furto",codice:111111,prezzo:100});
     
     if(this.incendio)
-      this.addGaranzia({nome:"incendio",codice:22222,prezzo:100});
+      this.addGaranzia({nome:"Incendio",codice:22222,prezzo:100});
 
     if(this.cristalli)
-      this.addGaranzia({nome:"cristalli",codice:333333,prezzo:200});
+      this.addGaranzia({nome:"Cristalli",codice:333333,prezzo:200});
 
     if(this.minicasko)
-      this.addGaranzia({nome:"minicasko",codice:111111,prezzo:300});
+      this.addGaranzia({nome:"Mini Kasko",codice:111111,prezzo:300});
 
     this.servizio.setGaranzia(this.garanzie);
     console.log(this.garanzie);

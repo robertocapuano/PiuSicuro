@@ -78,7 +78,7 @@
   
                     </ion-col>
                     <ion-col class="prezzo">
-                             {{item.prezzo}}&euro;
+                             {{item.prezzo | number:'3.1-2'}}&euro;
                         </ion-col>
                         <ion-col class="iva">
                                 
@@ -100,10 +100,10 @@
                              Tot   
                         </ion-col>
                         <ion-col>
-                               {{premio | number:".0-2"}} &euro;
+                               {{premio}} &euro;
                         </ion-col>
                         <ion-col class="iv">
-                                {{iva | number:".0-2"}}&euro;
+                                {{iva}}&euro;
                         </ion-col>
                     </ion-row>
                     <ion-row class="ultima">
@@ -111,7 +111,7 @@
                                <h6>TOTALE    </h6>  
                             </ion-col>
                             <ion-col col-8 class="totale">
-                                   <h6> {{premio+iva | number:".0-2"}} &euro;</h6>
+                                   <h6> {{premio+iva}} &euro;</h6>
                             </ion-col>                          
                         
                     </ion-row>
