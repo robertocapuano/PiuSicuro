@@ -40,7 +40,7 @@ export class GaranziaPage {
 
   pagInizio()
   {
-    this.navCtrl.push(HomePage);
+    this.navCtrl.push(HomePage,this.servizio.getVeicolo());
   }
 
   navigateToRiepilogo()
@@ -64,7 +64,7 @@ export class GaranziaPage {
   }
 
   navigateToPersona(){
-    this.navCtrl.push(ContraentePage);
+    this.navCtrl.push(ContraentePage,this.servizio.getPersona());
   }
   
 }
