@@ -5,9 +5,8 @@
         
           </div>
         
-          <div id="title" padding>
         
-            <h2>Dati veicolo</h2>
+            <h2 id="title" padding>Dati veicolo</h2>
             <br>
            <b> Marca:</b> {{preventivo.veicolo.marca}}<br>
             <b>Modello:</b> {{preventivo.veicolo.modello}}<br>
@@ -16,7 +15,7 @@
         <b> Cilindrata:</b> {{preventivo.veicolo.cilindrata}}<br><br>
             
             
-           <h2> Dati del contraente:</h2>
+           <h2 id="title" padding> Dati del contraente:</h2>
            <br>
            <b> Nome:</b> {{preventivo.persona.nome}}<br>
         <b>Cognome:</b> {{preventivo.persona.cognome}}<br>
@@ -25,7 +24,7 @@
         <b> Anni di possesso della patente:</b> {{preventivo.persona.anniPatente}}
             
             <br><br>
-            <h2>Dati delle garanzie:</h2>
+            <h2 id="title" padding>Dati delle garanzie:</h2>
             <br>
                 <div *ngFor="let item of preventivo.garanzie">
                   <b>Nome:</b>  {{item.nome}}<br>
@@ -36,7 +35,7 @@
             <br>
             <br>
 
-<h2>
+<h2 id="title" padding>
     Premio Preventivo: 
 </h2>
 
@@ -44,11 +43,9 @@
     <b>{{premio}}</b>
 </div>
 
-            <button ion-button (click)="pagInizio()">Modifica parti precedenti</button>
-            <button ion-button>Conferma Preventivo</button>
+            <button ion-button (click)="pagInizio()" full>Modifica parti precedenti</button>
+            <button ion-button full>Conferma Preventivo</button>
             
-            
-          </div>
           
 </ion-content>
 <ion-footer>

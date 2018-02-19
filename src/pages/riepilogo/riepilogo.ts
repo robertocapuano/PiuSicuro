@@ -34,8 +34,6 @@ export class RiepilogoPage {
     this.navCtrl.push(HomePage);
   }
 
-
-
   ionViewDidLoad() 
   {
     console.log('ionViewDidLoad RiepilogoPage');
