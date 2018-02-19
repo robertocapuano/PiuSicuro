@@ -19,6 +19,7 @@ export class RiepilogoPage {
     persona:{nome:"",cognome:"",dataNascita:"",luogoNascita:"",anniPatente:null},
     garanzie:[]
   };
+
   premio:number=0;
   iva:number=0;
   rca:number=0;

@@ -121,6 +121,7 @@ page-riepilogo {
             display: block;
         }
         
+
        
         
         .dropdown:hover .dropdown-content{
@@ -131,6 +132,60 @@ page-riepilogo {
             background-color:$primary-color;
             color: white;
         }
+
+        ion-col.iva{
+            border-bottom: 1.5px solid black;
+        }
+
+       ion-col.totale{
+           text-align: center;
+
+       }
+       ion-grid.bordogrid{
+           border-bottom: 1px black;
+       }
+
+ion-row#rosso{
+    background-color: $primary-color;
+    color: white;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+ion-col.iv{
+    border-top: 1.4px solid black;
+}
+
+ion-col.col{
+    text-align: center;
+    line-height: 40px;
+    padding: 0;
+}
+ion-row.ultima{
+    border-bottom: 1px solid black;
+}
+ion-col.iva{
+    border-right: 1px solid black;
+    border-bottom: none;
+    border-top:none;
+}
+
+
+ion-grid{
+    border-collapse: collapse;
+}
+        
+       ion-row{
+border-collapse: collapse;
+        }
+           
+        ion-col{
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            font-size: 14px;
+        }
+
 
       
 }

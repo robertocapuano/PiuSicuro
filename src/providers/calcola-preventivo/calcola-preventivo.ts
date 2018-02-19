@@ -6,6 +6,7 @@ import {Veicolo,Garanzia,Persona,Preventivo} from '../../providers/crea-preventi
 export class CalcolaPreventivoProvider {
 
   constructor(public http: HttpClient) {
+    
   }
 
   data= new Date();
