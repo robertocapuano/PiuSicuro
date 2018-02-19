@@ -1,5 +1,5 @@
 import { Component,Input } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,NavParams } from 'ionic-angular';
 import { ContraentePage } from '../contraente/contraente';
 import { CreaPreventivoProvider , Veicolo} from '../../providers/crea-preventivo/crea-preventivo';
 import {GaranziaPage} from '../garanzia/garanzia';
@@ -14,7 +14,8 @@ export class HomePage {
   @Input()
   disabilitato : boolean = true;
 
-  constructor(public navCtrl: NavController,public servizo : CreaPreventivoProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProvider) {
+    this.veicolo=this.navParams.data;
   }
 
   pagInizio()
@@ -30,7 +31,7 @@ export class HomePage {
     //console.log("navigaaaaaaa puoi!!!");
     if(!this.disabilitato){
       this.servizo.setVeicolo(this.veicolo);
-      this.navCtrl.push(ContraentePage);
+      this.navCtrl.push(ContraentePage,this.servizo.getPersona());
     }
   }
   validaForm()

@@ -18,14 +18,16 @@ export class ContraentePage {
   disabilitato : boolean = true;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProvider) {
+    this.contraente=this.navParams.data;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ContraentePage');
+    this.validaForm();
   }
   pagInizio()
   {
-    this.navCtrl.push(HomePage);
+    this.navCtrl.push(HomePage,this.servizo.getVeicolo());
   }
   validaForm()
   {

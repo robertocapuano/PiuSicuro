@@ -59,7 +59,7 @@ export class CreaPreventivoProvider {
     cognome:"",
     dataNascita: "",
     luogoNascita:"",
-    anniPatente:0
+    anniPatente:null
   }
 
   garanzi: Garanzia[] = 
@@ -102,6 +102,12 @@ export class CreaPreventivoProvider {
       persona:this.persona,
       garanzie:this.garanzi
     };
+  }
+  getPersona():Persona{
+    return this.persona;
+  }
+  getVeicolo(): Veicolo{
+    return this.veicolo
   }
 
 
