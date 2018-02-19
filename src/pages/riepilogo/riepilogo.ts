@@ -20,4 +20,25 @@ export class RiepilogoPage {
     garanzie:[]
   };
   premio:number;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public serv:CreaPreventivoProvider,public calcola : CalcolaPreventivoProvider) 
+  {
+    this.preventivo=serv.preve();
+    
+    this.premio=calcola.calcoloPremio(this.preventivo);
+
+  }
+
+  pagInizio()
+  {
+    this.navCtrl.push(HomePage);
+  }
+
+
+
+  ionViewDidLoad() 
+  {
+    console.log('ionViewDidLoad RiepilogoPage');
+  }
+
 }
