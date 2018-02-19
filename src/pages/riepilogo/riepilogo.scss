@@ -12,7 +12,7 @@ page-riepilogo {
     
         h1{
             font-family: 'Dosis', sans-serif;
-            font-size: 45px;
+            font-size: 30px;
             color:$text-color;
         }
     
@@ -117,12 +117,22 @@ page-riepilogo {
         .bordogrid{
            // border:1px solid black;
            word-wrap: break-word;
+           border-collapse: collapse;
             .col{
-                border:1px solid black;
+                border:1px solid white;
+                text-align: center;
             }
             .iva{
                 border:none !important;
                 border-right: 1px solid black !important;
+            }
+            #rosso{
+                background-color:$primary-color;
+                color: white; 
+                text-align: center;
+                height: 40px;
+                line-height: 35px;
+                
             }
 
         }

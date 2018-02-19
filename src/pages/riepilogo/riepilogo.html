@@ -73,11 +73,11 @@
                         </ion-col>
             </ion-row>
             <ion-row *ngFor="let item of preventivo.garanzie">
-                    <ion-col>
+                    <ion-col style="text-align:left">
                      {{item.nome}}  
   
                     </ion-col>
-                    <ion-col class="prezzo">
+                    <ion-col >
                              {{item.prezzo | number:'3.1-2'}}&euro;
                         </ion-col>
                         <ion-col class="iva">
@@ -85,7 +85,7 @@
                         </ion-col>
                 </ion-row>
                 <ion-row>
-                    <ion-col>
+                    <ion-col style="text-align:left">
                         RCA
                     </ion-col>
                 <ion-col>
@@ -96,21 +96,21 @@
                 </ion-col>
                 </ion-row>
                 <ion-row>
-                        <ion-col>
+                        <ion-col style="text-align:left">
                              Tot   
                         </ion-col>
                         <ion-col>
                                {{premio}} &euro;
                         </ion-col>
-                        <ion-col class="iv">
+                        <ion-col >
                                 {{iva}}&euro;
                         </ion-col>
                     </ion-row>
-                    <ion-row class="ultima">
+                    <ion-row>
                             <ion-col col-4>
-                               <h6>TOTALE    </h6>  
+                               <h6 style="text-align:left">TOTALE    </h6>  
                             </ion-col>
-                            <ion-col col-8 class="totale">
+                            <ion-col col-8 >
                                    <h6> {{premio+iva}} &euro;</h6>
                             </ion-col>                          
                         
