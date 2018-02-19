@@ -23,7 +23,6 @@ import { RiepilogoPage } from '../pages/riepilogo/riepilogo';
     AboutPage,
     ContactPage,
     HomePage,
-    //TabsPage,
     ContraentePage,
     GaranziaPage,
     RiepilogoPage
@@ -40,7 +39,6 @@ import { RiepilogoPage } from '../pages/riepilogo/riepilogo';
     AboutPage,
     ContactPage,
     HomePage,
-   // TabsPage,
     ContraentePage,
     GaranziaPage,
     RiepilogoPage
