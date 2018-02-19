@@ -1,20 +1,22 @@
+<ion-header>
+    <div id="header" padding align="center">
+
+        <h1><span id="pi">P</span>iuSicuro</h1>
+  
+    </div>
+
+</ion-header>
+
 <ion-content padding>
 
-  <div id="header" align="center">
+    <div id="title" padding>
 
-      <h1><span id="pi">P</span>iuSicuro</h1>
-
-  </div>
-
-  <div id="title" padding>
-
-    <h2>Dati veicolo</h2>
-
-  </div>
-
+        <h2>Dati veicolo</h2>
+    
+      </div>
+      
   <div id="form">
    
-
       <ion-item>
         <ion-label>Marca</ion-label>
         <ion-input type="text" [(ngModel)]="veicolo.marca" (change)="validaForm()"></ion-input>
@@ -39,9 +41,13 @@
         <ion-input type="text" [(ngModel)]="veicolo.cilindrata" (change)="validaForm()"></ion-input>
       </ion-item>
 
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> ae8e224d1110eb915d32cdf331168fb57235a999
   </div>
-  <div  align=center>
+  <div  align=center padding>
         <button ion-button block [disabled]="disabilitato" (click)="navigateToPersona()">
       Prosegui &nbsp;
       <ion-icon name='arrow-forward'></ion-icon>
@@ -49,6 +55,7 @@
   </div>
 
 </ion-content>
+
 <ion-footer>
   <ion-toolbar>
     <ion-grid>

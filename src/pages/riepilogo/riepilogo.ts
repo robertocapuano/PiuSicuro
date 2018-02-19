@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Preventivo,Garanzia,Persona,Veicolo, CreaPreventivoProvider} from '../../providers/crea-preventivo/crea-preventivo';
 
+import { HomePage } from '../home/home';
+import { CalcolaPreventivoProvider } from '../../providers/calcola-preventivo/calcola-preventivo';
+
+
 @IonicPage()
 @Component({
   selector: 'page-riepilogo',
@@ -15,13 +19,22 @@ export class RiepilogoPage {
     persona:{nome:"",cognome:"",dataNascita:"",luogoNascita:"",anniPatente:null},
     garanzie:[]
   };
+  premio:number;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public serv:CreaPreventivoProvider) 
+  constructor(public navCtrl: NavController, public navParams: NavParams, public serv:CreaPreventivoProvider,public calcola : CalcolaPreventivoProvider) 
   {
     this.preventivo=serv.preve();
-    console.log(this.preventivo);
-   
+    
+    this.premio=calcola.calcoloPremio(this.preventivo);
+
   }
+
+  pagInizio()
+  {
+    this.navCtrl.push(HomePage);
+  }
+
+
 
   ionViewDidLoad() 
   {

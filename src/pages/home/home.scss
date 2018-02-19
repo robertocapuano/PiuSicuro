@@ -1,15 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis');
 
+$primary-color: rgb(230, 0, 0) !important;
+$text-color: white;
+
 page-home{
 
     #header{
 
-         //HEADER
-    
+    background-color: $primary-color;
+
     h1{
         font-family: 'Dosis', sans-serif;
         font-size: 45px;
-        color:rgb(230, 0, 0);
+        color:$text-color;
     }
 
     #pi{
@@ -24,14 +27,29 @@ page-home{
         white-space: normal;
     }
     
+    //
 
     .button{
-        background-color: rgb(230, 0, 0) !important;
+        background-color: $primary-color;
     }
+
+    
 
     ion-col{
         text-align: center;
     }
+
+
+    // FOOTER
+
+    ion-footer{
+        color:$text-color;
+    }
+
+        .toolbar-background{
+            background-color: $primary-color;
+        }
+
 
 
 }

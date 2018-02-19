@@ -2,16 +2,17 @@
 
 page-garanzia {
 
-    .button{
-        background-color: rgb(230, 0, 0) !important;
-    }
+    $primary-color: rgb(230, 0, 0) !important;
+$text-color: white;
 
-    //HEADER
+#header{
+
+    background-color: $primary-color;
 
     h1{
         font-family: 'Dosis', sans-serif;
         font-size: 45px;
-        color:rgb(230, 0, 0);
+        color:$text-color;
     }
 
     #pi{
@@ -19,5 +20,23 @@ page-garanzia {
         font-style: italic;
         font-size: 65;
     }
+
+    }
+
+    .button{
+        background-color: rgb(230, 0, 0) !important;
+    }
+
+       // FOOTER
+
+       ion-footer{
+        color:$text-color;
+    }
+
+        .toolbar-background{
+            background-color: $primary-color;
+        }
+
+
 
 }
