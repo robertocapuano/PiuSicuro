@@ -2,6 +2,7 @@ import { Component,Input } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CreaPreventivoProvider,Persona } from '../../providers/crea-preventivo/crea-preventivo';
 import {GaranziaPage} from '../garanzia/garanzia';
+import {HomePage} from '../home/home';
 
 
 @IonicPage()
@@ -22,7 +23,10 @@ export class ContraentePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ContraentePage');
   }
-
+  pagInizio()
+  {
+    this.navCtrl.push(HomePage);
+  }
   validaForm()
   {
     if(
