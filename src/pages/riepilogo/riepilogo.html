@@ -44,7 +44,7 @@
         <ion-grid>
             <ion-row>
                 <ion-col>
-Garanzie
+            Garanzie
                 </ion-col>
                 <ion-col>
                         Prezzo
@@ -55,15 +55,46 @@ Garanzie
             </ion-row>
             <ion-row *ngFor="let item of preventivo.garanzie">
                     <ion-col>
-    {{item.nome}} {{item.codice}}
+    {{item.nome}} {{item.codice}}  
                     </ion-col>
                     <ion-col>
-                            
+                             {{item.prezzo}}
                         </ion-col>
                         <ion-col>
                                 
-                            </ion-col>
+                        </ion-col>
                 </ion-row>
+                <ion-row>
+                    <ion-col>
+                        RCA
+                    </ion-col>
+                <ion-col>
+                        {{rca}}
+                </ion-col>
+                <ion-col>
+                        
+                </ion-col>
+                </ion-row>
+                <ion-row>
+                        <ion-col>
+                             Tot   
+                        </ion-col>
+                        <ion-col>
+                               {{premio}} 
+                        </ion-col>
+                        <ion-col>
+                                {{iva}}
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                            <ion-col>
+                                TOTALE     
+                            </ion-col>
+                            <ion-col>
+                                    {{premio+iva}}
+                            </ion-col>                          
+                        
+                    </ion-row>
         </ion-grid>
 </div>
 </ion-content>
