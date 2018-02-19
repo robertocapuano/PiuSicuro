@@ -35,24 +35,6 @@ page-riepilogo {
             background-color: $primary-color;
         }
 
-        #header{
-
-            background-color: $primary-color;
-        
-            h1{
-                font-family: 'Dosis', sans-serif;
-                font-size: 45px;
-                color:$text-color;
-            }
-        
-            #pi{
-                font-weight: bold;
-                font-style: italic;
-                font-size: 65px;
-            }
-        
-            }
-
             ion-footer{
                 color:$text-color;
             }
@@ -133,42 +115,59 @@ page-riepilogo {
             color: white;
         }
 
+
+       ion-grid.bordogrid{
+          // border-bottom: 1px black;
+          // border: 1px solid black;
+
+           ion-row#rosso{
+            background-color: $primary-color;
+            color: white;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        ion-col.iv{
+            //border-top: 1px solid black;
+        }
+        
+        ion-col.col{
+            text-align: center;
+            line-height: 40px;
+            padding: 0;
+        }
+
+        ion-row{
+            border: 0.5px solid grey;
+        }
+
+        ion-col{
+            border: 0.5px solid grey;
+        }
+
+        ion-row.ultima{
+            //border-bottom: 1px solid black;
+        }
+        
         ion-col.iva{
-            border-bottom: 1.5px solid black;
+            //border-right: 1px solid black;
+            //border: none;
+            //border-top:none;
+        }
+
+        ion-col.iva{
+            //border-bottom: 1.5px solid black;
         }
 
        ion-col.totale{
            text-align: center;
 
        }
-       ion-grid.bordogrid{
-           border-bottom: 1px black;
+
+
+
        }
-
-ion-row#rosso{
-    background-color: $primary-color;
-    color: white;
-    height: 40px;
-    text-align: center;
-    line-height: 40px;
-}
-ion-col.iv{
-    border-top: 1.4px solid black;
-}
-
-ion-col.col{
-    text-align: center;
-    line-height: 40px;
-    padding: 0;
-}
-ion-row.ultima{
-    border-bottom: 1px solid black;
-}
-ion-col.iva{
-    border-right: 1px solid black;
-    border-bottom: none;
-    border-top:none;
-}
 
 
 ion-grid{
@@ -180,8 +179,8 @@ border-collapse: collapse;
         }
            
         ion-col{
-            border: 1px solid black;
-            border-collapse: collapse;
+            //border: 1px solid black;
+            //border-collapse: collapse;
             text-align: center;
             font-size: 14px;
         }
