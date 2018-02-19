@@ -1,20 +1,22 @@
+<ion-header>
+    <div id="header" padding align="center">
+
+        <h1><span id="pi">P</span>iuSicuro</h1>
+  
+    </div>
+
+</ion-header>
+
 <ion-content padding>
 
-  <div id="header" align="center">
+    <div id="title" padding>
 
-      <h1><span id="pi">P</span>iuSicuro</h1>
-
-  </div>
-
-  <div id="title" padding>
-
-    <h2>Dati veicolo</h2>
-
-  </div>
-
+        <h2>Dati veicolo</h2>
+    
+      </div>
+      
   <div id="form">
-    <ion-list>
-
+   
       <ion-item>
         <ion-label>Marca</ion-label>
         <ion-input type="text" [(ngModel)]="veicolo.marca" (change)="validaForm()"></ion-input>
@@ -39,9 +41,9 @@
         <ion-input type="text" [(ngModel)]="veicolo.cilindrata" (change)="validaForm()"></ion-input>
       </ion-item>
 
-    </ion-list>
+  
   </div>
-  <div  align=center>
+  <div  align=center padding>
         <button ion-button block [disabled]="disabilitato" (click)="navigateToPersona()">
       Prosegui &nbsp;
       <ion-icon name='arrow-forward'></ion-icon>
@@ -49,6 +51,7 @@
   </div>
 
 </ion-content>
+
 <ion-footer>
   <ion-toolbar>
     <ion-grid>
@@ -57,7 +60,7 @@
                 <b>Codice Fiscale: </b> 045043054305
             </ion-col>
             <ion-col>
-                <b>P.IVA:</b>   0123456789
+                <b>P.IVA:</b> <br>  0123456789
             </ion-col>
             <ion-col>
                 <b>Assistenza clienti:</b> <br> +39 9876543210
