@@ -35,13 +35,9 @@ export interface Preventivo
 }
 
 
-
-
-
 @Injectable()
 export class CreaPreventivoProvider {
 
-  cont:number=0;
   
 
   veicolo : Veicolo = {
@@ -78,7 +74,6 @@ export class CreaPreventivoProvider {
   };
 
   constructor(public http: HttpClient) {
-      this.cont++;
   }
 
   setPersona(pers: Persona)
@@ -95,6 +90,7 @@ export class CreaPreventivoProvider {
   {
     this.garanzi =gar;
   }
+
 /*
   preve()
   {
@@ -102,9 +98,12 @@ export class CreaPreventivoProvider {
       id:this.cont,
       veicolo:this.veicolo,
       persona:this.persona,
-      garanzie:this.garanzi
-    };
-  }*/
+      garanzie:this.garanzi};
+
+  }
+  
+  */
+
   getPersona():Persona{
     return this.persona;
   }

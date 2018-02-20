@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
+$primary-color: rgb(230, 0, 0) !important;
+$text-color: white;
+
+breadcrumb {
+    div{
+
+       
+        .attuale{
+            background-color: $primary-color;
+            color:$text-color;
+            border-width: 5px;
+        }
+
+        .grid{
+            padding:0px;
+            border-style: groove;
+            border-width: 0.5px;
+
+        }
+    }
+}

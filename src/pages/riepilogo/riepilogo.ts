@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {Preventivo,Garanzia,Persona,Veicolo, CreaPreventivoProvider} from '../../providers/crea-preventivo/crea-preventivo';
+import { Preventivo, Garanzia, Persona, Veicolo, CreaPreventivoProvider } from '../../providers/crea-preventivo/crea-preventivo';
 import { ContraentePage } from '../contraente/contraente';
 import { HomePage } from '../home/home';
 import { CalcolaPreventivoProvider } from '../../providers/calcola-preventivo/calcola-preventivo';
-import {GaranziaPage} from '../garanzia/garanzia';
-import {HeaderComponent} from '../../components/header/header';
-import {FooterComponent} from '../../components/footer/footer';
+import { GaranziaPage } from '../garanzia/garanzia';
+import { HeaderComponent } from '../../components/header/header';
 
 @IonicPage()
 @Component({
@@ -15,39 +14,41 @@ import {FooterComponent} from '../../components/footer/footer';
 })
 export class RiepilogoPage {
 
-  preventivo:Preventivo={
-    id:0,
-    veicolo:{marca:"",modello:"",annoImm:null,allestimento:"",cilindrata:null},
-    persona:{nome:"",cognome:"",dataNascita:"",luogoNascita:"",anniPatente:null},
-    garanzie:[]
+  preventivo: Preventivo = {
+    id: 0,
+    veicolo: { marca: "", modello: "", annoImm: null, allestimento: "", cilindrata: null },
+    persona: { nome: "", cognome: "", dataNascita: "", luogoNascita: "", anniPatente: null },
+    garanzie: []
   };
 
-  premio:number=0;
-  iva:number=0.0;
+  premio: number = 0;
+  iva: number = 0.0;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public serv:CreaPreventivoProvider,public calcola : CalcolaPreventivoProvider) 
-  {
-    this.preventivo={id:0,veicolo:this.serv.getVeicolo(),persona:this.serv.getPersona(),garanzie:this.serv.getGaranzie()};
-    this.iva=calcola.calcolaIva(this.preventivo);
-    this.premio=calcola.calcoloPremio(this.preventivo);
-    
+  constructor(public navCtrl: NavController, public navParams: NavParams, public serv: CreaPreventivoProvider, public calcola: CalcolaPreventivoProvider) {
+    this.preventivo =
+      {
+        id: 0,
+        veicolo: this.serv.getVeicolo(),
+        persona: this.serv.getPersona(),
+        garanzie: this.serv.getGaranzie()
+      };
 
+    this.iva = calcola.calcolaIva(this.preventivo);
+    this.premio = calcola.calcoloPremio(this.preventivo);
   }
 
-  navigateToPersona(){
-    this.navCtrl.push(ContraentePage,this.serv.getPersona());
+  navigateToPersona() {
+    this.navCtrl.push(ContraentePage, this.serv.getPersona());
   }
-  pagInizio()
-  {
-    this.navCtrl.push(HomePage,this.serv.getVeicolo());
+  pagInizio() {
+    this.navCtrl.push(HomePage, this.serv.getVeicolo());
   }
-  
-  navigateToGaranzia(){
+
+  navigateToGaranzia() {
     console.log("navigaaaaaaa puoi!!!");
     this.navCtrl.push(GaranziaPage);
   }
-  ionViewDidLoad() 
-  {
+  ionViewDidLoad() {
     console.log('ionViewDidLoad RiepilogoPage');
   }
 

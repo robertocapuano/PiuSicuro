@@ -18,6 +18,7 @@ import {GaranziaPage} from '../pages/garanzia/garanzia';
 import { RiepilogoPage } from '../pages/riepilogo/riepilogo';
 import {HeaderComponent} from '../components/header/header';
 import {FooterComponent} from '../components/footer/footer';
+import { BreadcrumbComponent } from '../components/breadcrumb/breadcrumb';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {FooterComponent} from '../components/footer/footer';
     GaranziaPage,
     RiepilogoPage,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    BreadcrumbComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,8 @@ import {FooterComponent} from '../components/footer/footer';
     GaranziaPage,
     RiepilogoPage,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    BreadcrumbComponent
   ],
   providers: [
     StatusBar,

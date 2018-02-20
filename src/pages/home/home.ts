@@ -5,6 +5,7 @@ import { CreaPreventivoProvider , Veicolo} from '../../providers/crea-preventivo
 import {GaranziaPage} from '../garanzia/garanzia';
 import {HeaderComponent} from '../../components/header/header';
 import {FooterComponent} from '../../components/footer/footer';
+import {BreadcrumbComponent} from '../../components/breadcrumb/breadcrumb';
 
 @Component({
   selector: 'page-home',
@@ -13,16 +14,20 @@ import {FooterComponent} from '../../components/footer/footer';
 export class HomePage {
   @Input()
   veicolo : Veicolo={marca:"",modello:"",annoImm:null,allestimento:"",cilindrata:null};
-  disabilitato : boolean = true;
+
+  @Input()
+  flag=false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProvider) {
     this.veicolo=this.navParams.data;
+    this.servizo.setVeicolo(this.veicolo);
+    
   }
 
   getfocus() {
     document.getElementById("prosegui").focus();
 }
-  pagInizio()
+ /* pagInizio()
   {
     this.navCtrl.push(HomePage);
   }
@@ -31,13 +36,14 @@ export class HomePage {
       this.navCtrl.push(GaranziaPage);
   }
   
-  navigateToPersona(){
+navigateToPersona(){
     //console.log("navigaaaaaaa puoi!!!");
     if(!this.disabilitato){
       this.servizo.setVeicolo(this.veicolo);
       this.navCtrl.push(ContraentePage,this.servizo.getPersona());
     }
-  }
+    
+  }*/
   
   validaForm()
   {
