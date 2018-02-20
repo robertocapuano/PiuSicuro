@@ -5,6 +5,7 @@ import { ContraentePage } from '../contraente/contraente';
 import { HomePage } from '../home/home';
 import { CalcolaPreventivoProvider } from '../../providers/calcola-preventivo/calcola-preventivo';
 import {GaranziaPage} from '../garanzia/garanzia';
+import {HeaderComponent} from '../../components/header/header';
 
 @IonicPage()
 @Component({

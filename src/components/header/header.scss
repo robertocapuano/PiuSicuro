@@ -1,0 +1,20 @@
+$primary-color: rgb(230, 0, 0) !important;
+$text-color: white;
+header {
+        background-color: $primary-color;
+        
+        h1{
+            font-family: 'Dosis', sans-serif;
+            font-size: 30px;
+            color:$text-color;
+        }
+    
+        #pi{
+            font-weight: bold;
+            font-style: italic;
+            font-size: 65px;
+        }
+    
+        
+
+}
