@@ -17,6 +17,7 @@ import { ContraentePage } from '../pages/contraente/contraente';
 import {GaranziaPage} from '../pages/garanzia/garanzia';
 import { RiepilogoPage } from '../pages/riepilogo/riepilogo';
 import {HeaderComponent} from '../components/header/header';
+import {FooterComponent} from '../components/footer/footer';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {HeaderComponent} from '../components/header/header';
     ContraentePage,
     GaranziaPage,
     RiepilogoPage,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,8 @@ import {HeaderComponent} from '../components/header/header';
     ContraentePage,
     GaranziaPage,
     RiepilogoPage,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   providers: [
     StatusBar,

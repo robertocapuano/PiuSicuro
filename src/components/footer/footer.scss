@@ -1,0 +1,12 @@
+$primary-color: rgb(230, 0, 0) !important;
+$text-color: white;
+footer {
+
+    ion-footer{
+        color:$text-color;
+    }
+
+        .toolbar-background{
+            background-color: $primary-color;
+        }
+}

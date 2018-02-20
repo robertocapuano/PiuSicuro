@@ -4,6 +4,7 @@ import { CreaPreventivoProvider,Persona } from '../../providers/crea-preventivo/
 import {GaranziaPage} from '../garanzia/garanzia';
 import {HomePage} from '../home/home';
 import {HeaderComponent} from '../../components/header/header';
+import {FooterComponent} from '../../components/footer/footer';
 
 
 @IonicPage()
