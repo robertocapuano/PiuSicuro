@@ -26,7 +26,7 @@ export class RiepilogoPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public serv:CreaPreventivoProvider,public calcola : CalcolaPreventivoProvider) 
   {
-    this.preventivo=serv.preve();
+    this.preventivo={id:0,veicolo:this.serv.getVeicolo(),persona:this.serv.getPersona(),garanzie:this.serv.getGaranzie()};
     this.iva=calcola.calcolaIva(this.preventivo);
     this.premio=calcola.calcoloPremio(this.preventivo);
     

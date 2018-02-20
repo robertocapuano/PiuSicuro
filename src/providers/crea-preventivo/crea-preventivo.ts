@@ -95,7 +95,7 @@ export class CreaPreventivoProvider {
   {
     this.garanzi =gar;
   }
-
+/*
   preve()
   {
       return this.preventivo={
@@ -104,12 +104,16 @@ export class CreaPreventivoProvider {
       persona:this.persona,
       garanzie:this.garanzi
     };
-  }
+  }*/
   getPersona():Persona{
     return this.persona;
   }
   getVeicolo(): Veicolo{
     return this.veicolo
+  }
+  getGaranzie():Garanzia[]
+  {
+    return this.garanzi;
   }
 
 
