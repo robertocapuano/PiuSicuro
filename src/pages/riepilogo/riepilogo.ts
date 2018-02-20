@@ -28,8 +28,7 @@ export class RiepilogoPage {
     this.preventivo=serv.preve();
     this.iva=calcola.calcolaIva(this.preventivo);
     this.premio=calcola.calcoloPremio(this.preventivo);
-    console.log(this.premio);
-    console.log(this.preventivo);
+    
 
   }
 
