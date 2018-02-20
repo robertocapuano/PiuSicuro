@@ -10,8 +10,7 @@ export class FooterComponent {
   text: string;
 
   constructor() {
-    console.log('Hello FooterComponent Component');
-    this.text = 'Hello World';
+    
   }
 
 }
