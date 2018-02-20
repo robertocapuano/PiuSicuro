@@ -17,6 +17,9 @@ export class HomePage {
     this.veicolo=this.navParams.data;
   }
 
+  getfocus() {
+    document.getElementById("prosegui").focus();
+}
   pagInizio()
   {
     this.navCtrl.push(HomePage);

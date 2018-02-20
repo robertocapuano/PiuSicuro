@@ -58,13 +58,15 @@
       </ion-item>
       <ion-item>
         <ion-label>Cilindrata</ion-label>
-        <ion-input type="text" [(ngModel)]="veicolo.cilindrata" (change)="validaForm()"></ion-input>
+        <ion-input type="text" [(ngModel)]="veicolo.cilindrata" (change)="validaForm();getfocus()">
+
+        </ion-input>
       </ion-item>
 
   
   </div>
   <div  align=center padding>
-        <button ion-button block [disabled]="disabilitato" (click)="navigateToPersona()">
+        <button id="prosegui" ion-button block [disabled]="disabilitato" (click)="navigateToPersona()">
       Prosegui &nbsp;
       <ion-icon name='arrow-forward'></ion-icon>
     </button>
