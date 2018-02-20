@@ -23,14 +23,14 @@ export class RiepilogoPage {
 
   premio:number=0;
   iva:number=0.0;
-  rca:number=0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public serv:CreaPreventivoProvider,public calcola : CalcolaPreventivoProvider) 
   {
     this.preventivo=serv.preve();
     this.iva=calcola.calcolaIva(this.preventivo);
     this.premio=calcola.calcoloPremio(this.preventivo);
-    this.rca=calcola.RCA;
+    console.log(this.premio);
+    console.log(this.preventivo);
 
   }
 
