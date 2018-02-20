@@ -4,6 +4,7 @@ import { CreaPreventivoProvider , Garanzia} from '../../providers/crea-preventiv
 import { RiepilogoPage } from '../riepilogo/riepilogo';
 import {HomePage} from '../home/home';
 import { ContraentePage } from '../contraente/contraente';
+import {HeaderComponent} from '../../components/header/header';
 import { CalcolaPreventivoProvider } from '../../providers/calcola-preventivo/calcola-preventivo';
 
 
