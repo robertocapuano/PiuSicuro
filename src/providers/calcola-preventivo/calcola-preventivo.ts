@@ -47,16 +47,16 @@ export class CalcolaPreventivoProvider {
     {
       switch(prev.garanzie[i].nome)
       {
-        case 'incendio':
+        case 'Incendio':
           tot+=100;
         break;
-        case 'furto':
+        case 'Furto':
           tot+=100;
         break;
-        case 'minicasko':
+        case 'Mini Kasko':
           tot+=300;
         break;
-        case 'cristalli':
+        case 'Cristalli':
           tot+=200;
         break;
         default:
