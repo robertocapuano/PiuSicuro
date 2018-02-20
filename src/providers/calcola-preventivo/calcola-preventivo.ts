@@ -47,6 +47,12 @@ export class CalcolaPreventivoProvider {
     {
       switch(prev.garanzie[i].nome)
       {
+        case 'RC':
+        {
+          tot+=this.RCA;
+          prev.garanzie[i].prezzo=this.RCA;
+        }
+        break;
         case 'Incendio':
           tot+=100;
         break;
@@ -63,7 +69,7 @@ export class CalcolaPreventivoProvider {
         break;
       }
     }
-    return tot+this.RCA;
+    return tot;
   }
 
   calcolaIva(prev:Preventivo)
