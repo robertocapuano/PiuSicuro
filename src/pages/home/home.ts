@@ -15,9 +15,13 @@ export class HomePage {
   @Input()
   disabilitato=true;
 
+  flag=false;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProvider) {
     this.veicolo=this.navParams.data;
     this.servizo.setVeicolo(this.veicolo);
+    console.log(this.navCtrl.length()+ "posizione pag costruttore");
+    this.flag=this.flags();
     
   }
 
@@ -38,6 +42,7 @@ export class HomePage {
     if(!this.disabilitato){
       this.servizo.setVeicolo(this.veicolo);
       this.navCtrl.push(ContraentePage,this.servizo.getPersona());
+      console.log(this.navCtrl.length()+ "navigate to pers");
     }
     
   }
@@ -54,7 +59,24 @@ export class HomePage {
     else
       this.disabilitato=true;
   }
+
+  flags()
+  {
+    let ris=false;
+    if(this.navCtrl.length()===4)
+        ris=true;
+        return ris;
+  }
     
+  popPage()
+  {
+    if(!this.disabilitato && this.flag)
+    {
+      this.navCtrl.pop();
+      console.log("mi sono attivato");
+     }
+  }
+
 
 
 

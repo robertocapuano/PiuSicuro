@@ -1,4 +1,4 @@
-import { Component, Input, OnInit} from '@angular/core';
+import { Component, Output, Input, OnInit} from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { CreaPreventivoProvider } from '../../providers/crea-preventivo/crea-preventivo';
 import {GaranziaPage} from '../../pages/garanzia/garanzia';
@@ -10,19 +10,25 @@ import { HomePage } from '../../pages/home/home';
   templateUrl: 'breadcrumb.html'
 })
 
-export class BreadcrumbComponent implements OnInit
-{
-  @Input()
-  pagina: string ="";
-  @Input()
-  breadAbilitata= false;
-  flag=false;
+export class BreadcrumbComponent implements OnInit{
+ 
   
-  constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProvider)
-  {
+  @Input()
+    pagina: string ="";
+
+    @Input()
+    breadAbilitata= false;
+
+    @Input()
+    popPage=false;
+
+    flag=false;
+  
+  constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProvider) {
     console.log(this.pagina);
     console.log("costruttore");
   }
+
   ngOnInit()
   {
     console.log(this.pagina);
@@ -32,7 +38,12 @@ export class BreadcrumbComponent implements OnInit
       this.breadAbilitata=true;
       this.flag=true;
     }
+
   }
+
+
+
+
   pagInizio()
   {
     if(this.breadAbilitata)
@@ -47,6 +58,7 @@ export class BreadcrumbComponent implements OnInit
       this.navCtrl.push(GaranziaPage);
     }
   }
+  
   navigateToPersona()
   {
     if(this.breadAbilitata)
