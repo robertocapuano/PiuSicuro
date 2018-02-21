@@ -26,10 +26,6 @@ export class ContraentePage {
     console.log('ionViewDidLoad ContraentePage');
     this.validaForm();
   }
-  pagInizio()
-  {
-    this.navCtrl.push(HomePage,this.servizo.getVeicolo());
-  }
   validaForm()
   {
     if(
@@ -46,10 +42,12 @@ export class ContraentePage {
     console.log("navigaaaaaaa puoi!!!");
     if(!this.disabilitato){
       this.servizo.setPersona(this.contraente);
-      this.navCtrl.push(GaranziaPage);
+      if(this.navCtrl.getPrevious().name==="RiepilogoPage")
+        this.navCtrl.pop();
+      else
+        this.navCtrl.push(GaranziaPage);
     }
-  }
-  navigateToPersona(){
-    this.navCtrl.push(ContraentePage);
+    console.log(this.navCtrl.length());
+    
   }
 }
