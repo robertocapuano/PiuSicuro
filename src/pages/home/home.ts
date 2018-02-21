@@ -21,6 +21,7 @@ export class HomePage {
   constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProvider) {
     this.veicolo=this.navParams.data;
     this.servizo.setVeicolo(this.veicolo);
+    console.log(this.navCtrl.length());
     
   }
 
@@ -42,6 +43,8 @@ export class HomePage {
       this.servizo.setVeicolo(this.veicolo);
       this.navCtrl.push(ContraentePage,this.servizo.getPersona());
     }
+    console.log(this.navCtrl.length());
+    
     
   }
   
@@ -58,6 +61,25 @@ export class HomePage {
       this.disabilitato=true;
   }
     
+  validaStringhe()
+  {
+    let valido = false;
+    if( this.veicolo.marca !=="" &&  
+        this.veicolo.modello !=="" && 
+        this.veicolo.allestimento !=="")
+        valido = true;
+    return valido;
+
+  }
+
+  validaNumber()
+  {
+    let valido = false;
+    if( this.veicolo.annoImm > 1000 && 
+         this.veicolo.cilindrata >= 1000)
+        valido = true;
+    return valido;
+  }
 
 
 

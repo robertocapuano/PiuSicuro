@@ -50,6 +50,8 @@ export class ContraentePage {
       this.servizo.setPersona(this.contraente);
       this.navCtrl.push(GaranziaPage);
     }
+    console.log(this.navCtrl.length());
+    
   }
   navigateToPersona(){
     this.navCtrl.push(ContraentePage);
