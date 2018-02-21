@@ -18,6 +18,7 @@ export class HomePage {
   constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProvider) {
     this.veicolo=this.navParams.data;
     this.servizo.setVeicolo(this.veicolo);
+    this.validaForm();
     
   }
 
@@ -37,7 +38,15 @@ export class HomePage {
     //console.log("navigaaaaaaa puoi!!!");
     if(!this.disabilitato){
       this.servizo.setVeicolo(this.veicolo);
-      this.navCtrl.push(ContraentePage,this.servizo.getPersona());
+      if(this.navCtrl.length()>1)
+      {
+        if(this.navCtrl.getPrevious().name==="RiepilogoPage")
+          this.navCtrl.pop();
+        else
+          this.navCtrl.push(ContraentePage,this.servizo.getPersona());
+      }
+      else
+        this.navCtrl.push(ContraentePage,this.servizo.getPersona());
     }
     
   }

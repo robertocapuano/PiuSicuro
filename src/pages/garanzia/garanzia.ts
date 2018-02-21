@@ -64,7 +64,10 @@ export class GaranziaPage {
     this.servizio.setGaranzia(this.garanzie);
     console.log(this.garanzie);
     //console.log("navigaaaaaaaaa versoooo l infinito e oltreeee aahahahahah no skerzo verso il riepilogo");
-    this.navCtrl.push(RiepilogoPage);
+    if(this.navCtrl.getPrevious().name==="RiepilogoPage")
+      this.navCtrl.pop();
+    else
+      this.navCtrl.push(RiepilogoPage);
   }
 
   navigateToPersona(){
