@@ -10,14 +10,7 @@ import { HomePage } from '../../pages/home/home';
   templateUrl: 'breadcrumb.html'
 })
 
-
-
-@Output()
-
-
-
 export class BreadcrumbComponent implements OnInit{
- 
  
   
   @Input()

@@ -16,7 +16,7 @@ export class HomePage {
   veicolo : Veicolo={marca:"",modello:"",annoImm:null,allestimento:"",cilindrata:null};
 
   @Input()
-  disabilitato=false;
+  disabilitato=true;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProvider) {
     this.veicolo=this.navParams.data;
@@ -36,14 +36,14 @@ export class HomePage {
       this.navCtrl.push(GaranziaPage);
   }
   
-navigateToPersona(){
+*/navigateToPersona(){
     //console.log("navigaaaaaaa puoi!!!");
     if(!this.disabilitato){
       this.servizo.setVeicolo(this.veicolo);
       this.navCtrl.push(ContraentePage,this.servizo.getPersona());
     }
     
-  }*/
+  }
   
   validaForm()
   {
