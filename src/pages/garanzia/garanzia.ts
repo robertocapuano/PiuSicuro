@@ -47,6 +47,7 @@ export class GaranziaPage {
 
   navigateToRiepilogo()
   {
+    this.garanzie=[];
     this.addGaranzia({nome:"RC",codice:478521, prezzo:0});
       
     if(this.furto)
@@ -64,9 +65,8 @@ export class GaranziaPage {
     this.servizio.setGaranzia(this.garanzie);
     console.log(this.garanzie);
     //console.log("navigaaaaaaaaa versoooo l infinito e oltreeee aahahahahah no skerzo verso il riepilogo");
-    if(this.navCtrl.getPrevious().name==="RiepilogoPage")
-      this.navCtrl.pop();
-    else
+ 
+    
       this.navCtrl.push(RiepilogoPage);
   }
 
