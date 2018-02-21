@@ -20,13 +20,8 @@ export class HomePage {
   constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProvider) {
     this.veicolo=this.navParams.data;
     this.servizo.setVeicolo(this.veicolo);
-<<<<<<< HEAD
-    console.log(this.navCtrl.length()+ "posizione pag costruttore");
-    this.flag=this.flags();
-=======
     console.log(this.navCtrl.length());
     this.validaForm();
->>>>>>> 4fd9fc5e157dd65bc75194e77fa63a2502839b9c
     
   }
 
@@ -46,27 +41,12 @@ export class HomePage {
     //console.log("navigaaaaaaa puoi!!!");
     if(!this.disabilitato){
       this.servizo.setVeicolo(this.veicolo);
-<<<<<<< HEAD
       this.navCtrl.push(ContraentePage,this.servizo.getPersona());
       console.log(this.navCtrl.length()+ "navigate to pers");
-=======
-      if(this.navCtrl.length()>1)
-      {
-        if(this.navCtrl.getPrevious().name==="RiepilogoPage")
-          this.navCtrl.pop();
-        else
-          this.navCtrl.push(ContraentePage,this.servizo.getPersona());
-      }
-      else
-        this.navCtrl.push(ContraentePage,this.servizo.getPersona());
->>>>>>> 4fd9fc5e157dd65bc75194e77fa63a2502839b9c
     }
     console.log(this.navCtrl.length());
-<<<<<<< HEAD
     
-=======
      
->>>>>>> 6ff2163f2dd4ffb2e995d6a1edd2fa8db1fc384d
     
   }
   
@@ -91,17 +71,6 @@ export class HomePage {
         return ris;
   }
     
-<<<<<<< HEAD
-  popPage()
-  {
-    if(!this.disabilitato && this.flag)
-    {
-      this.navCtrl.pop();
-      console.log("mi sono attivato");
-     }
-  }
-
-=======
   validaStringhe()
   {
     let valido = false;
@@ -121,7 +90,6 @@ export class HomePage {
         valido = true;
     return valido;
   }
->>>>>>> 4fd9fc5e157dd65bc75194e77fa63a2502839b9c
 
 
 
