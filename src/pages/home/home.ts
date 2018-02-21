@@ -15,11 +15,13 @@ export class HomePage {
   @Input()
   disabilitato=true;
 
+  flag=false;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProvider) {
     this.veicolo=this.navParams.data;
     this.servizo.setVeicolo(this.veicolo);
-    console.log(this.navCtrl.length());
-    this.validaForm();
+    console.log(this.navCtrl.length()+ "posizione pag costruttore");
+    this.flag=this.flags();
     
   }
 
@@ -39,19 +41,11 @@ export class HomePage {
     //console.log("navigaaaaaaa puoi!!!");
     if(!this.disabilitato){
       this.servizo.setVeicolo(this.veicolo);
-      if(this.navCtrl.length()>1)
-      {
-        if(this.navCtrl.getPrevious().name==="RiepilogoPage")
-          this.navCtrl.pop();
-        else
-          this.navCtrl.push(ContraentePage,this.servizo.getPersona());
-      }
-      else
-        this.navCtrl.push(ContraentePage,this.servizo.getPersona());
+      this.navCtrl.push(ContraentePage,this.servizo.getPersona());
+      console.log(this.navCtrl.length()+ "navigate to pers");
     }
     console.log(this.navCtrl.length());
-    console.log(this.validaStringhe());
-    
+     
     
   }
   
@@ -67,26 +61,24 @@ export class HomePage {
     else
       this.disabilitato=true;
   }
+
+  flags()
+  {
+    let ris=false;
+    if(this.navCtrl.length()===4)
+        ris=true;
+        return ris;
+  }
     
-  validaStringhe()
+  popPage()
   {
-    let valido = false;
-    if( this.veicolo.marca !=="" &&  
-        this.veicolo.modello !=="" && 
-        this.veicolo.allestimento !=="")
-        valido = true;
-    return valido;
-
+    if(!this.disabilitato && this.flag)
+    {
+      this.navCtrl.pop();
+      console.log("mi sono attivato");
+     }
   }
 
-  validaNumber()
-  {
-    let valido = false;
-    if( this.veicolo.annoImm > 1000 && 
-         this.veicolo.cilindrata >= 1000)
-        valido = true;
-    return valido;
-  }
 
 
 
