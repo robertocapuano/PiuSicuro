@@ -24,8 +24,9 @@ export class BreadcrumbComponent implements OnInit{
     pagina: string ="";
 
     @Input()
-    disabilitato : boolean = true;
+    disabilitato= true;
 
+  
   constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProvider) {
     console.log(this.pagina);
     console.log("costruttore");
@@ -34,7 +35,11 @@ export class BreadcrumbComponent implements OnInit{
   ngOnInit()
   {
     console.log(this.pagina);
+    console.log(this.disabilitato);
   }
+
+
+
 
   pagInizio()
   {

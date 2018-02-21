@@ -18,7 +18,7 @@ export class ContraentePage {
   contraente : Persona={nome:"",cognome:"",dataNascita:"",luogoNascita:"",anniPatente:null};
 
   @Input()
-    disabilitato=false;
+    disabilitato=true;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProvider) {
     this.contraente=this.navParams.data;
