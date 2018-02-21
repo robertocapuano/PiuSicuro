@@ -31,21 +31,21 @@ export class BreadcrumbComponent implements OnInit{
 
   pagInizio()
   {
-    if(!this.disabilitato)
+    //if(!this.disabilitato)
     this.navCtrl.push(HomePage);
   }
   navigateToGaranzia(){
-    if(!this.disabilitato)
+    //if(!this.disabilitato)
       this.navCtrl.push(GaranziaPage);
   }
   
 navigateToPersona(){
     //console.log("navigaaaaaaa puoi!!!");
-    if(!this.disabilitato){
+    //if(!this.disabilitato){
       this.navCtrl.push(ContraentePage,this.servizo.getPersona());
     }
     
   }
 
 
-}
+
