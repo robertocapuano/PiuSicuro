@@ -50,6 +50,7 @@ export class HomePage {
         this.navCtrl.push(ContraentePage,this.servizo.getPersona());
     }
     console.log(this.navCtrl.length());
+    console.log(this.validaStringhe());
     
     
   }
