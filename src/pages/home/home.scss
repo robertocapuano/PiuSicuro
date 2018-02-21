@@ -2,6 +2,8 @@
 
 $primary-color: rgb(230, 0, 0) !important;
 $text-color: white;
+$text-input-highlight-color-valid: #32db64;
+$text-input-highlight-color-invalid:red;
 
 page-home{
 
@@ -56,6 +58,14 @@ page-home{
 
         }
     }
+ion-input{
+
+    .warning
+{
+        color:$text-input-highlight-color-invalid;
+}
+   
+}
 
 
 }

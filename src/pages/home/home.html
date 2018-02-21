@@ -38,7 +38,7 @@
    
       <ion-item>
         <ion-label>Marca</ion-label>
-        <ion-input type="text" [(ngModel)]="veicolo.marca" (change)="validaForm()"></ion-input>
+        <ion-input type="text" [(ngModel)]="veicolo.marca" (change)="validaForm()" class="warning"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -53,7 +53,7 @@
 
       <ion-item>
         <ion-label>Anno Immatricolazione </ion-label>
-        <ion-input type="number" [(ngModel)]="veicolo.annoImm" (change)="validaForm()"></ion-input>
+        <ion-input type="number" [(ngModel)]="veicolo.annoImm" (change)="validaForm()" ></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Cilindrata</ion-label>
