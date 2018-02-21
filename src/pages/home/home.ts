@@ -35,8 +35,8 @@ export class HomePage {
     if(!this.disabilitato)
       this.navCtrl.push(GaranziaPage);
   }
-  */
-navigateToPersona(){
+  
+*/navigateToPersona(){
     //console.log("navigaaaaaaa puoi!!!");
     if(!this.disabilitato){
       this.servizo.setVeicolo(this.veicolo);
