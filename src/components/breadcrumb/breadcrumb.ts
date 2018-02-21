@@ -17,8 +17,9 @@ export class BreadcrumbComponent implements OnInit{
     pagina: string ="";
 
     @Input()
-    disabilitato= true;
+    breadAbilitata= false;
 
+    flag=false;
   
   constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProvider) {
     console.log(this.pagina);
@@ -28,7 +29,13 @@ export class BreadcrumbComponent implements OnInit{
   ngOnInit()
   {
     console.log(this.pagina);
-    console.log(this.disabilitato);
+    //console.log(this.disabilitato);
+    if(this.navCtrl.length()>4)
+    {
+      this.breadAbilitata=true;
+      this.flag=true;
+    }
+
   }
 
 
@@ -36,21 +43,32 @@ export class BreadcrumbComponent implements OnInit{
 
   pagInizio()
   {
-    //if(!this.disabilitato)
-    this.navCtrl.push(HomePage);
+    if(this.breadAbilitata)
+    {
+      this.navCtrl.push(HomePage,this.servizo.getVeicolo());
+    }
   }
-  navigateToGaranzia(){
-    //if(!this.disabilitato)
+  navigateToGaranzia()
+  {
+    if(this.breadAbilitata)
+    {
       this.navCtrl.push(GaranziaPage);
+    }
   }
   
-navigateToPersona(){
-    //console.log("navigaaaaaaa puoi!!!");
-    //if(!this.disabilitato){
+  navigateToPersona()
+  {
+    if(this.breadAbilitata)
+    {
       this.navCtrl.push(ContraentePage,this.servizo.getPersona());
     }
-    
   }
+  back()
+  {
+    this.navCtrl.pop();
+    this.flag=false;
+  }
+}
 
 
 

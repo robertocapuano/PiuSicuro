@@ -2,13 +2,13 @@
 
     <ion-grid align="center">
         <ion-row >
-            <ion-col  [ngClass]="pagina==='prima'? 'attuale' : 'niente'"  >
+            <ion-col  [ngClass]="pagina==='prima'? 'attuale' : 'niente'" (click)="flag ? back():pagInizio()" >
                 <b>Dati veicolo</b>
             </ion-col>
-            <ion-col [ngClass]="pagina==='seconda'? 'attuale' : 'niente'">
+            <ion-col [ngClass]="pagina==='seconda'? 'attuale' : 'niente'" (click)="flag ? back():navigateToPersona()">
                 <b>Dati cliente</b> 
             </ion-col>
-            <ion-col [ngClass]="pagina==='terza'? 'attuale' : 'niente'">
+            <ion-col [ngClass]="pagina==='terza'? 'attuale' : 'niente'" (click)="flag ? back():navigateToGaranzia()">
                 <b>Garanzie</b>
             </ion-col>
             <ion-col [ngClass]="pagina==='quarta'? 'attuale' : 'niente'">
