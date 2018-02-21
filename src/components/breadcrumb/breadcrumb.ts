@@ -1,5 +1,5 @@
 import { Component, Output, Input, OnInit} from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, NavPop, ViewController } from 'ionic-angular';
 import { CreaPreventivoProvider } from '../../providers/crea-preventivo/crea-preventivo';
 import {GaranziaPage} from '../../pages/garanzia/garanzia';
 import {ContraentePage} from '../../pages/contraente/contraente';
@@ -24,7 +24,8 @@ export class BreadcrumbComponent implements OnInit{
 
     flag=false;
   
-  constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProvider) {
+  
+  constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProvider, public viewCtrl : ViewController) {
     console.log(this.pagina);
     console.log("costruttore");
   }
@@ -63,14 +64,56 @@ export class BreadcrumbComponent implements OnInit{
   {
     if(this.breadAbilitata)
     {
-      this.navCtrl.push(ContraentePage,this.servizo.getPersona());
+      this.navCtrl
+        .push(ContraentePage,this.servizo.getPersona())
     }
   }
+
+naviga(pageName:string)
+{
+  if(this.breadAbilitata)
+  {
+         
+    for ( let i=0; i < this.navCtrl.length(); i++ )
+          {
+            let v = this.navCtrl.getViews()[i];
+            console.log(i,v.component.name);
+            if(pageName === v.component.name)
+            {
+             
+              //console.log("prima "+this.navCtrl.length());
+                this.navCtrl.popTo(v);
+                console.log(i,v.component.name);
+                //console.log("dopo "+this.navCtrl.length());
+              }
+             
+          }
+
+    console.log(this.navCtrl.length());
+          
+
+
+         /* let found: boolean = views.some((view, i) =>{
+            let index: number = i;
+            return (view.id == 'HomePage');
+          });
+          found ?  : 
+          console.log('non trovata');*/
+
+        
+  }
+          
+}
+  
   back()
   {
     this.navCtrl.pop();
     this.flag=false;
   }
+
+
+
+
 }
 
 

@@ -20,8 +20,13 @@ export class HomePage {
   constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProvider) {
     this.veicolo=this.navParams.data;
     this.servizo.setVeicolo(this.veicolo);
+<<<<<<< HEAD
     console.log(this.navCtrl.length()+ "posizione pag costruttore");
     this.flag=this.flags();
+=======
+    console.log(this.navCtrl.length());
+    this.validaForm();
+>>>>>>> 4fd9fc5e157dd65bc75194e77fa63a2502839b9c
     
   }
 
@@ -41,9 +46,23 @@ export class HomePage {
     //console.log("navigaaaaaaa puoi!!!");
     if(!this.disabilitato){
       this.servizo.setVeicolo(this.veicolo);
+<<<<<<< HEAD
       this.navCtrl.push(ContraentePage,this.servizo.getPersona());
       console.log(this.navCtrl.length()+ "navigate to pers");
+=======
+      if(this.navCtrl.length()>1)
+      {
+        if(this.navCtrl.getPrevious().name==="RiepilogoPage")
+          this.navCtrl.pop();
+        else
+          this.navCtrl.push(ContraentePage,this.servizo.getPersona());
+      }
+      else
+        this.navCtrl.push(ContraentePage,this.servizo.getPersona());
+>>>>>>> 4fd9fc5e157dd65bc75194e77fa63a2502839b9c
     }
+    console.log(this.navCtrl.length());
+    
     
   }
   
@@ -68,6 +87,7 @@ export class HomePage {
         return ris;
   }
     
+<<<<<<< HEAD
   popPage()
   {
     if(!this.disabilitato && this.flag)
@@ -77,6 +97,27 @@ export class HomePage {
      }
   }
 
+=======
+  validaStringhe()
+  {
+    let valido = false;
+    if( this.veicolo.marca !=="" &&  
+        this.veicolo.modello !=="" && 
+        this.veicolo.allestimento !=="")
+        valido = true;
+    return valido;
+
+  }
+
+  validaNumber()
+  {
+    let valido = false;
+    if( this.veicolo.annoImm > 1000 && 
+         this.veicolo.cilindrata >= 1000)
+        valido = true;
+    return valido;
+  }
+>>>>>>> 4fd9fc5e157dd65bc75194e77fa63a2502839b9c
 
 
 
