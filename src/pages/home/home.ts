@@ -2,10 +2,7 @@ import { Component,Input } from '@angular/core';
 import { NavController,NavParams } from 'ionic-angular';
 import { ContraentePage } from '../contraente/contraente';
 import { CreaPreventivoProvider , Veicolo} from '../../providers/crea-preventivo/crea-preventivo';
-import {GaranziaPage} from '../garanzia/garanzia';
-import {HeaderComponent} from '../../components/header/header';
-import {FooterComponent} from '../../components/footer/footer';
-import {BreadcrumbComponent} from '../../components/breadcrumb/breadcrumb';
+
 
 @Component({
   selector: 'page-home',
