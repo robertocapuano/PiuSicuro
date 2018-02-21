@@ -3,8 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CreaPreventivoProvider,Persona } from '../../providers/crea-preventivo/crea-preventivo';
 import {GaranziaPage} from '../garanzia/garanzia';
 import {HomePage} from '../home/home';
-import {HeaderComponent} from '../../components/header/header';
-import {FooterComponent} from '../../components/footer/footer';
 
 
 @IonicPage()
@@ -28,10 +26,6 @@ export class ContraentePage {
     console.log('ionViewDidLoad ContraentePage');
     this.validaForm();
   }
-  pagInizio()
-  {
-    this.navCtrl.push(HomePage,this.servizo.getVeicolo());
-  }
   validaForm()
   {
     if(
@@ -48,12 +42,12 @@ export class ContraentePage {
     console.log("navigaaaaaaa puoi!!!");
     if(!this.disabilitato){
       this.servizo.setPersona(this.contraente);
-      this.navCtrl.push(GaranziaPage);
+      if(this.navCtrl.getPrevious().name==="RiepilogoPage")
+        this.navCtrl.pop();
+      else
+        this.navCtrl.push(GaranziaPage);
     }
     console.log(this.navCtrl.length());
     
-  }
-  navigateToPersona(){
-    this.navCtrl.push(ContraentePage);
   }
 }

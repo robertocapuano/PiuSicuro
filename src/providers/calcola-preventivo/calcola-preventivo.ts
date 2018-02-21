@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {Veicolo,Garanzia,Persona,Preventivo} from '../../providers/crea-preventivo/crea-preventivo';
+import {Preventivo} from '../../providers/crea-preventivo/crea-preventivo';
 
 @Injectable()
 export class CalcolaPreventivoProvider {

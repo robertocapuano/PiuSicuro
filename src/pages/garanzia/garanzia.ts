@@ -4,9 +4,8 @@ import { CreaPreventivoProvider , Garanzia} from '../../providers/crea-preventiv
 import { RiepilogoPage } from '../riepilogo/riepilogo';
 import {HomePage} from '../home/home';
 import { ContraentePage } from '../contraente/contraente';
-import {HeaderComponent} from '../../components/header/header';
 import { CalcolaPreventivoProvider } from '../../providers/calcola-preventivo/calcola-preventivo';
-import {FooterComponent} from '../../components/footer/footer';
+
 
 
 
@@ -48,6 +47,7 @@ export class GaranziaPage {
 
   navigateToRiepilogo()
   {
+    this.garanzie=[];
     this.addGaranzia({nome:"RC",codice:478521, prezzo:0});
       
     if(this.furto)
@@ -65,7 +65,9 @@ export class GaranziaPage {
     this.servizio.setGaranzia(this.garanzie);
     console.log(this.garanzie);
     //console.log("navigaaaaaaaaa versoooo l infinito e oltreeee aahahahahah no skerzo verso il riepilogo");
-    this.navCtrl.push(RiepilogoPage);
+ 
+    
+      this.navCtrl.push(RiepilogoPage);
   }
 
   navigateToPersona(){

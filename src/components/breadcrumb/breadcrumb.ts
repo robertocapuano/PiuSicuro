@@ -10,23 +10,19 @@ import { HomePage } from '../../pages/home/home';
   templateUrl: 'breadcrumb.html'
 })
 
-export class BreadcrumbComponent implements OnInit{
- 
-  
+export class BreadcrumbComponent implements OnInit
+{
   @Input()
-    pagina: string ="";
-
-    @Input()
-    breadAbilitata= false;
-
-    flag=false;
+  pagina: string ="";
+  @Input()
+  breadAbilitata= false;
+  flag=false;
   
   
   constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProvider, public viewCtrl : ViewController) {
     console.log(this.pagina);
     console.log("costruttore");
   }
-
   ngOnInit()
   {
     console.log(this.pagina);
@@ -36,12 +32,7 @@ export class BreadcrumbComponent implements OnInit{
       this.breadAbilitata=true;
       this.flag=true;
     }
-
   }
-
-
-
-
   pagInizio()
   {
     if(this.breadAbilitata)
@@ -56,7 +47,6 @@ export class BreadcrumbComponent implements OnInit{
       this.navCtrl.push(GaranziaPage);
     }
   }
-  
   navigateToPersona()
   {
     if(this.breadAbilitata)

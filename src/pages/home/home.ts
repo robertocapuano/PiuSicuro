@@ -2,10 +2,7 @@ import { Component,Input } from '@angular/core';
 import { NavController,NavParams } from 'ionic-angular';
 import { ContraentePage } from '../contraente/contraente';
 import { CreaPreventivoProvider , Veicolo} from '../../providers/crea-preventivo/crea-preventivo';
-import {GaranziaPage} from '../garanzia/garanzia';
-import {HeaderComponent} from '../../components/header/header';
-import {FooterComponent} from '../../components/footer/footer';
-import {BreadcrumbComponent} from '../../components/breadcrumb/breadcrumb';
+
 
 @Component({
   selector: 'page-home',
@@ -22,6 +19,7 @@ export class HomePage {
     this.veicolo=this.navParams.data;
     this.servizo.setVeicolo(this.veicolo);
     console.log(this.navCtrl.length());
+    this.validaForm();
     
   }
 
@@ -41,7 +39,15 @@ export class HomePage {
     //console.log("navigaaaaaaa puoi!!!");
     if(!this.disabilitato){
       this.servizo.setVeicolo(this.veicolo);
-      this.navCtrl.push(ContraentePage,this.servizo.getPersona());
+      if(this.navCtrl.length()>1)
+      {
+        if(this.navCtrl.getPrevious().name==="RiepilogoPage")
+          this.navCtrl.pop();
+        else
+          this.navCtrl.push(ContraentePage,this.servizo.getPersona());
+      }
+      else
+        this.navCtrl.push(ContraentePage,this.servizo.getPersona());
     }
     console.log(this.navCtrl.length());
     
