@@ -62,7 +62,11 @@ export class HomePage {
 >>>>>>> 4fd9fc5e157dd65bc75194e77fa63a2502839b9c
     }
     console.log(this.navCtrl.length());
+<<<<<<< HEAD
     
+=======
+     
+>>>>>>> 6ff2163f2dd4ffb2e995d6a1edd2fa8db1fc384d
     
   }
   
