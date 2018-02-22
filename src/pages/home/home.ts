@@ -79,7 +79,7 @@ export class HomePage {
     
   }
     
-  validCilindrata()
+  /*validCilindrata()
   {
       let control: FormControl;
       if(control.value < 1000){            
@@ -89,7 +89,7 @@ export class HomePage {
         return {  "not realistic": true  };        }
 
       return null;    
-  }
+  }*/
     
   validaForm()
   {
