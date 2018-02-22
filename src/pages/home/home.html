@@ -34,29 +34,37 @@
     
       </div>
       
-  <div id="form" [formGroup]="form">
-   
+  <div class="red" id="form" [formGroup]="form">
+   <div *ngIf="validaStringa(marca)">la marca deve contenere almeno 4 caratteri</div>
       <ion-item >
         <ion-label >Marca</ion-label>
        
-        <ion-input type="text"  [(ngModel)]="veicolo.marca" (change)="validaForm()" formControlName = "marca"></ion-input>
+        <ion-input type="text"  [(ngModel)]="veicolo.marca" (change)="validaForm()" formControlName = "marca" id="marca"></ion-input>
      </ion-item>
 <br>
+  <div class="red" *ngIf="validaStringa(modello)">il modello deve contenere almeno 4 caratteri</div>
+
       <ion-item >
         <ion-label>Modello</ion-label>
         <ion-input type="text"   [(ngModel)]="veicolo.modello"(change)="validaForm()" formControlName = "modello"></ion-input>
       </ion-item>
 <br>
+<div  class="red" *ngIf="validaStringa(allestimento)">l' allestimento deve contenere almeno 4 caratteri</div>
+
       <ion-item  >
         <ion-label>Allestimento</ion-label>
         <ion-input type="text"   [(ngModel)]="veicolo.allestimento" (change)="validaForm()" formControlName = "allestimento"></ion-input>
       </ion-item>
 <br>
+
+      <div class="red" *ngIf="validaAnnoImm()"> l anno di immatricolazione deve essere compreso tra 1000 e 2100</div>
       <ion-item>
         <ion-label>Anno Immatricolazione </ion-label>
         <ion-input type="number" [(ngModel)]="veicolo.annoImm" (change)="validaForm()" formControlName = "annoImm" ></ion-input>
       </ion-item>
-      <br>
+<br>
+<div  class="red" *ngIf="validaCilindrata()">la cilindrata deve contenere deve essere compresa tra 1000 e 10000 </div>
+
       <ion-item >
         <ion-label>Cilindrata</ion-label>
         <ion-input type="number"  [(ngModel)]="veicolo.cilindrata" (change)="validaForm();getfocus()" formControlName = "cilindrata">
