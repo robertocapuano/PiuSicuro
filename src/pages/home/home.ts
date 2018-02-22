@@ -21,8 +21,7 @@ export class HomePage {
   constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProvider, public formBuilder: FormBuilder ) {
     this.veicolo=this.navParams.data;
     this.servizo.setVeicolo(this.veicolo);
-    console.log(this.navCtrl.length());
-    this.validaForm();
+    //this.validaForm();
 
     /*this.slideOneForm = new FormGroup({
       marca: new FormControl(),
@@ -38,8 +37,7 @@ export class HomePage {
                   annoImm: ['',Validators.compose([Validators.min(1000),Validators.max(2100),Validators.pattern('[0-9]*'),Validators.required]) ],
                   allestimento:['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
                   cilindrata:['',Validators.compose([Validators.min(1000),Validators.max(10000),Validators.pattern('[0-9]*'),Validators.required]) ]  });
- 
-    
+    this.form.addControl;
   }
 
   getfocus() {
@@ -75,11 +73,11 @@ export class HomePage {
     else{
       console.log('campi inseriti scorrettamente');  
     }
-    console.log(this.navCtrl.length());
+    //console.log(this.navCtrl.length());
     
   }
-    
-  validCilindrata()
+
+  /*validCilindrata()
   {
       let control: FormControl;
       if(control.value < 1000){            
@@ -89,10 +87,11 @@ export class HomePage {
         return {  "not realistic": true  };        }
 
       return null;    
-  }
+  }*/
     
   validaForm()
   {
+    //console.log(this.form.controls.cilindrata.invalid);
     if(
       this.veicolo.marca !=="" &&  
       this.veicolo.modello !=="" && 
