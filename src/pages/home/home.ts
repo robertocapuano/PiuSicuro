@@ -71,15 +71,12 @@ export class HomePage {
         return ris;
   }
     
-  validaStringhe()
+  validaMarca()
   {
     let valido = false;
-    if( this.veicolo.marca !=="" &&  
-        this.veicolo.modello !=="" && 
-        this.veicolo.allestimento !=="")
+    if( this.veicolo.marca !=="")
         valido = true;
     return valido;
-
   }
 
   validaNumber()

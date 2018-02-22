@@ -22,7 +22,9 @@ $app-direction: ltr;
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
 
-
+$text-input-highlight-color-valid:#32db64;
+$text-input-highlight-color-invalid:red;
+$text-input-ios-highlight-color-valid: #32db64;
 
 
 // Named Color Variables

@@ -37,9 +37,10 @@
   <div id="form">
    
       <ion-item>
-        <ion-label>Marca</ion-label>
-        <ion-input type="text" [(ngModel)]="veicolo.marca" (change)="validaForm()" class="warning"></ion-input>
-      </ion-item>
+        <ion-label  [ngClass]="validaMarca()===true ? 'niente': 'warning'" >Marca</ion-label>
+       
+        <ion-input type="text" [(ngModel)]="veicolo.marca" (change)="validaForm()"></ion-input>
+     </ion-item>
 
       <ion-item>
         <ion-label>Modello</ion-label>
