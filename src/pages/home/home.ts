@@ -91,7 +91,7 @@ export class HomePage {
     
   validaForm()
   {
-    //console.log(this.form.controls.cilindrata.invalid);
+    //console.log(this.form.controls.cilindrata.dirty);
     if(
       this.veicolo.marca !=="" &&  
       this.veicolo.modello !=="" && 
