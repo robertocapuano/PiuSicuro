@@ -39,31 +39,32 @@
  
 
       <ion-item>
-        <ion-label>Nome</ion-label>
+        <ion-label color="{{ !form.controls.nome.valid && form.controls.nome.dirty ? 'danger' : 'niente' }}"  >Nome</ion-label>
         <ion-input type="text" [(ngModel)]="contraente.nome" (change)="validaForm()" formControlName="nome"></ion-input>
       </ion-item>
+      <span *ngIf="!form.controls.nome.valid && form.controls.nome.dirty" class="danger" padding>Nome is not valid.</span>
 
       <ion-item>
-        <ion-label>Cognome</ion-label>
+        <ion-label color="{{ !form.controls.cognome.valid && form.controls.cognome.dirty ? 'danger' : 'niente' }}">Cognome</ion-label>
         <ion-input type="text"  [(ngModel)]="contraente.cognome"(change)="validaForm()" formControlName="cognome"></ion-input>
       </ion-item>
-
+      <span *ngIf="!form.controls.cognome.valid && form.controls.cognome.dirty" class="danger" padding>Cognome is not valid.</span>
       <ion-item>
-        <ion-label>Data di nascita</ion-label>
+        <ion-label color="{{ !form.controls.dataN.valid && form.controls.dataN.dirty ? 'danger' : 'niente' }}">Data di nascita</ion-label>
         <ion-input type="date" [(ngModel)]="contraente.dataNascita" (change)="validaForm()" formControlName="dataN"></ion-input>
       </ion-item>
-
+      <span *ngIf="!form.controls.dataN.valid && form.controls.dataN.dirty" class="danger" padding>Data di Nascita is not valid.</span>
       <ion-item>
-          <ion-label>Luogo di nascita</ion-label>
+          <ion-label color="{{ !form.controls.luogoN.valid && form.controls.luogoN.dirty ? 'danger' : 'niente' }}">Luogo di nascita</ion-label>
           <ion-input type="text"  [(ngModel)]="contraente.luogoNascita"(change)="validaForm()" formControlName="luogoN"></ion-input>
         </ion-item>
-  
+        <span *ngIf="!form.controls.luogoN.valid && form.controls.luogoN.dirty" class="danger" padding>Luogo di Nascita is not valid.</span>
   
         <ion-item>
-          <ion-label>Anni possesso patente</ion-label>
+          <ion-label color="{{ !form.controls.anniPat.valid && form.controls.anniPat.dirty ? 'danger' : 'niente' }}">Anni possesso patente</ion-label>
           <ion-input type="number" [(ngModel)]="contraente.anniPatente" (change)="validaForm()" formControlName="anniPat"></ion-input>
         </ion-item>
-
+        <span *ngIf="!form.controls.anniPat.valid && form.controls.anniPat.dirty" class="danger" padding>Anni possesso patente is not valid.</span>
       
 
   </div>
