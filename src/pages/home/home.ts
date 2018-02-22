@@ -15,7 +15,7 @@ export class HomePage {
   @Input()
   disabilitato=true;
 
-  flag=false;
+
   form : FormGroup;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProvider, public formBuilder: FormBuilder ) {
@@ -32,7 +32,7 @@ export class HomePage {
    });*/
 
     this.form= formBuilder.group({ 
-                  marca : ['',Validators.compose([Validators.maxLength(20), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+                  marca : ['',Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
                   modello: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
                   annoImm: ['',Validators.compose([Validators.min(1000),Validators.max(2100),Validators.pattern('[0-9]*'),Validators.required]) ],
                   allestimento:['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
@@ -103,36 +103,32 @@ export class HomePage {
       this.disabilitato=true;
   }
 
-  flags()
+
+/*validaAnnoImm()
   {
-    let ris=false;
-    if(this.navCtrl.length()===4)
+    let ris:boolean=false;
+    if(this.veicolo.annoImm>1000 && this.veicolo.annoImm <10000)
+      ris=true;
+    return ris;
+  }
+
+  validaCilindrata()
+  {
+    let ris:boolean=false;
+    if(this.veicolo.annoImm>1000 && this.veicolo.annoImm <2100)
+      ris=true;
+    return ris;
+  }
+
+  validaStringa(s:string)
+  {
+    let ris:boolean=false;
+      let l =this.veicolo[s].length;
+    if(l<30 && l>4 && typeof(this.veicolo[s])==="string")
         ris=true;
-        return ris;
-  }
-    
-  /*validaMarca()
-  validaStringhe()
-  {
-    let valido = false;
-    if( this.veicolo.marca !=="" &&  
-        this.veicolo.modello !=="" && 
-        this.veicolo.allestimento !=="")
-        valido = true;
-    return valido;
+    return ris;
 
-  }
-/*
-  validaNumber()
-  {
-    let valido = false;
-    if( this.veicolo.annoImm > 1000 && 
-         this.veicolo.cilindrata >= 1000)
-        valido = true;
-    return valido;
   }*/
-
-
 
   }
 
