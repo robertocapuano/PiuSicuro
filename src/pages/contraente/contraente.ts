@@ -43,7 +43,7 @@ export class ContraentePage {
       this.contraente.cognome !=="" &&
       this.contraente.dataNascita !=="" &&
       this.contraente.luogoNascita !=="" &&
-      this.contraente.anniPatente > 0)
+      this.contraente.anniPatente > 0 && this.contraente.anniPatente <= 65)
       this.disabilitato=false;
     else
     this.disabilitato=true;
