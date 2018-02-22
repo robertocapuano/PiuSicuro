@@ -34,7 +34,7 @@ export class HomePage {
    });*/
 
     this.form= formBuilder.group({ 
-                  marca : ['',Validators.compose([Validators.maxLength(2), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+                  marca : ['',Validators.compose([Validators.maxLength(20), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
                   modello: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
                   annoImm: ['',Validators.compose([Validators.min(1000),Validators.max(2100),Validators.required]) ],
                   allestimento:['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
