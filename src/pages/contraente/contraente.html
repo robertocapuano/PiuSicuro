@@ -35,7 +35,7 @@
 
   </div>
 
-  <div id="form">
+  <div id="form" [formGroup]="form">
  
 
       <ion-item>
@@ -61,7 +61,7 @@
   
         <ion-item>
           <ion-label>Anni possesso patente</ion-label>
-          <ion-input type="number" [(ngModel)]="contraente.anniPatente" (change)="validaForm()"formControlName="anniPat"></ion-input>
+          <ion-input type="number" [(ngModel)]="contraente.anniPatente" (change)="validaForm()" formControlName="anniPat"></ion-input>
         </ion-item>
 
       
