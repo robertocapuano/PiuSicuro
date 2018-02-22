@@ -21,7 +21,7 @@ export class HomePage {
   constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProvider, public formBuilder: FormBuilder ) {
     this.veicolo=this.navParams.data;
     this.servizo.setVeicolo(this.veicolo);
-    //this.validaForm();
+    this.validaForm();
 
     /*this.slideOneForm = new FormGroup({
       marca: new FormControl(),

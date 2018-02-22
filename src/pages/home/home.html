@@ -55,11 +55,6 @@
       </ion-item>
       <span *ngIf="!form.controls.allestimento.valid && form.controls.allestimento.dirty" class="danger" padding>Allestimento is not valid.</span>
 <br>
-      <ion-item>
-        <ion-label>Anno Immatricolazione </ion-label>
-        <ion-input type="number" [(ngModel)]="veicolo.annoImm" (change)="validaForm()" formControlName = "annoImm" ></ion-input>
-      </ion-item>
-<br>
       <ion-item >
         <ion-label>Anno Immatricolazione </ion-label>
         <ion-input type="number" [(ngModel)]="veicolo.annoImm" (change)="validaForm()" formControlName = "annoImm" ></ion-input>
