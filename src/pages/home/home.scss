@@ -58,12 +58,14 @@ page-home{
         }
     }
 
-ion-input{
-    
+
+
+.invalid {           
+     border: 2px solid #ea6153;        
 }
-    .warning
-{
-    text-decoration:underline red ;
+
+.valid{
+    border: 2px solid green;
 }
    
 
