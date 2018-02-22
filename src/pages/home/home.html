@@ -39,28 +39,53 @@
       <ion-item >
         <ion-label color="{{ !form.controls.marca.valid && form.controls.marca.dirty ? 'danger' : 'niente' }}" >Marca</ion-label>
        
-        <ion-input type="text"  [(ngModel)]="veicolo.marca" (change)="validaForm()" formControlName = "marca"></ion-input>
+        <ion-input type="text"  [(ngModel)]="veicolo.marca" (change)="validaForm()" formControlName = "marca" id="marca"></ion-input>
      </ion-item>
      <span *ngIf="!form.controls.marca.valid && form.controls.marca.dirty" class="danger" padding>Marca is not valid.</span>
 <br>
+  <div class="red" *ngIf="validaStringa(modello)">il modello deve contenere almeno 4 caratteri</div>
+
       <ion-item >
         <ion-label color="{{ !form.controls.modello.valid && form.controls.modello.dirty ? 'danger' : 'niente' }}" >Modello</ion-label>
         <ion-input type="text"   [(ngModel)]="veicolo.modello"(change)="validaForm()" formControlName = "modello"></ion-input>
       </ion-item>
       <span *ngIf="!form.controls.modello.valid && form.controls.modello.dirty" class="danger" padding>Modello is not valid.</span>
 <br>
+<<<<<<< HEAD
+<div  class="red" *ngIf="validaStringa(allestimento)">l' allestimento deve contenere almeno 4 caratteri</div>
+
+      <ion-item  >
+        <ion-label>Allestimento</ion-label>
+=======
       <ion-item   >
+<<<<<<< HEAD
         <ion-label color="{{!form.controls.allestimento.valid && form.controls.allestimento.dirty ? 'danger' : 'niente' }}">Allestimento</ion-label>
+=======
+        <ion-label color="{{ form.controls.allestimento.errors && form.controls.allestimento.dirty ? 'danger' : 'niente' }}">Allestimento</ion-label>
+>>>>>>> bb0f5d92597e07bcb0612cc87acc8120408352c4
+>>>>>>> fdeadafdc600d2a6b4e127e911ab997607d0df51
         <ion-input type="text"   [(ngModel)]="veicolo.allestimento" (change)="validaForm()" formControlName = "allestimento"></ion-input>
       </ion-item>
       <span *ngIf="!form.controls.allestimento.valid && form.controls.allestimento.dirty" class="danger" padding>Allestimento is not valid.</span>
 <br>
+<<<<<<< HEAD
+
+      <div class="red" *ngIf="validaAnnoImm()"> l anno di immatricolazione deve essere compreso tra 1000 e 2100</div>
+      <ion-item>
+        <ion-label>Anno Immatricolazione </ion-label>
+        <ion-input type="number" [(ngModel)]="veicolo.annoImm" (change)="validaForm()" formControlName = "annoImm" ></ion-input>
+      </ion-item>
+<br>
+<div  class="red" *ngIf="validaCilindrata()">la cilindrata deve contenere deve essere compresa tra 1000 e 10000 </div>
+
+=======
       <ion-item >
         <ion-label color="{{!form.controls.annoImm.valid && form.controls.annoImm.dirty ? 'danger' : 'niente' }}">Anno Immatricolazione </ion-label>
         <ion-input type="number" [(ngModel)]="veicolo.annoImm" (change)="validaForm()" formControlName = "annoImm" ></ion-input>
       </ion-item>
       <span *ngIf="!form.controls.annoImm.valid && form.controls.annoImm.dirty" class="danger" padding>Anno di Immatricolazione is not valid.</span>
       <br>
+>>>>>>> bb0f5d92597e07bcb0612cc87acc8120408352c4
       <ion-item >
         <ion-label color="{{ !form.controls.annoImm.valid && form.controls.annoImm.dirty ? 'danger' : 'niente' }}">Cilindrata</ion-label>
         <ion-input type="number"  [(ngModel)]="veicolo.cilindrata" (change)="validaForm();getfocus()" formControlName = "cilindrata">
