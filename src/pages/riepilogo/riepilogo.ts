@@ -31,7 +31,7 @@ export class RiepilogoPage {
         persona: this.serv.getPersona(),
         garanzie: this.serv.getGaranzie()
       };
-      console.log(this.navCtrl.length());
+      //console.log(this.navCtrl.length());
 
     this.iva = calcola.calcolaIva(this.preventivo);
     this.premio = calcola.calcoloPremio(this.preventivo);
@@ -45,7 +45,7 @@ export class RiepilogoPage {
   }
 
   navigateToGaranzia() {
-    console.log("navigaaaaaaa puoi!!!");
+    //console.log("navigaaaaaaa puoi!!!");
     this.navCtrl.push(GaranziaPage);
   }
   ionViewDidLoad() {

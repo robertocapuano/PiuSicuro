@@ -51,7 +51,7 @@ export class ContraentePage {
 
   
   navigateToGaranzia(){
-    console.log("navigaaaaaaa puoi!!!");
+    //console.log("navigaaaaaaa puoi!!!");
     if(!this.disabilitato){
       this.servizo.setPersona(this.contraente);
       if(this.navCtrl.getPrevious().name==="RiepilogoPage")
@@ -59,7 +59,7 @@ export class ContraentePage {
       else
         this.navCtrl.push(GaranziaPage);
     }
-    console.log(this.navCtrl.length());
+   // console.log(this.navCtrl.length());
     
   }
 }
