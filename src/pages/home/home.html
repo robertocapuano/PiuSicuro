@@ -36,7 +36,7 @@
       
   <div id="form" [formGroup]="form">
       <ion-item >
-        <ion-label >Marca</ion-label>
+        <ion-label>Marca</ion-label>
        
         <ion-input type="text"  [(ngModel)]="veicolo.marca" (change)="validaForm()" formControlName = "marca" id="marca"></ion-input>
      </ion-item>
@@ -48,13 +48,11 @@
       </ion-item>
       <span *ngIf="form.controls.modello.errors && form.controls.modello.dirty" class="danger" padding>Modello is not valid.</span>
 <br>
-
       <ion-item  >
         <ion-label>Allestimento</ion-label>
-      <ion-item   >
         <ion-input type="text"   [(ngModel)]="veicolo.allestimento" (change)="validaForm()" formControlName = "allestimento"></ion-input>
       </ion-item>
-      <span *ngIf="form.controls.allestimento.errors && form.controls.allestimento.dirty" class="danger" padding>Allestimento is not valid.</span>
+      <span *ngIf="!form.controls.allestimento.valid && form.controls.allestimento.dirty" class="danger" padding>Allestimento is not valid.</span>
 <br>
       <ion-item >
         <ion-label>Anno Immatricolazione </ion-label>
@@ -63,7 +61,7 @@
       <span *ngIf="form.controls.annoImm.errors && form.controls.annoImm.dirty" class="danger" padding>Anno di Immatricolazione is not valid.</span>
       <br>
       <ion-item >
-        <ion-label >Cilindrata</ion-label>
+        <ion-label>Cilindrata</ion-label>
         <ion-input type="number"  [(ngModel)]="veicolo.cilindrata" (change)="validaForm();getfocus()" formControlName = "cilindrata">
 
         </ion-input>
