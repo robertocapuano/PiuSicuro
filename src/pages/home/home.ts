@@ -2,6 +2,7 @@ import { Component,Input } from '@angular/core';
 import { NavController,NavParams } from 'ionic-angular';
 import { ContraentePage } from '../contraente/contraente';
 import { CreaPreventivoProvider , Veicolo} from '../../providers/crea-preventivo/crea-preventivo';
+import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
 
 
 @Component({
@@ -16,18 +17,40 @@ export class HomePage {
   disabilitato=true;
 
   flag=false;
+  slideOneForm : FormGroup;
+  myGroup:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProvider, public formBuilder: FormBuilder ) {
     this.veicolo=this.navParams.data;
     this.servizo.setVeicolo(this.veicolo);
     console.log(this.navCtrl.length());
     this.validaForm();
+
+    /*this.slideOneForm = new FormGroup({
+      marca: new FormControl(),
+      modello: new FormControl(),
+      annoImm: new FormControl(),
+      allestimento: new FormControl(),
+      cilindrata:new FormControl() 
+   });*/
+
+    this.slideOneForm = formBuilder.group({ 
+                  marca : ['',Validators.compose([Validators.maxLength(2), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+                  modello: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+                  annoImm: ['', ],
+                  allestimento:['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+                  cilindrata:['']  });
+ 
     
   }
 
   getfocus() {
     document.getElementById("prosegui").focus();
 }
+
+
+
+        
  /* pagInizio()
   {
     this.navCtrl.push(HomePage);
@@ -46,10 +69,15 @@ export class HomePage {
     }
     console.log(this.navCtrl.length());
     
+    //verifica la validazione dei caratteri
+    if(!this.slideOneForm.valid){  
+      console.log('campi inseriti scorrettamente');    }    
+      else {        console.log("success!");        
+      console.log(this.slideOneForm.value);  }
+
+    }
      
     
-  }
-  
   validaForm()
   {
     if(
