@@ -37,28 +37,28 @@
   <div id="form">
    
       <ion-item>
-        <ion-label  [ngClass]="validaMarca()===true ? 'niente': 'warning'" >Marca</ion-label>
+        <ion-label>Marca</ion-label>
        
-        <ion-input type="text" [(ngModel)]="veicolo.marca" (change)="validaForm()"></ion-input>
+        <ion-input type="text" [(ngModel)]="veicolo.marca" (change)="validaForm()" formControlName="marca"></ion-input>
      </ion-item>
 
       <ion-item>
         <ion-label>Modello</ion-label>
-        <ion-input type="text"  [(ngModel)]="veicolo.modello"(change)="validaForm()"></ion-input>
+        <ion-input type="text"  [(ngModel)]="veicolo.modello"(change)="validaForm()" formControlName="modello"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label>Allestimento</ion-label>
-        <ion-input type="text" [(ngModel)]="veicolo.allestimento" (change)="validaForm()"></ion-input>
+        <ion-input type="text" [(ngModel)]="veicolo.allestimento" (change)="validaForm()" formControlName="allestimento"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label>Anno Immatricolazione </ion-label>
-        <ion-input type="number" [(ngModel)]="veicolo.annoImm" (change)="validaForm()" ></ion-input>
+        <ion-input type="number" [(ngModel)]="veicolo.annoImm" (change)="validaForm()" formControlName="annoImm"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Cilindrata</ion-label>
-        <ion-input type="text" [(ngModel)]="veicolo.cilindrata" (change)="validaForm();getfocus()">
+        <ion-input type="text" [(ngModel)]="veicolo.cilindrata" (change)="validaForm();getfocus()"formControlName="cilindrata">
 
         </ion-input>
       </ion-item>

@@ -2,7 +2,7 @@ import { Component,Input } from '@angular/core';
 import { NavController,NavParams } from 'ionic-angular';
 import { ContraentePage } from '../contraente/contraente';
 import { CreaPreventivoProvider , Veicolo} from '../../providers/crea-preventivo/crea-preventivo';
-
+import { Validators, FormBuilder, FormGroup,FormControl } from '@angular/forms';
 
 @Component({
   selector: 'page-home',
@@ -15,13 +15,23 @@ export class HomePage {
   @Input()
   disabilitato=true;
 
-  flag=false;
+  private thing : FormGroup;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProvider) {
+  //myControl = new FormControl('value','validation function goes here', 'asynchronous validation function goes here');
+  
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProvider, public formBuilder:FormBuilder) {
     this.veicolo=this.navParams.data;
     this.servizo.setVeicolo(this.veicolo);
     console.log(this.navCtrl.length());
     this.validaForm();
+    this.thing = this.formBuilder.group({
+      marca: ['', Validators.required, Validators.minLength(3)],
+      modello: ['', Validators.required, Validators.minLength(3)],
+      allestimento:['', Validators.required, Validators.minLength(3)],
+      annoImm:['', Validators.required,Validators.min(1000)],
+      cilindrata:['', Validators.required,Validators.max(10000),Validators.min(500)]
+        });
     
   }
 
@@ -41,12 +51,18 @@ export class HomePage {
     //console.log("navigaaaaaaa puoi!!!");
     if(!this.disabilitato){
       this.servizo.setVeicolo(this.veicolo);
-      this.navCtrl.push(ContraentePage,this.servizo.getPersona());
-      console.log(this.navCtrl.length()+ "navigate to pers");
+      if(this.navCtrl.length()>1)
+      {
+        if(this.navCtrl.getPrevious().name==="RiepilogoPage")
+          this.navCtrl.pop();
+        else
+          this.navCtrl.push(ContraentePage,this.servizo.getPersona());
+      }
+      else
+        this.navCtrl.push(ContraentePage,this.servizo.getPersona());
     }
     console.log(this.navCtrl.length());
     
-     
     
   }
   
@@ -71,12 +87,15 @@ export class HomePage {
         return ris;
   }
     
-  validaMarca()
+  validaStringhe()
   {
     let valido = false;
-    if( this.veicolo.marca !=="")
+    if( this.veicolo.marca !=="" &&  
+        this.veicolo.modello !=="" && 
+        this.veicolo.allestimento !=="")
         valido = true;
     return valido;
+
   }
 
   validaNumber()
