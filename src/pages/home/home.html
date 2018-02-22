@@ -58,11 +58,7 @@
         <ion-label>Anno Immatricolazione </ion-label>
         <ion-input type="number" [(ngModel)]="veicolo.annoImm" (change)="validaForm()" formControlName = "annoImm" ></ion-input>
       </ion-item>
-<<<<<<< HEAD
       <span *ngIf="!form.controls.annoImm.valid && form.controls.annoImm.dirty" class="danger" padding>Anno di Immatricolazione is not valid.min=1000,max=2100.</span>
-=======
-      <span *ngIf="form.controls.annoImm.errors && form.controls.annoImm.dirty" class="danger" padding>Anno di Immatricolazione is not valid.</span>
->>>>>>> fd9c990663a7c477f4a4b62cf03406b9b004c777
       <br>
       <ion-item >
         <ion-label>Cilindrata</ion-label>
@@ -70,11 +66,7 @@
 
         </ion-input>
       </ion-item>
-<<<<<<< HEAD
       <span *ngIf="!form.controls.cilindrata.valid && form.controls.cilindrata.dirty" class="danger" padding>Cilindrata is not valid.max=10000,min=1000.</span>
-=======
-      <span *ngIf="form.controls.cilindrata.errors && form.controls.cilindrata.dirty" class="danger" padding>Cilindrata is not valid.</span>
->>>>>>> fd9c990663a7c477f4a4b62cf03406b9b004c777
 
   
   </div>
