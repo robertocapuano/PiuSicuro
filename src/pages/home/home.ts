@@ -17,8 +17,7 @@ export class HomePage {
   disabilitato=true;
 
   flag=false;
-  slideOneForm : FormGroup;
-  myGroup:any;
+  form : FormGroup;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProvider, public formBuilder: FormBuilder ) {
     this.veicolo=this.navParams.data;
@@ -34,7 +33,7 @@ export class HomePage {
       cilindrata:new FormControl() 
    });*/
 
-    this.slideOneForm = formBuilder.group({ 
+    this.form= formBuilder.group({ 
                   marca : ['',Validators.compose([Validators.maxLength(2), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
                   modello: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
                   annoImm: ['', ],
@@ -70,10 +69,10 @@ export class HomePage {
     console.log(this.navCtrl.length());
     
     //verifica la validazione dei caratteri
-    if(!this.slideOneForm.valid){  
+    if(!this.form.valid){  
       console.log('campi inseriti scorrettamente');    }    
       else {        console.log("success!");        
-      console.log(this.slideOneForm.value);  }
+      console.log(this.form.value);  }
 
     }
      

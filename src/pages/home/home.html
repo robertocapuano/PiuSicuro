@@ -34,12 +34,12 @@
     
       </div>
       
-  <div id="form" [formGroup]="slideOneForm">
+  <div id="form" [formGroup]="form">
    
       <ion-item>
         <ion-label >Marca</ion-label>
        
-        <ion-input type="text" [(ngModel)]="veicolo.marca"  formControlName = "marca"></ion-input>
+        <ion-input type="text" [(ngModel)]="veicolo.marca" (change)="validaForm()" formControlName = "marca"></ion-input>
      </ion-item>
 
       <ion-item>
