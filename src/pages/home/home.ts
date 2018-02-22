@@ -35,9 +35,9 @@ export class HomePage {
     this.form= formBuilder.group({ 
                   marca : ['',Validators.compose([Validators.maxLength(20), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
                   modello: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
-                  annoImm: ['',Validators.compose([Validators.min(1000),Validators.max(2100),Validators.required]) ],
+                  annoImm: ['',Validators.compose([Validators.min(1000),Validators.max(2100),Validators.pattern('[0-9]*'),Validators.required]) ],
                   allestimento:['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
-                  cilindrata:['',Validators.compose([Validators.min(1000),Validators.max(10000),Validators.required]) ]  });
+                  cilindrata:['',Validators.compose([Validators.min(1000),Validators.max(10000),Validators.pattern('[0-9]*'),Validators.required]) ]  });
  
     
   }
@@ -96,7 +96,7 @@ export class HomePage {
     if(
       this.veicolo.marca !=="" &&  
       this.veicolo.modello !=="" && 
-      this.veicolo.annoImm > 1000 && 
+      this.veicolo.annoImm >= 1000 && 
       this.veicolo.allestimento !=="" &&
       this.veicolo.cilindrata >= 1000)
       this.disabilitato=false;
