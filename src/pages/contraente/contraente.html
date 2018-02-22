@@ -40,28 +40,28 @@
 
       <ion-item>
         <ion-label>Nome</ion-label>
-        <ion-input type="text" [(ngModel)]="contraente.nome" (change)="validaForm()"></ion-input>
+        <ion-input type="text" [(ngModel)]="contraente.nome" (change)="validaForm()" formControlName="nome"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label>Cognome</ion-label>
-        <ion-input type="text"  [(ngModel)]="contraente.cognome"(change)="validaForm()"></ion-input>
+        <ion-input type="text"  [(ngModel)]="contraente.cognome"(change)="validaForm()" formControlName="cognome"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label>Data di nascita</ion-label>
-        <ion-input type="text" [(ngModel)]="contraente.dataNascita" (change)="validaForm()"></ion-input>
+        <ion-input type="text" [(ngModel)]="contraente.dataNascita" (change)="validaForm()" formControlName="dataN"></ion-input>
       </ion-item>
 
       <ion-item>
           <ion-label>Luogo di nascita</ion-label>
-          <ion-input type="text"  [(ngModel)]="contraente.luogoNascita"(change)="validaForm()"></ion-input>
+          <ion-input type="text"  [(ngModel)]="contraente.luogoNascita"(change)="validaForm()" formControlName="luogoN"></ion-input>
         </ion-item>
   
   
         <ion-item>
           <ion-label>Anni possesso patente</ion-label>
-          <ion-input type="number" [(ngModel)]="contraente.anniPatente" (change)="validaForm()"></ion-input>
+          <ion-input type="number" [(ngModel)]="contraente.anniPatente" (change)="validaForm()"formControlName="anniPat"></ion-input>
         </ion-item>
 
       

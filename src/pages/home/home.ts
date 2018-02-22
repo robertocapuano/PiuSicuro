@@ -2,8 +2,7 @@ import { Component,Input } from '@angular/core';
 import { NavController,NavParams } from 'ionic-angular';
 import { ContraentePage } from '../contraente/contraente';
 import { CreaPreventivoProvider , Veicolo} from '../../providers/crea-preventivo/crea-preventivo';
-import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
-
+import { Validators, FormBuilder, FormGroup,FormControl } from '@angular/forms';
 
 @Component({
   selector: 'page-home',
@@ -61,21 +60,36 @@ export class HomePage {
   
 */navigateToPersona(){
     //console.log("navigaaaaaaa puoi!!!");
-    if(!this.disabilitato){
+    if(!this.disabilitato && this.form.valid){
       this.servizo.setVeicolo(this.veicolo);
-      this.navCtrl.push(ContraentePage,this.servizo.getPersona());
-      console.log(this.navCtrl.length()+ "navigate to pers");
+      if(this.navCtrl.length()>1)
+      {
+        if(this.navCtrl.getPrevious().name==="RiepilogoPage")
+          this.navCtrl.pop();
+        else
+          this.navCtrl.push(ContraentePage,this.servizo.getPersona());
+      }
+      else
+        this.navCtrl.push(ContraentePage,this.servizo.getPersona());
+    }
+    else{
+      console.log('campi inseriti scorrettamente');  
     }
     console.log(this.navCtrl.length());
     
-    //verifica la validazione dei caratteri
-    if(!this.form.valid){  
-      console.log('campi inseriti scorrettamente');    }    
-      else {        console.log("success!");        
-      console.log(this.form.value);  }
+  }
+    
+  validCilindrata()
+  {
+      let control: FormControl;
+      if(control.value < 1000){            
+        return {   "too young": true   };   }
 
-    }
-     
+      if (control.value > 3000){            
+        return {  "not realistic": true  };        }
+
+      return null;    
+  }
     
   validaForm()
   {
@@ -98,14 +112,18 @@ export class HomePage {
         return ris;
   }
     
-  validaMarca()
+  /*validaMarca()
+  validaStringhe()
   {
     let valido = false;
-    if( this.veicolo.marca !=="")
+    if( this.veicolo.marca !=="" &&  
+        this.veicolo.modello !=="" && 
+        this.veicolo.allestimento !=="")
         valido = true;
     return valido;
-  }
 
+  }
+/*
   validaNumber()
   {
     let valido = false;
@@ -113,7 +131,7 @@ export class HomePage {
          this.veicolo.cilindrata >= 1000)
         valido = true;
     return valido;
-  }
+  }*/
 
 
 
