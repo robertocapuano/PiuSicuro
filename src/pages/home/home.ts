@@ -76,7 +76,7 @@ export class HomePage {
     //console.log(this.navCtrl.length());
     
   }
-    
+
   /*validCilindrata()
   {
       let control: FormControl;
