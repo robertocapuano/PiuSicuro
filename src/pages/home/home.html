@@ -36,29 +36,30 @@
       
   <div id="form" [formGroup]="form">
    
-      <ion-item>
-        <ion-label>Marca</ion-label>
+      <ion-item [ngClass]="!form.controls.marca.valid ? 'invalid' : 'valid'">
+        <ion-label >Marca</ion-label>
        
-        <ion-input type="text" [(ngModel)]="veicolo.marca" (change)="validaForm()" formControlName="marca"></ion-input>
+        <ion-input type="text"  [(ngModel)]="veicolo.marca" (change)="validaForm()" formControlName = "marca"></ion-input>
      </ion-item>
-
-      <ion-item>
+<br>
+      <ion-item [ngClass]="!form.controls.modello.valid ? 'invalid' : 'valid'">
         <ion-label>Modello</ion-label>
-        <ion-input type="text"  [(ngModel)]="veicolo.modello"(change)="validaForm()" formControlName="modello"></ion-input>
+        <ion-input type="text"   [(ngModel)]="veicolo.modello"(change)="validaForm()" formControlName = "modello"></ion-input>
       </ion-item>
-
-      <ion-item>
+<br>
+      <ion-item [ngClass]="!form.controls.allestimento.valid ? 'invalid' : 'valid'" >
         <ion-label>Allestimento</ion-label>
-        <ion-input type="text" [(ngModel)]="veicolo.allestimento" (change)="validaForm()" formControlName="allestimento"></ion-input>
+        <ion-input type="text"   [(ngModel)]="veicolo.allestimento" (change)="validaForm()" formControlName = "allestimento"></ion-input>
       </ion-item>
-
-      <ion-item>
+<br>
+      <ion-item [ngClass]="!form.controls.cilindrata.valid ? 'invalid' : 'valid'">
         <ion-label>Anno Immatricolazione </ion-label>
-        <ion-input type="number" [(ngModel)]="veicolo.annoImm" (change)="validaForm()" formControlName="annoImm"></ion-input>
+        <ion-input type="text" [(ngModel)]="veicolo.annoImm" (change)="validaForm()" formControlName = "annoImm" ></ion-input>
       </ion-item>
-      <ion-item>
+      <br>
+      <ion-item [ngClass]="!form.controls.cilindrata.valid ? 'invalid' : 'valid'">
         <ion-label>Cilindrata</ion-label>
-        <ion-input type="text" [(ngModel)]="veicolo.cilindrata" (change)="validaForm();getfocus()"formControlName="cilindrata">
+        <ion-input type="text"  [(ngModel)]="veicolo.cilindrata" (change)="validaForm();getfocus()" formControlName = "cilindrata">
 
         </ion-input>
       </ion-item>

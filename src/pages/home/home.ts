@@ -33,11 +33,11 @@ export class HomePage {
    });*/
 
     this.form= formBuilder.group({ 
-                  marca : ['',Validators.compose([Validators.maxLength(2), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
-                  modello: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
-                  annoImm: ['',Validators.compose([Validators.min(1000),Validators.max(2100),Validators.required]) ],
-                  allestimento:['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
-                  cilindrata:['',Validators.compose([Validators.min(1000),Validators.max(10000),Validators.required]) ]  });
+                  marca : ['',Validators.compose([Validators.maxLength(30), Validators.pattern('[[a-zA-Z0-9 ]*'), Validators.required])],
+                  modello: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z0-9 ]*'), Validators.required])],
+                  annoImm: ['', Validators.compose([Validators.maxLength(4), Validators.pattern('[0-9 ]*'), Validators.required])],
+                  allestimento:['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z0-9 ]*'), Validators.required])],
+                  cilindrata:['', Validators.compose([Validators.maxLength(4), Validators.pattern('[0-9 ]*'),Validators.required])]  });
  
     
   }
@@ -60,7 +60,7 @@ export class HomePage {
   
 */navigateToPersona(){
     //console.log("navigaaaaaaa puoi!!!");
-    if(!this.disabilitato){
+    if(!this.disabilitato && this.form.valid){
       this.servizo.setVeicolo(this.veicolo);
       if(this.navCtrl.length()>1)
       {
@@ -72,16 +72,24 @@ export class HomePage {
       else
         this.navCtrl.push(ContraentePage,this.servizo.getPersona());
     }
+    else{
+      console.log('campi inseriti scorrettamente');  
+    }
     console.log(this.navCtrl.length());
     
-    //verifica la validazione dei caratteri
-    if(!this.form.valid){  
-      console.log('campi inseriti scorrettamente');    }    
-      else {        console.log("success!");        
-      console.log(this.form.value);  }
+  }
+    
+  validCilindrata()
+  {
+      let control: FormControl;
+      if(control.value < 1000){            
+        return {   "too young": true   };   }
 
-    }
-     
+      if (control.value > 3000){            
+        return {  "not realistic": true  };        }
+
+      return null;    
+  }
     
   validaForm()
   {
@@ -104,6 +112,7 @@ export class HomePage {
         return ris;
   }
     
+  /*validaMarca()
   validaStringhe()
   {
     let valido = false;
@@ -114,7 +123,7 @@ export class HomePage {
     return valido;
 
   }
-
+/*
   validaNumber()
   {
     let valido = false;
@@ -122,7 +131,7 @@ export class HomePage {
          this.veicolo.cilindrata >= 1000)
         valido = true;
     return valido;
-  }
+  }*/
 
 
 
