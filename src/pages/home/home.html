@@ -34,20 +34,19 @@
     
       </div>
       
-  <div id="form" [formGroup]="form" >
-   
+  <div id="form" [formGroup]="form">
       <ion-item >
         <ion-label>Marca</ion-label>
        
         <ion-input type="text"  [(ngModel)]="veicolo.marca" (change)="validaForm()" formControlName = "marca"></ion-input>
      </ion-item>
-     <span *ngIf="!form.controls.marca.valid && form.controls.marca.dirty" class="danger" padding>Marca is not valid.</span>
+     <span *ngIf="form.controls.marca.errors && form.controls.marca.dirty" class="danger" padding>Marca is not valid.</span>
 <br>
       <ion-item >
         <ion-label>Modello</ion-label>
         <ion-input type="text"   [(ngModel)]="veicolo.modello"(change)="validaForm()" formControlName = "modello"></ion-input>
       </ion-item>
-      <span *ngIf="!form.controls.modello.valid && form.controls.modello.dirty" class="danger" padding>Modello is not valid.</span>
+      <span *ngIf="form.controls.modello.errors && form.controls.modello.dirty" class="danger" padding>Modello is not valid.</span>
 <br>
       <ion-item  >
         <ion-label>Allestimento</ion-label>
@@ -59,7 +58,7 @@
         <ion-label>Anno Immatricolazione </ion-label>
         <ion-input type="number" [(ngModel)]="veicolo.annoImm" (change)="validaForm()" formControlName = "annoImm" ></ion-input>
       </ion-item>
-      <span *ngIf="!form.controls.annoImm.valid && form.controls.annoImm.dirty" class="danger" padding>Anno di Immatricolazione is not valid.</span>
+      <span *ngIf="!form.controls.annoImm.valid && form.controls.annoImm.dirty" class="danger" padding>Anno di Immatricolazione is not valid.min=1000,max=2100.</span>
       <br>
       <ion-item >
         <ion-label>Cilindrata</ion-label>
@@ -67,7 +66,7 @@
 
         </ion-input>
       </ion-item>
-      <span *ngIf="!form.controls.cilindrata.valid && form.controls.cilindrata.dirty" class="danger" padding>Cilindrata is not valid.</span>
+      <span *ngIf="!form.controls.cilindrata.valid && form.controls.cilindrata.dirty" class="danger" padding>Cilindrata is not valid.max=10000,min=1000.</span>
 
   
   </div>
