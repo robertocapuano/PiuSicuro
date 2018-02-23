@@ -19,6 +19,7 @@ import { RiepilogoPage } from '../pages/riepilogo/riepilogo';
 import {HeaderComponent} from '../components/header/header';
 import {FooterComponent} from '../components/footer/footer';
 import { BreadcrumbComponent } from '../components/breadcrumb/breadcrumb';
+import { SalvaProvider } from '../providers/salva/salva';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { BreadcrumbComponent } from '../components/breadcrumb/breadcrumb';
     SplashScreen,
     CreaPreventivoProvider,
     CalcolaPreventivoProvider,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    SalvaProvider
   ]
 })
 export class AppModule {}

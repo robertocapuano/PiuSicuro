@@ -37,6 +37,10 @@ export class RiepilogoPage {
     this.premio = calcola.calcoloPremio(this.preventivo);
   }
 
+  salvaDati(){
+
+  }
+
   navigateToPersona() {
     this.navCtrl.push(ContraentePage, this.serv.getPersona());
   }
