@@ -23,6 +23,7 @@
         <ion-input type="text" [(ngModel)]="contraente.nome" (change)="validaForm()" formControlName="nome"></ion-input>
       </ion-item>
       <span *ngIf="!form.controls.nome.valid && form.controls.nome.dirty" class="danger" padding>Nome is not valid.</span>
+      <br>
       <span *ngIf="form.controls.nome.invalid" class="danger" padding>Campo obbligatorio</span>
 
       <ion-item>
@@ -30,6 +31,7 @@
         <ion-input type="text"  [(ngModel)]="contraente.cognome"(change)="validaForm()" formControlName="cognome"></ion-input>
       </ion-item>
       <span *ngIf="!form.controls.cognome.valid && form.controls.cognome.dirty" class="danger" padding>Cognome is not valid.</span>
+      <br>
       <span *ngIf="form.controls.cognome.invalid" class="danger" padding>Campo obbligatorio</span>
       <ion-item>
         <ion-label >Data di nascita</ion-label>
@@ -37,12 +39,14 @@
         <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="contraente.dataNascita" (change)="validaForm()"  formControlName="dataN"></ion-datetime> 
       </ion-item>
       <span *ngIf="!form.controls.dataN.valid && form.controls.dataN.dirty" class="danger" padding>Data di Nascita is not valid.</span>
+      <br>
       <span *ngIf="form.controls.dataN.invalid" class="danger" padding>Campo obbligatorio</span>
       <ion-item>
           <ion-label >Luogo di nascita</ion-label>
           <ion-input type="text"  [(ngModel)]="contraente.luogoNascita"(change)="validaForm()" formControlName="luogoN"></ion-input>
         </ion-item>
         <span *ngIf="!form.controls.luogoN.valid && form.controls.luogoN.dirty" class="danger" padding>Luogo di Nascita is not valid.</span>
+        <br>
         <span *ngIf="form.controls.luogoN.invalid" class="danger" padding>Campo obbligatorio</span>
   
         <ion-item>
@@ -50,6 +54,7 @@
           <ion-input type="number" [(ngModel)]="contraente.anniPatente" (change)="validaForm()" formControlName="anniPat"></ion-input>
         </ion-item>
         <span *ngIf="!form.controls.anniPat.valid && form.controls.anniPat.dirty" class="danger" padding>Anni possesso patente is not valid.min=1,max=65.</span>
+        <br>
         <span *ngIf="form.controls.anniPat.invalid" class="danger" padding>Campo obbligatorio</span>
       
 
