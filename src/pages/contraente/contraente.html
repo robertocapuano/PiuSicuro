@@ -53,7 +53,8 @@
       <span *ngIf="form.controls.cognome.invalid" class="danger" padding>Campo obbligatorio</span>
       <ion-item>
         <ion-label >Data di nascita</ion-label>
-        <ion-input type="date" [(ngModel)]="contraente.dataNascita" (change)="validaForm()" formControlName="dataN"></ion-input>
+       
+        <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="contraente.dataNascita" (change)="validaForm()"  formControlName="dataN"></ion-datetime> 
       </ion-item>
       <span *ngIf="!form.controls.dataN.valid && form.controls.dataN.dirty" class="danger" padding>Data di Nascita is not valid.</span>
       <span *ngIf="form.controls.dataN.invalid" class="danger" padding>Campo obbligatorio</span>
