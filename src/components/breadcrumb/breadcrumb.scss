@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis');
 
-$primary-color: rgb(230, 0, 0) !important;
+$primary-color: rgb(230, 0, 0);
 $text-color: white;
 
 #breadcrumb {   
@@ -9,14 +9,14 @@ $text-color: white;
         .attuale{
             background-color: $primary-color;
             color:$text-color;
-            border-width: 5px;
+            border-left: 1px solid rgb(200, 200, 200);
+            border-right:1px solid rgb(200, 200, 200);
         }
 
         .grid{
             padding:0px;
-            border-style: groove;
             border-width: 0.5px;
-
+            border-bottom:1px solid rgb(200, 200, 200);
         }
     
 }

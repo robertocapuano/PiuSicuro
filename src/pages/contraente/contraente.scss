@@ -4,27 +4,6 @@ $primary-color: rgb(230, 0, 0);
     $text-color: white;
 
 page-contraente {
-    
-    
-    #header{
-      
-          //HEADER
-    
-          background-color: $primary-color;
-
-          h1{
-            font-family: 'Dosis', sans-serif;
-            font-size: 30px;
-            color:$text-color;
-        }
-    
-        #pi{
-            font-weight: bold;
-            font-style: italic;
-            font-size: 65px;
-        }
-
-    }
 
     #title{
         white-space: normal;
@@ -35,38 +14,13 @@ page-contraente {
         background-color: rgb(230, 0, 0) !important;
     }
 
-    ion-datetime{
-    
-}
-
 .datetime-text{
     padding-right:113px;  
 }
    // FOOTER
 
-   ion-footer{
-    color:$text-color;
-}
-
     .toolbar-background{
         background-color: $primary-color;
-    }
-
-    #breadcrumb{
-
-       
-        .attuale{
-            background-color: $primary-color;
-            color:$text-color;
-            border-width: 5px;
-        }
-
-        .grid{
-            padding:0px;
-            border-style: groove;
-            border-width: 0.5px;
-
-        }
     }
 
     .danger{

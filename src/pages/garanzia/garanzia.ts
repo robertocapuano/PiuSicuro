@@ -63,8 +63,6 @@ export class GaranziaPage {
       this.addGaranzia({nome:"Mini Kasko",codice:111111,prezzo:300});
 
     this.servizio.setGaranzia(this.garanzie);
-    //console.log(this.garanzie);
-    //console.log("navigaaaaaaaaa versoooo l infinito e oltreeee aahahahahah no skerzo verso il riepilogo");
  
     
       this.navCtrl.push(RiepilogoPage);

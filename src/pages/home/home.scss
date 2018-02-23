@@ -6,24 +6,6 @@ $text-color: white;
 
 page-home{
 
-    #header{
-
-    background-color: $primary-color !important;
-    
-    h1{
-        font-family: 'Dosis', sans-serif;
-        font-size: 30px;
-        color:$text-color;
-    }
-
-    #pi{
-        font-weight: bold;
-        font-style: italic;
-        font-size: 65px;
-    }
-
-    }
-
     #title{
         white-space: normal;
     }
@@ -33,41 +15,16 @@ page-home{
         background-color: $primary-color !important;
     }
 
-    
 
     ion-col{
         text-align: center;
     }
 
-
-  
-        #breadcrumb{
-
-       
-        .attuale{
-            background-color: $primary-color !important;
-            color:$text-color;
-            border-width: 5px;
-        }
-
-        .grid{
-            padding:0px;
-            border-style: groove;
-            border-width: 0.5px;
-
-        }
-    }
-
+    
     .danger{
         color:$primary-color !important;
       }
     
-
-
-
-
-   
-
 
 
 }

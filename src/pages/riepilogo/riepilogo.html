@@ -4,24 +4,7 @@
 
 <ion-content>
                 <breadcrumb [pagina]="'quarta'" [breadAbilitata]=true [popPage]="true"> </breadcrumb>
-        <!--div id="breadcrumb">
-        <ion-grid align="center">
-                <ion-row>
-                    <ion-col (click)="pagInizio()" >
-                        <b>Dati veicolo</b>
-                    </ion-col>
-                    <ion-col (click)="navigateToPersona()">
-                        <b>Dati cliente</b> 
-                    </ion-col>
-                    <ion-col (click)="navigateToGaranzia()">
-                        <b>Garanzie</b>
-                    </ion-col>
-                    <ion-col class="attuale">
-                        <b>Riepilogo</b>
-                    </ion-col>
-                  </ion-row>
-            </ion-grid>
-          </div-->
+
     <br>
     <br>
     <div class="dropdown">
@@ -76,7 +59,7 @@
                     <ion-col >
                              {{item.prezzo | number:'3.1-2'}}&euro;
                         </ion-col>
-                        <ion-col class="iva">
+                        <ion-col>
                                 
                         </ion-col>
                 </ion-row>
