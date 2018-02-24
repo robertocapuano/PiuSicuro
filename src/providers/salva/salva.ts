@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 /*
@@ -14,12 +14,30 @@ export class SalvaProvider {
     console.log('Hello SalvaProvider Provider');
   }
 
-
-  salvaDati()
+  
+  salvaDatiPost(preventivo)
   {
-      let apiURL = `http://127.0.0.1:3000/`; 
-     console.log("URL : "+apiURL);
-      return this.http.get(apiURL).toPromise(); 
+      let apiURL = `http://127.0.0.1:3000`; 
+      //console.log(preventivo);
+     this.http.post(apiURL,preventivo).subscribe((data)=>{
+        console.log(data);
+        return true;
+      },
+      (err)=> {
+        console.log(err);
+        return true;
+      });
 }
+
+
+salvaDatiGet()
+{
+    let apiURL = `http://127.0.0.1:3000`; 
+    let param = new HttpParams().append('id','9');
+  // console.log("URL : "+apiURL);
+    return this.http.get(apiURL,{params:param}).toPromise();
+    
+}
+
 
 }

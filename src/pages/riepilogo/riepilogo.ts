@@ -5,6 +5,7 @@ import { ContraentePage } from '../contraente/contraente';
 import { HomePage } from '../home/home';
 import { CalcolaPreventivoProvider } from '../../providers/calcola-preventivo/calcola-preventivo';
 import { GaranziaPage } from '../garanzia/garanzia';
+import { SalvaProvider } from '../../providers/salva/salva';
 
 @IonicPage()
 @Component({
@@ -23,7 +24,7 @@ export class RiepilogoPage {
   premio: number = 0;
   iva: number = 0.0;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public serv: CreaPreventivoProvider, public calcola: CalcolaPreventivoProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public serv: CreaPreventivoProvider, public calcola: CalcolaPreventivoProvider,public salva:SalvaProvider) {
     this.preventivo =
       {
         id: 0,
@@ -37,9 +38,17 @@ export class RiepilogoPage {
     this.premio = calcola.calcoloPremio(this.preventivo);
   }
 
-  salvaDati(){
-
+  
+  salvaDati(){    
+    this.salva.salvaDatiPost(this.preventivo);
   }
+
+
+  /*
+  salvaDati(){    
+    this.salva.salvaDatiGet();
+  }
+  */
 
   navigateToPersona() {
     this.navCtrl.push(ContraentePage, this.serv.getPersona());
