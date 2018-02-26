@@ -25,7 +25,7 @@ export class RiepilogoPage {
   iva: number = 0.0;
   servizio;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public serv: CreaPreventivoProvider, public calcola: CalcolaPreventivoProvider, salva:SalvaProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public serv: CreaPreventivoProvider, public calcola: CalcolaPreventivoProvider,public salva:SalvaProvider) {
     this.preventivo =
       {
         id: 0,
@@ -37,12 +37,20 @@ export class RiepilogoPage {
 
     this.iva = calcola.calcolaIva(this.preventivo);
     this.premio = calcola.calcoloPremio(this.preventivo);
-    salva.salvaDati().then((data)=>{this.servizio=data});
+    salva.salvaDatiPost(this.preventivo);
   }
 
-  salvaDati(){
-
+  
+  salvaDati(){    
+    this.salva.salvaDatiPost(this.preventivo);
   }
+
+
+  /*
+  salvaDati(){    
+    this.salva.salvaDatiGet();
+  }
+  */
 
   navigateToPersona() {
     this.navCtrl.push(ContraentePage, this.serv.getPersona());
