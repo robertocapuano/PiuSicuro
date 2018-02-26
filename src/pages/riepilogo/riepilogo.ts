@@ -5,7 +5,7 @@ import { ContraentePage } from '../contraente/contraente';
 import { HomePage } from '../home/home';
 import { CalcolaPreventivoProvider } from '../../providers/calcola-preventivo/calcola-preventivo';
 import { GaranziaPage } from '../garanzia/garanzia';
-import {SalvaProvider} from '../../providers/salva/salva';
+import {SalvaProvider, Ris} from '../../providers/salva/salva';
 
 @IonicPage()
 @Component({
@@ -25,7 +25,11 @@ export class RiepilogoPage {
   iva: number = 0.0;
   servizio;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public serv: CreaPreventivoProvider, public calcola: CalcolaPreventivoProvider,public salva:SalvaProvider) {
+  ris:Ris={id:null,esito:null};
+  id:number=null;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public serv: CreaPreventivoProvider, public calcola: CalcolaPreventivoProvider,public salva:SalvaProvider) 
+  {
     this.preventivo =
       {
         id: 0,
@@ -37,14 +41,31 @@ export class RiepilogoPage {
 
     this.iva = calcola.calcolaIva(this.preventivo);
     this.premio = calcola.calcoloPremio(this.preventivo);
-    salva.salvaDatiPost(this.preventivo);
-  }
+    }
 
   
   salvaDati(){    
-    this.salva.salvaDatiPost(this.preventivo);
+    this.salva.salvaDatiPost(this.preventivo).subscribe((data:Ris)=>{
+      console.log(data);//ris in app.js
+      this.ris=data;
+      return true;
+    },
+    (err)=> {
+      console.log(err);
+      return true;
+    });
   }
 
+  codiceArrivato()
+{
+  let a:boolean=false
+  if(this.ris.id!==null)
+  {
+    a=true;
+    this.id=this.ris.id;
+  }
+  return a;
+}
 
   /*
   salvaDati(){    

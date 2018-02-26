@@ -85,8 +85,12 @@
                     </ion-row>
         </ion-grid>
 </div>
-
+<div  *ngIf="!codiceArrivato()">
 <button ion-button (click)="salvaDati()">    Salva   </button>
+</div>
+<div *ngIf="codiceArrivato()">
+    il salvataggio è avvenuto con successo con il codice: {{id}}
+</div>
 </ion-content>
 
 <footer></footer>
