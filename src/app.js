@@ -18,6 +18,7 @@ http.createServer(function (req, res) {
     if (req.method === 'POST') {
         req.on('data', ( data ) => {
             body += data;
+            
         });
         req.on('end', ( data ) => {
             console.log(body);
