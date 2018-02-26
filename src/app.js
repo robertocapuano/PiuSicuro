@@ -6,8 +6,7 @@
 
 var http = require('http');
 var url = require('url');
- var id=0; 
- var ris={id:null,esisto:""};
+  
 var records = {
  
 };
@@ -17,29 +16,24 @@ http.createServer(function (req, res) {
     let body = '';
 
     if (req.method === 'POST') {
-        req.on('data', ( data ) =>
-        {
+        req.on('data', ( data ) => {
             body += data;
         });
-        req.on('end', ( data ) => 
-        {
+        req.on('end', ( data ) => {
             console.log(body);
             var rec = JSON.parse(body);
-
-            records[id] = rec;
-    //      records.push(rec);
+	    var id = rec.id;
+	    records[id] = rec;
+//            records.push(rec);
             console.log(records);
-            ris.id=id;
-            ris.esisto="il salvataggio e andato a buon fine";
-            res.end(JSON.stringify(ris));
-            id++;
+            res.end()
         });
     }
     else if (req.method === 'GET' )
     {
 	     var query = url.parse(req.url,true).query;
 	    console.log(query);
-	var record = records[query.id];
+	    var record = records[query.id];
         res.writeHead(200, {'Content-Type': 'application/json'});
         res.write(JSON.stringify(records));
         res.end();
