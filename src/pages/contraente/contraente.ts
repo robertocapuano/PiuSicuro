@@ -2,8 +2,8 @@ import { Component,Input } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CreaPreventivoProvider,Persona } from '../../providers/crea-preventivo/crea-preventivo';
 import {GaranziaPage} from '../garanzia/garanzia';
-import {HomePage} from '../home/home';
-import { Validators, FormBuilder, FormGroup,FormControl } from '@angular/forms';
+//import {HomePage} from '../home/home';
+import { Validators, FormBuilder, FormGroup} from '@angular/forms';
 
 @IonicPage()
 @Component({

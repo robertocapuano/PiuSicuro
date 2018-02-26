@@ -15,7 +15,6 @@ export class HomePage {
   @Input()
   disabilitato=true;
 
-
   form : FormGroup;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public servizo : CreaPreventivoProvider, public formBuilder: FormBuilder ) {
@@ -25,10 +24,10 @@ export class HomePage {
 
 
     this.form= formBuilder.group({ 
-                  marca : ['',Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
-                  modello: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+                  marca : ['',Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z]*'), Validators.required])],
+                  modello: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z0-9]*'), Validators.required])],
                   annoImm: ['',Validators.compose([Validators.min(1000),Validators.max(2100),Validators.pattern('[0-9]*'),Validators.required]) ],
-                  allestimento:['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+                  allestimento:['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z]*'), Validators.required])],
                   cilindrata:['',Validators.compose([Validators.min(1000),Validators.max(10000),Validators.pattern('[0-9]*'),Validators.required]) ]  });
   }
 
@@ -57,7 +56,7 @@ navigateToPersona(){
     //console.log(this.navCtrl.length());
     
   }
-    
+  
   validaForm()
   {
     //console.log(this.form.controls.cilindrata.dirty);
