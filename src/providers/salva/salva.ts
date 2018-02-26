@@ -14,7 +14,7 @@ export class SalvaProvider {
   {
       let apiURL = `http://127.0.0.1:3000`; 
       //console.log(preventivo);
-     this.http.post(apiURL,preventivo).subscribe((data)=>{
+     this.http.post(apiURL,JSON.stringify(preventivo)).subscribe((data)=>{
         console.log(data);
         return true;
       },
