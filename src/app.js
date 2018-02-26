@@ -20,6 +20,7 @@ http.createServer(function (req, res) {
         req.on('data', ( data ) =>
         {
             body += data;
+            
         });
         req.on('end', ( data ) => 
         {
