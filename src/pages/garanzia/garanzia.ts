@@ -5,6 +5,7 @@ import { RiepilogoPage } from '../riepilogo/riepilogo';
 import {HomePage} from '../home/home';
 import { ContraentePage } from '../contraente/contraente';
 import { CalcolaPreventivoProvider } from '../../providers/calcola-preventivo/calcola-preventivo';
+import { SalvaProvider } from '../../providers/salva/salva';
 
 
 
@@ -26,8 +27,22 @@ export class GaranziaPage {
   
   
   garanzie: Garanzia[]=[];
+  garanzieTot:Garanzia[]=[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public servizio : CreaPreventivoProvider,public calcola: CalcolaPreventivoProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public servizio : CreaPreventivoProvider,public calcola: CalcolaPreventivoProvider, public salva:SalvaProvider) {
+  this.salva.getGaranzie().then(
+    (data:Garanzia[])=>
+    {
+      console.log(data);
+      this.garanzieTot=data;
+    },
+    (err)=>
+    {
+      console.log(err);
+      
+    });
+  
+  
   }
 
   addGaranzia(item : Garanzia){
@@ -49,18 +64,17 @@ export class GaranziaPage {
   {
     this.garanzie=[];
     this.addGaranzia({nome:"RC",codice:478521, prezzo:0});
-      
-    if(this.furto)
-      this.addGaranzia({nome:"Furto",codice:111111,prezzo:100});
-    
-    if(this.incendio)
-      this.addGaranzia({nome:"Incendio",codice:22222,prezzo:100});
+        if(this.furto)
+          this.addGaranzia(this.garanzieTot[0]);
+        
+        if(this.incendio)
+          this.addGaranzia(this.garanzieTot[1]);
 
-    if(this.cristalli)
-      this.addGaranzia({nome:"Cristalli",codice:333333,prezzo:200});
+        if(this.cristalli)
+          this.addGaranzia(this.garanzieTot[3]);
 
-    if(this.minicasko)
-      this.addGaranzia({nome:"Mini Kasko",codice:111111,prezzo:300});
+        if(this.minicasko)
+          this.addGaranzia(this.garanzieTot[2]);
 
     this.servizio.setGaranzia(this.garanzie);
  
@@ -72,4 +86,6 @@ export class GaranziaPage {
     this.navCtrl.push(ContraentePage,this.servizio.getPersona());
   }
   
+
+
 }

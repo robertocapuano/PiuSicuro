@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Preventivo, CreaPreventivoProvider } from '../../providers/crea-preventivo/crea-preventivo';
+import { Preventivo, CreaPreventivoProvider, Garanzia } from '../../providers/crea-preventivo/crea-preventivo';
 import { ContraentePage } from '../contraente/contraente';
 import { HomePage } from '../home/home';
 import { CalcolaPreventivoProvider } from '../../providers/calcola-preventivo/calcola-preventivo';
@@ -37,7 +37,6 @@ export class RiepilogoPage {
         persona: this.serv.getPersona(),
         garanzie: this.serv.getGaranzie()
       };
-      //console.log(this.navCtrl.length());
 
     this.iva = calcola.calcolaIva(this.preventivo);
     this.premio = calcola.calcoloPremio(this.preventivo);
@@ -54,7 +53,6 @@ export class RiepilogoPage {
       console.log(err);
       return true;
     });
-    //this.salva.salvaDatiGet();
   }
 
   codiceArrivato()

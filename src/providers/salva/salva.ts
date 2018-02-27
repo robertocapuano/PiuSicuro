@@ -38,12 +38,12 @@ export class SalvaProvider {
 }
 
 
-salvaDatiGet()
+getGaranzie()
 {
     let apiURL = `http://127.0.0.1:3000/garanzie`; 
-    let param = new HttpParams().append('id','9');
+  //  let param = new HttpParams().append('id','9');
   // console.log("URL : "+apiURL);
-    return this.http.get(apiURL,{params:param}).toPromise();
+    return this.http.get(apiURL).toPromise();
     
 }
 

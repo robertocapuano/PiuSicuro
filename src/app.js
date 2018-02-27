@@ -7,7 +7,12 @@ var http = require('http');
 var url = require('url');
  var id=0; 
  var ris={id:null,esisto:""};
- var garanzie=[{},{},{},{},{}];
+ var garanzie=[
+     {nome:"Furto",codice:1111,prezzo:100},
+     {nome:"Incendio",codice:2222,prezzo:100},
+     {nome:"Mini Kasko",codice:3333,prezzo:300},
+     {nome:"Cristalli",codice:4444,prezzo:200}
+    ];
 var records = {
  
 };
@@ -48,12 +53,15 @@ http.createServer(function (req, res) {
     }
     else if (req.method === 'GET' )
     {
-	     var query = url.parse(req.url,true).query;
-	    console.log(query);
-	var record = records[query.id];
-        res.writeHead(200, {'Content-Type': 'application/json'});
-        res.write(JSON.stringify(records));
-        res.end();
+	     var query = url.parse(req.url,false).query;
+	   // console.log("prova"+req.url.split("?")[0]);
+    var record = records[query.id];
+        if(req.url.split("?")[0]==="/garanzie")
+        {
+            res.writeHead(200, {'Content-Type': 'application/json'});
+            res.write(JSON.stringify(garanzie));
+            res.end();
+        }
     }
 
 }).listen(3000);

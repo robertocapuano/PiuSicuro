@@ -42,7 +42,8 @@ export class CalcolaPreventivoProvider {
   {
     let tot:number=0;
     this.RCA=this.calcolaAnniPat(prev)+this.calcolaAnniImm(prev)+250;
-
+    
+    
     for(let i=0; i<prev.garanzie.length; i++)
     {
       switch(prev.garanzie[i].nome)
