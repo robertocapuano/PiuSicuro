@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Preventivo, CreaPreventivoProvider, Garanzia } from '../../providers/crea-preventivo/crea-preventivo';
+import { Preventivo, CreaPreventivoProvider} from '../../providers/crea-preventivo/crea-preventivo';
 import { ContraentePage } from '../contraente/contraente';
 import { HomePage } from '../home/home';
 import { GaranziaPage } from '../garanzia/garanzia';

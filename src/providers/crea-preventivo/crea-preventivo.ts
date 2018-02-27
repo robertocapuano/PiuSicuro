@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { preserveWhitespacesDefault } from '@angular/compiler/src/config';
 
 export interface Veicolo
 {
