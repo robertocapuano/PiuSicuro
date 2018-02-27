@@ -57,7 +57,7 @@
   
                     </ion-col>
                     <ion-col >
-                             {{item.prezzo | number:'3.1-2'}}&euro;
+                             {{item.prezzo | number:'.1-2'}}&euro;
                         </ion-col>
                         <ion-col>
                                 
@@ -71,7 +71,7 @@
                               <B> {{preventivo.prezzo}} &euro;</B>
                         </ion-col>
                         <ion-col >
-                        <B>{{preventivo.iva}}&euro;</B>
+                        <B>{{preventivo.iva | number:'.1-2'}}&euro;</B>
                         </ion-col>
                     </ion-row>
                     <ion-row class="totale">
@@ -79,7 +79,7 @@
                                <h6 style="text-align:left">TOTALE    </h6>  
                             </ion-col>
                             <ion-col col-8 >
-                                   <h6> {{preventivo.prezzo+preventivo.iva}} &euro;</h6>
+                                   <h6> {{preventivo.prezzo+preventivo.iva | number:'.1-2'}} &euro;</h6>
                             </ion-col>                          
                         
                     </ion-row>
