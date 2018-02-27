@@ -1,5 +1,5 @@
-import { Component, Output, Input, OnInit} from '@angular/core';
-import { NavController, NavParams, NavPop, ViewController } from 'ionic-angular';
+import { Component, Input, OnInit} from '@angular/core';
+import { NavController, NavParams, ViewController } from 'ionic-angular';
 import { CreaPreventivoProvider } from '../../providers/crea-preventivo/crea-preventivo';
 import {GaranziaPage} from '../../pages/garanzia/garanzia';
 import {ContraentePage} from '../../pages/contraente/contraente';

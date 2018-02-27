@@ -1,6 +1,5 @@
 import { HttpClient,HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subscriber } from 'rxjs/Subscriber';
 import { Observable} from 'rxjs';
 
 export interface Ris
@@ -21,7 +20,7 @@ export class SalvaProvider {
   
   salvaDatiPost(preventivo):Observable<any>
   {
-      let apiURL = `http://127.0.0.1:3000`; 
+      let apiURL = `http://127.0.0.1:3000/salva`; 
       //console.log(preventivo);
        return this.http.post(apiURL,JSON.stringify(preventivo));
        /*--
@@ -41,7 +40,7 @@ export class SalvaProvider {
 
 salvaDatiGet()
 {
-    let apiURL = `http://127.0.0.1:3000`; 
+    let apiURL = `http://127.0.0.1:3000/garanzie`; 
     let param = new HttpParams().append('id','9');
   // console.log("URL : "+apiURL);
     return this.http.get(apiURL,{params:param}).toPromise();

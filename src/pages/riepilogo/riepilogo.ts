@@ -54,6 +54,7 @@ export class RiepilogoPage {
       console.log(err);
       return true;
     });
+    //this.salva.salvaDatiGet();
   }
 
   codiceArrivato()

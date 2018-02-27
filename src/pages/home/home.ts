@@ -2,7 +2,7 @@ import { Component,Input } from '@angular/core';
 import { NavController,NavParams } from 'ionic-angular';
 import { ContraentePage } from '../contraente/contraente';
 import { CreaPreventivoProvider , Veicolo} from '../../providers/crea-preventivo/crea-preventivo';
-import { Validators, FormBuilder, FormGroup,FormControl } from '@angular/forms';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'page-home',
