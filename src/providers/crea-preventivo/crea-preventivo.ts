@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { preserveWhitespacesDefault } from '@angular/compiler/src/config';
 
 export interface Veicolo
 {
@@ -28,10 +29,11 @@ export interface Garanzia
 
 export interface Preventivo
 {
-  id:number,
+  prezzo:number,
   veicolo:Veicolo,
   persona:Persona,
-  garanzie:Garanzia[]
+  garanzie:Garanzia[],
+  iva?:number
 }
 
 
@@ -67,7 +69,7 @@ export class CreaPreventivoProvider {
   }]
 
   preventivo:Preventivo={
-    id:0,
+    prezzo:0,
     veicolo:{marca:"",modello:"",annoImm:null,allestimento:"",cilindrata:null},
     persona:{nome:"",cognome:"",dataNascita:"",luogoNascita:"",anniPatente:null},
     garanzie:[]
@@ -114,6 +116,12 @@ export class CreaPreventivoProvider {
   {
     return this.garanzi;
   }
-
+  getPreventivo() : Preventivo
+  {
+    this.preventivo.persona=this.getPersona();
+    this.preventivo.veicolo=this.getVeicolo();
+    this.preventivo.garanzie=this.getGaranzie();
+    return this.preventivo;
+  }
 
 }

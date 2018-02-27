@@ -40,13 +40,38 @@ http.createServer(function (req, res) {
                 console.log(records);
                 ris.id=id;
                 ris.esisto="il salvataggio e andato a buon fine";
-                res.end(JSON.stringify(ris));
                 id++;
+                res.end(JSON.stringify(ris));
             });
             break;
 
             case"/calcolaPreventivo":
-            break;
+            req.on('end', ( data ) => 
+            {
+                var polizza = JSON.parse(body);
+                polizza.prezzo = polizza.veicolo.cilindrata / 10;
+                var data = new Date();
+                if (polizza.persona.anniPatente <= 3)
+                    polizza.prezzo += 200;
+                else if (polizza.persona.anniPatente >= 10)
+                    polizza.prezzo += 50;
+                else if (polizza.persona.anniPatente > 3 && polizza.persona.anniPatente < 10)
+                    polizza.prezzo += 100;
+                if (data.getFullYear() - polizza.veicolo.annoImm <= 5)
+                    polizza.prezzo += 200;
+                else if (data.getFullYear() - polizza.veicolo.annoImm > 5 && data.getFullYear() - polizza.veicolo.annoImm <= 10)
+                    polizza.prezzo += 150;
+                else if (data.getFullYear() - polizza.veicolo.annoImm > 10)
+                    polizza.prezzo += 100;
+                for(let i=0; i<polizza.garanzie.length; i++)
+                {
+                    polizza.prezzo+=polizza.garanzie[i].prezzo;
+                }  
+                console.log(polizza.prezzo);                  
+                polizza.iva=(polizza.prezzo*22)/100;
+                res.end(JSON.stringify({prezzo:polizza.prezzo,iva:polizza.iva}));
+            });
+                break;
             default:
         }
 
@@ -55,7 +80,7 @@ http.createServer(function (req, res) {
     {
 	     var query = url.parse(req.url,false).query;
 	   // console.log("prova"+req.url.split("?")[0]);
-    var record = records[query.id];
+    //var record = records[query.id];
         if(req.url.split("?")[0]==="/garanzie")
         {
             res.writeHead(200, {'Content-Type': 'application/json'});

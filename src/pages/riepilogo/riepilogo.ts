@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Preventivo, CreaPreventivoProvider, Garanzia } from '../../providers/crea-preventivo/crea-preventivo';
 import { ContraentePage } from '../contraente/contraente';
 import { HomePage } from '../home/home';
-import { CalcolaPreventivoProvider } from '../../providers/calcola-preventivo/calcola-preventivo';
 import { GaranziaPage } from '../garanzia/garanzia';
 import {SalvaProvider, Ris} from '../../providers/salva/salva';
 
@@ -14,33 +13,17 @@ import {SalvaProvider, Ris} from '../../providers/salva/salva';
 })
 export class RiepilogoPage {
 
-  preventivo: Preventivo = {
-    id: 0,
-    veicolo: { marca: "", modello: "", annoImm: null, allestimento: "", cilindrata: null },
-    persona: { nome: "", cognome: "", dataNascita: "", luogoNascita: "", anniPatente: null },
-    garanzie: []
-  };
+  preventivo: Preventivo = this.serv.getPreventivo();
 
-  premio: number = 0;
-  iva: number = 0.0;
-  servizio;
+
 
   ris:Ris={id:null,esito:null};
   id:number=null;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public serv: CreaPreventivoProvider, public calcola: CalcolaPreventivoProvider,public salva:SalvaProvider) 
+  constructor(public navCtrl: NavController, public navParams: NavParams, public serv: CreaPreventivoProvider,public salva:SalvaProvider) 
   {
-    this.preventivo =
-      {
-        id: 0,
-        veicolo: this.serv.getVeicolo(),
-        persona: this.serv.getPersona(),
-        garanzie: this.serv.getGaranzie()
-      };
 
-    this.iva = calcola.calcolaIva(this.preventivo);
-    this.premio = calcola.calcoloPremio(this.preventivo);
-    }
+  }
 
   
   salvaDati(){    
