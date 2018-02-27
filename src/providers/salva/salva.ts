@@ -1,4 +1,4 @@
-import { HttpClient,HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable} from 'rxjs';
 
@@ -41,7 +41,7 @@ export class SalvaProvider {
   }
 
 
-  getGaranzie()
+  getGaranzie():Promise<any>
   {
     let apiURL = `http://127.0.0.1:3000/garanzie`;
     //  let param = new HttpParams().append('id','9');
