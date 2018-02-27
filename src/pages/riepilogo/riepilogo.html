@@ -8,7 +8,7 @@
     <br>
     <br>
     <div class="dropdown">
-        <button ion-button full id="dropbtn" >Veicolo ({{preventivo.veicolo.marca}} {{preventivo.veicolo.modello}})</button>
+        <button ion-button id="dropbtn" >Veicolo ({{preventivo.veicolo.marca}} {{preventivo.veicolo.modello}})  &nbsp; <ion-icon ios="ios-arrow-dropdown" md="md-arrow-dropdown"></ion-icon></button>
         <div class="dropdown-content">
            <a> <b> Marca:</b> &nbsp;&nbsp; {{preventivo.veicolo.marca}}</a>
             <br>
@@ -23,7 +23,7 @@
         </div>
     </div> <br><br><br>
     <div class="dropdown">
-            <button ion-button full id="dropbtn" >Contraente: ({{preventivo.persona.nome}} {{preventivo.persona.cognome}})</button>
+            <button ion-button id="dropbtn" >Contraente: ({{preventivo.persona.nome}} {{preventivo.persona.cognome}}) &nbsp;   <ion-icon ios="ios-arrow-dropdown" md="md-arrow-dropdown"></ion-icon></button>
             <div class="dropdown-content">
                <a> <b> Nome:</b> {{preventivo.persona.nome}}<br></a>
                 
@@ -85,8 +85,8 @@
                     </ion-row>
         </ion-grid>
 </div>
-<div  *ngIf="!codiceArrivato()">
-<button ion-button (click)="salvaDati()">    Salva   </button>
+<div  *ngIf="!codiceArrivato()" id="salva-btn">
+<button  ion-button (click)="salvaDati()" text-center>    Salva   </button>
 </div>
 <div *ngIf="codiceArrivato()">
     il salvataggio è avvenuto con successo con il codice: {{id}}
