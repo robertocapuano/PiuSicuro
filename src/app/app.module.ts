@@ -10,7 +10,6 @@ import { HomePage } from '../pages/home/home';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CreaPreventivoProvider } from '../providers/crea-preventivo/crea-preventivo';
-import { CalcolaPreventivoProvider } from '../providers/calcola-preventivo/calcola-preventivo';
 import {HttpClientModule} from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { ContraentePage } from '../pages/contraente/contraente';
@@ -57,7 +56,6 @@ import { SalvaProvider } from '../providers/salva/salva';
     StatusBar,
     SplashScreen,
     CreaPreventivoProvider,
-    CalcolaPreventivoProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     SalvaProvider
   ]
