@@ -26,7 +26,8 @@ export class RiepilogoPage {
   }
 
   
-  salvaDati(){    
+  salvaDati()
+  {    
     this.salva.salvaDatiPost(this.preventivo).subscribe((data:Ris)=>{
       console.log(data);//ris in app.js
       this.ris=data;
